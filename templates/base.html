@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <!--=============== basic  ===============-->
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Photogam - Creative Photography Portfolio Template</title>
+        <!--=============== css  ===============-->	
+        <link type="text/css" rel="stylesheet" href="{% static 'css/plugins.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/map.css' %}">
+        {% block extrahead %}
+        {% endblock extrahead %}
+        <!--=============== favicons ===============-->
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    </head>
+    <body>
+
+    {% block content %}
+    
+    {% endblock content %}
+
+     <!--=============== scripts  ===============-->   
+     <script  src="{% static 'js/jquery.min.js' %}"></script>
+     <script  src="{% static 'js/plugins.js' %}"></script>
+     <script  src="{% static 'js/scripts.js' %}"></script>
+     <script  src="{% static 'js/map.js' %}"></script>
+ </body>
+</html>

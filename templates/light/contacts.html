@@ -1,0 +1,330 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/light-style.css' %}">
+{% endblock extrahead %}
+{% block content %}
+        <!--loader-->
+        <div class="main-loader">
+            <div class="ml-wrap">
+                <div class="ml-mask"></div>
+                <img src="{% static 'images/beyhagh-bastan-black(text).png' %}" alt="">
+            </div>
+            <div class="ml_images-wrap">
+                <div class="ml_bg-item" style="top:-30px; left: 0">
+                    <div class="bg" data-bg="{% static 'images/folio/2.jpg' %}"></div>
+                </div>
+                <div class="ml_bg-item" style="bottom:  -20px; left: 50px">
+                    <div class="bg" data-bg="{% static 'images/folio/6.jpg' %}"></div>
+                </div>
+                <div class="ml_bg-item" style="top:30px; right: -120px">
+                    <div class="bg" data-bg="{% static 'images/folio/18.jpg' %}"></div>
+                </div>
+            </div>
+        </div>
+        <!--loader end-->
+        <!--  main start  -->
+        <div id="main">
+            <!--  header main-header  -->
+            <header class="main-header">
+                <div class="main-inner">
+                    <!--logo-->
+                    <a href="index.html" class="logo-holder"><img src="{% static 'images/beyhagh-bastan-black.png' %}" alt=""></a>
+                    <!--logo end-->
+                    <!-- sb-button-->
+                    <div class="sb-button c_sb"><span></span></div>
+                    <!-- sb-button end-->
+                    <!-- mobile nav -->
+                    <div class="nav-button-wrap">
+                        <div class="nav-button"><span></span><span></span><span></span></div>
+                    </div>
+                    <!-- mobile nav end-->	
+                    <!-- share btn-->	
+                    <div class="share-btn isShare show-share"> <span>Share  <i class="fal fa-chevron-up"></i></span></div>
+                    <!-- share btn end-->	
+                    <!--  navigation -->
+                    <div class="nav-holder main-menu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#">Home </a>
+                                    <!--second level -->
+                                    <ul>
+                                        <li><a href="{% url 'light_mode:index_carousel' %}">Carousel</a></li>
+                                        <li><a href="{% url 'light_mode:index_slider' %}">Slider  </a></li>
+                                        <li><a href="{% url 'light_mode:index_imagesGrid' %}">Images Grid</a></li>
+                                        <li><a href="{% url 'light_mode:index_carousel2' %}">Carousel 2</a></li>
+                                        <li><a href="{% url 'light_mode:index_video' %}">Video</a></li>
+                                    </ul>
+                                    <!--second level end-->
+                                </li>
+                                <li>
+                                    <a href="#">Portfolio </a>
+                                    <!--second level -->
+                                    <ul>
+                                        <li><a href="{% url 'light_mode:portfolio-horizontal' %}">Horizontal Grid </a></li>
+                                        <li><a href="{% url 'light_mode:portfolio-vertical' %}">Vertical Grid</a></li>
+                                        <li><a href="{% url 'light_mode:portfolio-column' %}">Column Grid</a></li>
+                                        <li>
+                                            <a href="#">Single </a>
+                                            <!--third  level -->
+                                            <ul>
+                                                <li><a href="{% url 'light_mode:portfolio-single' %}">Style 1</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio-single2' %}">Style 2</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio-single3' %}">Style 3</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio-single4' %}">Style 4</a></li>
+                                            </ul>
+                                            <!--third level end-->
+                                        </li>
+                                    </ul>
+                                    <!--second level end-->
+                                </li>
+                                <li>
+                                    <a href="{% url 'light_mode:about' %}">About</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'light_mode:blog' %}">News</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'light_mode:contact' %}" class="act-link">Contacts</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- navigation  end -->  						
+                    <!-- share-wrapper-->  
+                    <div class="share-wrapper">
+                        <div class="share-inner">
+                            <div class="share-container"></div>
+                        </div>
+                    </div>
+                    <!-- share-wrapper end -->  
+                </div>
+            </header>
+            <!-- Header   end-->
+            <!-- wrapper -->
+            <div id="wrapper">
+                <!-- content-holder -->
+                <div class="content-holder">
+                    <!-- column-image  -->
+                    <div class="column-image">
+                        <div class="bg"  data-bg="{% static 'images/bg/13.jpg' %}"></div>
+                        <div class="overlay"></div>
+                        <div class="column-title">
+                            <h2>Our Contacts</h2>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.</h3>
+                        </div>
+                        <div class="ci_dec"><span></span></div>
+                    </div>
+                    <!-- column-image end  -->
+                    <!-- column-wrapper -->
+                    <div class="column-wrapper">
+                        <!--section  -->
+                        <section id="sec1">
+                            <div class="container small-container">
+                                <div class="section-title fl-wrap">
+                                    <h3>Contact Details</h3>
+                                    <h4>Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa</h4>
+									<div class="section-number">01.</div>
+                                </div>
+                                <div class="column-wrapper_item fl-wrap">
+                                    <div class="column-wrapper_text fl-wrap">
+                                        <p>Cras mattis iudicium purus sit amet fermentum at nos hinc posthac, sitientis piros afros. Lorem ipsum dolor sit amet, consectetur adipisici elit, petierunt uti sibi concilium totius Galliae in diem sed eius mod tempor incidunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus piros labore et dolore magna.
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.
+                                        </p>
+                                        <div class="contact-details fl-wrap">
+                                            <ul>
+                                                <li><span>Mail :</span><a href="#" target="_blank">yourmail@domain.com</a></li>
+                                                <li><span>Adress :</span><a href="#" target="_blank">USA 27TH Brooklyn NY</a></li>
+                                                <li><span>Phone :</span><a href="#">+7(111)123456789</a> , <a href="#">09155710393</a></li>
+                                            </ul>
+                                        </div>
+                                        <a href="#sec3" class="custom-scroll-link btn fl-btn">Say Hello</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!--section end  -->
+                        <!--section   -->
+                        <section id="sec2">
+                            <div class="container small-container">
+                                <div class="section-title fl-wrap">
+                                    <h3>Studio Location</h3>
+                                    <h4>Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa</h4>
+									<div class="section-number">02.</div>
+                                </div>
+                                <div class="column-wrapper_item fl-wrap">
+                                    <div class="column-wrapper_text fl-wrap">
+                                        <div class="map-box">
+                                            <div id="map-single"    data-latlog="[40.714 , -74.005]" data-popuptext="Our Location in New York ."></div>
+                                        </div>
+                                        <p>Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor odio tempus arcu, vel ultrices nisi nibh vitae ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi varius lacinia vestibulum. Aliquam lobortis facilisis tellus, in facilisis ex vehicula ac. In malesuada quis turpis vel viverra.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!--section end  --> 
+                        <!--section   -->
+                        <section id="sec3">
+                            <div class="container small-container">
+                                <div class="section-title fl-wrap">
+                                    <h3>Get in Touch</h3>
+                                    <h4>Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa</h4>
+									<div class="section-number">03.</div>
+                                </div>
+                                <div class="column-wrapper_item fl-wrap">
+                                    <div class="column-wrapper_text fl-wrap">
+                                        <p>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi varius lacinia vestibulum. Aliquam lobortis facilisis tellus, in facilisis ex vehicula ac. In malesuada quis turpis vel viverra.</p>
+                                        <div id="contact-form" class="fl-wrap">
+                                            <div id="message"></div>
+                                            <form  class="custom-form" action="php/contact.php" name="contactform" id="contactform">
+                                                <fieldset>
+                                                    <input type="text" name="name" id="name" placeholder="Your Name *" value="">
+                                                    <input type="text"  name="email" id="email" placeholder="Email Address *" value="">
+                                                    <textarea name="comments"  id="comments" cols="40" rows="3" placeholder="Your Message:"></textarea>
+                                                    <button class="btn float-btn flat-btn color-bg" id="submit">Send Message </button>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!--section end  -->
+                    </div>
+                    <!-- column-wrapper -->
+                    <!-- fixed-bottom-container -->
+                    <div class="fixed-bottom-container">
+                        <div class="scroll-down-wrap">
+                            <div class="mousey">
+                                <div class="scroller"></div>
+                            </div>
+                        </div>
+                        <div class="page-scroll-nav">
+                            <nav class="scroll-init">
+                                <ul>
+                                    <li><a  href="#sec1" class="act-sec"></a><span>Details</span></li>
+                                    <li><a  href="#sec2"></a><span>Location</span></li>
+                                    <li><a  href="#sec3"></a><span>Write Me</span></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar color-bg"></div>
+                        </div>
+                    </div>
+                    <!-- fixed-bottom-container end-->
+                </div>
+                <!-- content-holder end -->
+            </div>
+            <!-- wrapper end -->
+            <!-- aside-column -->			
+            <div class="aside-column">
+                <!-- social_links-->
+                <div class="header_social">
+                    <ul>
+                        <li><a href="#" target="_blank">Fb</a></li>
+                        <li><a href="#" target="_blank">Ins</a></li>
+                        <li><a href="#" target="_blank">Tw</a></li>
+                        <li><a href="#" target="_blank">Tic</a></li>
+                    </ul>
+                </div>
+                <!-- social_links end-->			
+            </div>
+            <!-- aside-column  end -->			
+            <!-- footer -->
+            <footer class="main-footer">
+                <div class="footer_contacts">
+                    <ul>
+                        <li><span>Mail :</span><a href="#" target="_blank">yourmail@domain.com</a></li>
+                        <li><span>Phone :</span><a href="#">09155710393</a></li>
+                    </ul>
+                </div>
+                <div class="policy-box">
+                    Photogam 2023 . All rights reserved.  
+                </div>
+            </footer>
+            <div class="to-top-btn  to-top"><i class="fal fa-long-arrow-up"></i></div>
+            <!-- footer end-->
+            <div class="aside_dec"></div>
+            <!-- sidebar-->
+            <div class="sidebar-wrap">
+                <div class="sidebar-wrap-container">
+                    <!-- sb-widget-wrap-->
+                    <div class="sb-widget-wrap fl-wrap">
+                        <h3>Latest Works</h3>
+                        <div class="sb-widget  fl-wrap">
+                            <div class="categories_widget-wrap">
+                                <!-- categories_widget_item-->
+                                <a class="categories_widget_item" href="portfolio-single.html">
+                                    <div class="categories_widget_item_img">
+                                        <img src="{% static 'images/folio/14.jpg' %}" class="respimg" alt="">
+                                    </div>
+                                    <span class="categories_widget_title">Crazy, Cute Couple</span>
+                                </a>
+                                <!-- categories_widget_item end-->
+                                <!-- categories_widget_item-->
+                                <a class="categories_widget_item" href="portfolio-single.html">
+                                    <div class="categories_widget_item_img">
+                                        <img src="{% static 'images/folio/15.jpg' %}" class="respimg" alt="">
+                                    </div>
+                                    <span class="categories_widget_title">Alone on Nature</span>
+                                </a>
+                                <!-- categories_widget_item end-->							
+                                <!-- categories_widget_item-->
+                                <a class="categories_widget_item" href="portfolio-single.html">
+                                    <div class="categories_widget_item_img">
+                                        <img src="{% static 'images/folio/16.jpg' %}" class="respimg" alt="">
+                                    </div>
+                                    <span class="categories_widget_title">Living in my dream</span>
+                                </a>
+                                <!-- categories_widget_item end-->
+                                <!-- categories_widget_item-->
+                                <a class="categories_widget_item" href="portfolio-single.html">
+                                    <div class="categories_widget_item_img">
+                                        <img src="{% static 'images/folio/17.jpg' %}" class="respimg" alt="">
+                                    </div>
+                                    <span class="categories_widget_title">Sunny Side Up</span>
+                                </a>
+                                <!-- categories_widget_item end-->						
+                            </div>
+                        </div>
+                    </div>
+                    <!-- sb-widget-wrap end-->					
+                    <!-- sb-widget-wrap-->
+                    <div class="sb-widget-wrap fl-wrap">
+                        <h3>Subscribe To  Newsletter</h3>
+                        <div class="sb-widget  fl-wrap">
+                            <p>Lorem ipsum dosectetur adipisicing elit, sed do.Lorem ipsum dolor sit amet,  </p>
+                            <div class="subcribe-form fl-wrap">
+                                <form id="subscribe">
+                                    <input class="enteremail" name="email" id="subscribe-email" placeholder="Your Email" spellcheck="false" type="text">
+                                    <button type="submit" id="subscribe-button" class="subscribe-button">Submit</button>
+                                    <label for="subscribe-email" class="subscribe-message"></label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- sb-widget-wrap end-->
+                    <!-- sb-widget-wrap-->
+                    <div class="sb-widget-wrap fl-wrap">
+                        <h3>Social Links</h3>
+                        <div class="sb-widget    fl-wrap">
+                            <div class="sidebar-social fl-wrap">
+                                <ul>
+                                    <li><a href="#" target="_blank">Fb</a></li>
+                                    <li><a href="#" target="_blank">Tw</a></li>
+                                    <li><a href="#" target="_blank">Ins</a></li>
+                                    <li><a href="#" target="_blank">Tic</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- sb-widget-wrap end-->
+                </div>
+            </div>
+            <div class="sb-overlay"></div>
+            <!-- sidebar end-->				
+        </div>
+        <!-- Main end -->
+{% endblock content %}
