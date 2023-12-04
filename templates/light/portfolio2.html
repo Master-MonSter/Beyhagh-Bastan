@@ -29,7 +29,7 @@
             <header class="main-header">
                 <div class="main-inner">
                     <!--logo-->
-                    <a href="index.html" class="logo-holder"><img src="{% static 'images/beyhagh-bastan-black.png' %}" alt=""></a>
+                    <a href="index.html' %}" class="logo-holder"><img src="{% static 'images/beyhagh-bastan-black.png' %}" alt=""></a>
                     <!--logo end-->
                     <!-- sb-button-->
                     <div class="sb-button c_sb"><span></span></div>
@@ -62,17 +62,17 @@
                                     <a href="#" class="act-link">Portfolio </a>
                                     <!--second level -->
                                     <ul>
-                                        <li><a href="{% url 'light_mode:portfolio-horizontal' %}">Horizontal Grid </a></li>
-                                        <li><a href="{% url 'light_mode:portfolio-vertical' %}">Vertical Grid</a></li>
-                                        <li><a href="{% url 'light_mode:portfolio-column' %}">Column Grid</a></li>
+                                        <li><a href="{% url 'light_mode:portfolio_horizontal' %}">Horizontal Grid </a></li>
+                                        <li><a href="{% url 'light_mode:portfolio_vertical' %}">Vertical Grid</a></li>
+                                        <li><a href="{% url 'light_mode:portfolio_column' %}">Column Grid</a></li>
                                         <li>
                                             <a href="#">Single </a>
                                             <!--third  level -->
                                             <ul>
-                                                <li><a href="{% url 'light_mode:portfolio-single' %}">Style 1</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio-single2' %}">Style 2</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio-single3' %}">Style 3</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio-single4' %}">Style 4</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single' %}">Style 1</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single2' %}">Style 2</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single3' %}">Style 3</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single4' %}">Style 4</a></li>
                                             </ul>
                                             <!--third level end-->
                                         </li>
@@ -83,7 +83,7 @@
                                     <a href="{% url 'light_mode:about' %}">About</a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'light_mode:blog' %}">News</a>
+                                    <a href="{% url 'blog:index_light' %}">News</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'light_mode:contact' %}">Contacts</a>
@@ -115,7 +115,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/3.jpg' %}"    alt="">                                  
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">Alone on Nature</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">Alone on Nature</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -128,7 +128,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/8.jpg' %}"    alt="">                                   
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">Living my dream</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">Living my dream</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -141,7 +141,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/10.jpg' %}"    alt="">                                 
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">Forever Young</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">Forever Young</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -154,7 +154,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/4.jpg' %}"    alt="">                                   
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">Sunny side up</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">Sunny side up</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -167,7 +167,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/14.jpg' %}"    alt="">                                   
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">The other side of me</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">The other side of me</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -180,7 +180,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/6.jpg' %}"    alt="">                                  
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">A Wonderful Life</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">A Wonderful Life</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -193,7 +193,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/1.jpg' %}"    alt="">
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">Just Happy</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">Just Happy</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -206,7 +206,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/19.jpg' %}"    alt="">
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">My Blooming Backyard</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">My Blooming Backyard</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -219,7 +219,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/9.jpg' %}"    alt="">
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">Life, here I come</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">Life, here I come</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -232,7 +232,7 @@
                                 <div class="grid-item-holder hov_zoom">
                                     <img  src="{% static 'images/folio/18.jpg' %}"    alt="">
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">Travelling is Fun</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">Travelling is Fun</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -245,7 +245,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/17.jpg' %}"    alt="">
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">Go green</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">Go green</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -258,7 +258,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/7.jpg' %}"    alt="">
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">Forever Young</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">Forever Young</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -271,7 +271,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/12.jpg' %}"    alt="">
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">Sunny side up</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">Sunny side up</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -284,7 +284,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/20.jpg' %}"    alt="">
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">Crazy, cute couple</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">Crazy, cute couple</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -297,7 +297,7 @@
                                 <div class="grid-item-holder  hov_zoom">
                                     <img  src="{% static 'images/folio/15.jpg' %}"    alt="">
                                     <div class="grid-item-info">
-                                        <h3><a href="{% url 'light_mode:portfolio-single' %}" class="ajax">The other side of me</a></h3>
+                                        <h3><a href="{% url 'light_mode:portfolio_single' %}" class="ajax">The other side of me</a></h3>
                                         <p>Here you can place an optional description of your  Project</p>
                                     </div>
                                     <div class="pr_num"></div>
@@ -365,7 +365,7 @@
                     </ul>
                 </div>
                 <div class="policy-box">
-                    Photogam 2023 . All rights reserved.  
+                    Mr.BoO 2023 . All rights reserved.  
                 </div>
             </footer>
             <div class="to-top-btn  to-top"><i class="fal fa-long-arrow-up"></i></div>
@@ -380,7 +380,7 @@
                         <div class="sb-widget  fl-wrap">
                             <div class="categories_widget-wrap">
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio-single' %}">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/14.jpg' %}" class="respimg" alt="">
                                     </div>
@@ -388,7 +388,7 @@
                                 </a>
                                 <!-- categories_widget_item end-->
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio-single' %}">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/15.jpg' %}" class="respimg" alt="">
                                     </div>
@@ -396,7 +396,7 @@
                                 </a>
                                 <!-- categories_widget_item end-->							
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio-single' %}">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/16.jpg' %}" class="respimg" alt="">
                                     </div>
@@ -404,7 +404,7 @@
                                 </a>
                                 <!-- categories_widget_item end-->
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio-single' %}">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/17.jpg' %}" class="respimg" alt="">
                                     </div>

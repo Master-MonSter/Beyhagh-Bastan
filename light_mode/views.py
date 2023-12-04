@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from light_mode.forms import ContactForm, NewsLetterForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -47,14 +50,42 @@ def portfolio_single4_view(request):
 def about_view(request):
     return render(request, 'light/about.html')
 
-def blog_view(request):
-    return render(request, 'light/blog.html')
-
-def blog_single_view(request):
-    return render(request, 'light/blog-single.html')
-
 def contact_view(request):
-    return render(request, 'light/contacts.html')
+    # *********************************** Get full path ********************************
+    # full_path = request.get_full_path()
+    # path_info = request.path_info
+    path_info = request.path
+    # *********************************** Get full path ********************************
+    light_theme = "light" in path_info
+    print(path_info)
+    print(light_theme)
+    # request.add({"names": 'ali' })
+    updated_request = request.GET.copy()
+    print(request)
+    if request.method == 'POST':
+        msg = ""
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Update values before save ****************************************************************
+            # obj = form.save(commit=False)
+            # obj.name = "unknown"
+            # Update values before save ****************************************************************
+            form.save()
+            messages.add_message(request, messages.SUCCESS, '******************<br>Well done<br>******************')
+            print(messages)
+            # return HttpResponseRedirect('/contact')
+        else:
+            # ************************************** Set error list ***********************************************
+            if form.errors:
+                for field in form.errors:
+                    print(form.errors)
+                    for error in form.errors[field]:
+                        msg = msg + f"<p><b>{field}:</b> {error}</p>"
+            # messages.add_message(request, messages.ERROR, 'Somthing went wrong<br>please try again')
+            messages.add_message(request, messages.ERROR, msg)
+            # ************************************** Set error list ***********************************************
+    form = ContactForm()
+    return render(request, 'light/contacts.html', {'form': form, 'light_theme': light_theme})
 
 
 

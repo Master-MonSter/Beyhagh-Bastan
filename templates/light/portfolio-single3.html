@@ -29,7 +29,7 @@
             <header class="main-header">
                 <div class="main-inner">
                     <!--logo-->
-                    <a href="index.html" class="logo-holder"><img src="{% static 'images/beyhagh-bastan-black.png' %}" alt=""></a>
+                    <a href="index.html' %}" class="logo-holder"><img src="{% static 'images/beyhagh-bastan-black.png' %}" alt=""></a>
                     <!--logo end-->
                     <!-- sb-button-->
                     <div class="sb-button c_sb"><span></span></div>
@@ -62,17 +62,17 @@
                                     <a href="#" class="act-link">Portfolio </a>
                                     <!--second level -->
                                     <ul>
-                                        <li><a href="portfolio.html">Horizontal Grid </a></li>
-                                        <li><a href="portfolio2.html">Vertical Grid</a></li>
-                                        <li><a href="portfolio3.html">Column Grid</a></li>
+                                        <li><a href="{% url 'light_mode:portfolio_horizontal' %}">Horizontal Grid </a></li>
+                                        <li><a href="{% url 'light_mode:portfolio_vertical' %}">Vertical Grid</a></li>
+                                        <li><a href="{% url 'light_mode:portfolio_column' %}">Column Grid</a></li>
                                         <li>
                                             <a href="#">Single </a>
                                             <!--third  level -->
                                             <ul>
-                                                <li><a href="portfolio-single.html">Style 1</a></li>
-                                                <li><a href="portfolio-single2.html">Style 2</a></li>
-                                                <li><a href="portfolio-single3.html">Style 3</a></li>
-                                                <li><a href="portfolio-single4.html">Style 4</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single' %}">Style 1</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single2' %}">Style 2</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single3' %}">Style 3</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single4' %}">Style 4</a></li>
                                             </ul>
                                             <!--third level end-->
                                         </li>
@@ -83,7 +83,7 @@
                                     <a href="{% url 'light_mode:about' %}">About</a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'light_mode:blog' %}">News</a>
+                                    <a href="{% url 'blog:index_light' %}">News</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'light_mode:contact' %}">Contacts</a>
@@ -223,7 +223,7 @@
                             <div class="container small-container">
                                 <h4>Ready To order Your Project?</h4>
                             </div>
-                            <a href="contacts.html" class="order_btn">Get In Touch</a>
+                            <a href="{% url 'light_mode:contact' %}" class="order_btn">Get In Touch</a>
                         </div>
                     </div>
                     <!-- column-wrapper -->
@@ -236,7 +236,7 @@
                         </div>
                         <div class="aside_icon_wrap hbn_vis">
                             <div class="list">
-                                <a href="portfolio.html">							
+                                <a href="{% url 'light_mode:portfolio_horizontal' %}">							
                                 <span>
                                 <i class="b1 c1"></i><i class="b1 c2"></i><i class="b1 c3"></i>
                                 <i class="b2 c1"></i><i class="b2 c2"></i><i class="b2 c3"></i>
@@ -292,7 +292,7 @@
                         <div class="sb-widget  fl-wrap">
                             <div class="categories_widget-wrap">
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="portfolio-single.html">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/14.jpg' %}" class="respimg" alt="">
                                     </div>
@@ -300,7 +300,7 @@
                                 </a>
                                 <!-- categories_widget_item end-->
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="portfolio-single.html">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/15.jpg' %}" class="respimg" alt="">
                                     </div>
@@ -308,7 +308,7 @@
                                 </a>
                                 <!-- categories_widget_item end-->							
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="portfolio-single.html">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/16.jpg' %}" class="respimg" alt="">
                                     </div>
@@ -316,7 +316,7 @@
                                 </a>
                                 <!-- categories_widget_item end-->
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="portfolio-single.html">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/17.jpg' %}" class="respimg" alt="">
                                     </div>

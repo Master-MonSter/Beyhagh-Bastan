@@ -13,18 +13,16 @@ urlpatterns = [
     # ********************************************* Home pages ****************************************
 
     # ********************************************* Portfolios ****************************************
-    path('portfolio-horizontal/', views.portfolio_horizontal_view, name='portfolio-horizontal'),
-    path('portfolio-vertical/', views.portfolio_vertical_view, name='portfolio-vertical'),
-    path('portfolio-column/', views.portfolio_column_view, name='portfolio-column'),
+    path('portfolio-horizontal/', views.portfolio_horizontal_view, name='portfolio_horizontal'),
+    path('portfolio-vertical/', views.portfolio_vertical_view, name='portfolio_vertical'),
+    path('portfolio-column/', views.portfolio_column_view, name='portfolio_column'),
 
-    path('portfolio-single/', views.portfolio_single_view, name='portfolio-single'),
-    path('portfolio-single2/', views.portfolio_single2_view, name='portfolio-single2'),
-    path('portfolio-single3/', views.portfolio_single3_view, name='portfolio-single3'),
-    path('portfolio-single4/', views.portfolio_single4_view, name='portfolio-single4'),
+    path('portfolio-single/', views.portfolio_single_view, name='portfolio_single'),
+    path('portfolio-single2/', views.portfolio_single2_view, name='portfolio_single2'),
+    path('portfolio-single3/', views.portfolio_single3_view, name='portfolio_single3'),
+    path('portfolio-single4/', views.portfolio_single4_view, name='portfolio_single4'),
     # ********************************************* Portfolios ****************************************
 
     path('about/', views.about_view, name='about'),
     path('contact/', views.contact_view, name='contact'),
-    path('blog/', views.blog_view, name='blog'),
-    path('blog-single/', views.blog_single_view, name='blog_single'),
 ]

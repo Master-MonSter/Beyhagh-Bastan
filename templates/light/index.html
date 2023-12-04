@@ -29,7 +29,7 @@
             <header class="main-header">
                 <div class="main-inner">
                     <!--logo-->
-                    <a href="index.html" class="logo-holder"><img src="{% static 'images/beyhagh-bastan-black.png' %}" alt=""></a>
+                    <a href="index.html' %}" class="logo-holder"><img src="{% static 'images/beyhagh-bastan-black.png' %}" alt=""></a>
                     <!--logo end-->
                     <!-- sb-button-->
                     <div class="sb-button c_sb"><span></span></div>
@@ -62,17 +62,17 @@
                                     <a href="#">Portfolio </a>
                                     <!--second level -->
                                     <ul>
-                                        <li><a href="{% url 'light_mode:portfolio-horizontal' %}">Horizontal Grid </a></li>
-                                        <li><a href="{% url 'light_mode:portfolio-vertical' %}">Vertical Grid</a></li>
-                                        <li><a href="{% url 'light_mode:portfolio-column' %}">Column Grid</a></li>
+                                        <li><a href="{% url 'light_mode:portfolio_horizontal' %}">Horizontal Grid </a></li>
+                                        <li><a href="{% url 'light_mode:portfolio_vertical' %}">Vertical Grid</a></li>
+                                        <li><a href="{% url 'light_mode:portfolio_column' %}">Column Grid</a></li>
                                         <li>
                                             <a href="#">Single </a>
                                             <!--third  level -->
                                             <ul>
-                                                <li><a href="{% url 'light_mode:portfolio-single' %}">Style 1</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio-single2' %}">Style 2</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio-single3' %}">Style 3</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio-single4' %}">Style 4</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single' %}">Style 1</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single2' %}">Style 2</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single3' %}">Style 3</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single4' %}">Style 4</a></li>
                                             </ul>
                                             <!--third level end-->
                                         </li>
@@ -83,7 +83,7 @@
                                     <a href="{% url 'light_mode:about' %}">About</a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'light_mode:blog' %}">News</a>
+                                    <a href="{% url 'blog:index_light' %}">News</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'light_mode:contact' %}">Contacts</a>
@@ -118,9 +118,9 @@
                                             <a href="{% static 'images/folio/3.jpg' %}" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
                                             <div class="overlay"></div>
                                             <div class="thumb-info_main">
-                                                <h3><a href="portfolio-single.html">Sunny side up</a></h3>
+                                                <h3><a href="{% url 'light_mode:portfolio_single' %}">Sunny side up</a></h3>
                                                 <p>Here you can place an optional description of your  Project</p>
-                                                <a href="portfolio-single.html" class=" fs-slider-item_btn">View Case</a>
+                                                <a href="{% url 'light_mode:portfolio_single' %}" class=" fs-slider-item_btn">View Case</a>
                                             </div>
                                             <div class="sc_num">01</div>
                                         </div>
@@ -133,9 +133,9 @@
                                             <a href="{% static 'images/folio/9.jpg' %}" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
                                             <div class="overlay"></div>
                                             <div class="thumb-info_main">
-                                                <h3><a href="portfolio-single.html" >A Wonderful Life</a></h3>
+                                                <h3><a href="{% url 'light_mode:portfolio_single' %}" >A Wonderful Life</a></h3>
                                                 <p>Here you can place an optional description of your  Project</p>
-                                                <a href="portfolio-single.html" class="fs-slider-item_btn">View Case</a>
+                                                <a href="{% url 'light_mode:portfolio_single' %}" class="fs-slider-item_btn">View Case</a>
                                             </div>
                                             <div class="sc_num">02</div>
                                         </div>
@@ -148,9 +148,9 @@
                                             <a href="{% static 'images/folio/4.jpg' %}" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
                                             <div class="overlay"></div>
                                             <div class="thumb-info_main">
-                                                <h3><a href="portfolio-single.html" >The Other Side of Me</a></h3>
+                                                <h3><a href="{% url 'light_mode:portfolio_single' %}" >The Other Side of Me</a></h3>
                                                 <p>Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. </p>
-                                                <a href="portfolio-single.html" class="fs-slider-item_btn">View Case</a>
+                                                <a href="{% url 'light_mode:portfolio_single' %}" class="fs-slider-item_btn">View Case</a>
                                             </div>
                                             <div class="sc_num">03</div>
                                         </div>
@@ -163,9 +163,9 @@
                                             <a href="{% static 'images/folio/5.jpg' %}" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
                                             <div class="overlay"></div>
                                             <div class="thumb-info_main">
-                                                <h3><a href="portfolio-single.html">Alone on the Nature</a></h3>
+                                                <h3><a href="{% url 'light_mode:portfolio_single' %}">Alone on the Nature</a></h3>
                                                 <p>Here you can place an optional description of your  Project</p>
-                                                <a href="portfolio-single.html" class="fs-slider-item_btn">View Case</a>
+                                                <a href="{% url 'light_mode:portfolio_single' %}" class="fs-slider-item_btn">View Case</a>
                                             </div>
                                             <div class="sc_num">04</div>
                                         </div>
@@ -237,7 +237,7 @@
                         <div class="sb-widget  fl-wrap">
                             <div class="categories_widget-wrap">
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="portfolio-single.html">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/14.jpg' %}" class="respimg" alt="">
                                     </div>
@@ -245,7 +245,7 @@
                                 </a>
                                 <!-- categories_widget_item end-->
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="portfolio-single.html">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/15.jpg' %}" class="respimg" alt="">
                                     </div>
@@ -253,7 +253,7 @@
                                 </a>
                                 <!-- categories_widget_item end-->							
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="portfolio-single.html">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/16.jpg' %}" class="respimg" alt="">
                                     </div>
@@ -261,7 +261,7 @@
                                 </a>
                                 <!-- categories_widget_item end-->
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="portfolio-single.html">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/17.jpg' %}" class="respimg" alt="">
                                     </div>

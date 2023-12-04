@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 {% block extrahead %}
-    <link type="text/css" rel="stylesheet" href="{% static 'css/light-style.css' %}">
+    {% if light_theme %}
+        <link type="text/css" rel="stylesheet" href="{% static 'css/light-style.css' %}">
+    {% endif %}
 {% endblock extrahead %}
 {% block content %}
         <!--loader-->
@@ -29,7 +32,7 @@
             <header class="main-header">
                 <div class="main-inner">
                     <!--logo-->
-                    <a href="index.html" class="logo-holder"><img src="{% static 'images/beyhagh-bastan-black.png' %}" alt=""></a>
+                    <a href="index.html' %}" class="logo-holder"><img src="{% static 'images/beyhagh-bastan-black.png' %}" alt=""></a>
                     <!--logo end-->
                     <!-- sb-button-->
                     <div class="sb-button c_sb"><span></span></div>
@@ -62,17 +65,17 @@
                                     <a href="#">Portfolio </a>
                                     <!--second level -->
                                     <ul>
-                                        <li><a href="{% url 'light_mode:portfolio-horizontal' %}">Horizontal Grid </a></li>
-                                        <li><a href="{% url 'light_mode:portfolio-vertical' %}">Vertical Grid</a></li>
-                                        <li><a href="{% url 'light_mode:portfolio-column' %}">Column Grid</a></li>
+                                        <li><a href="{% url 'light_mode:portfolio_horizontal' %}">Horizontal Grid </a></li>
+                                        <li><a href="{% url 'light_mode:portfolio_vertical' %}">Vertical Grid</a></li>
+                                        <li><a href="{% url 'light_mode:portfolio_column' %}">Column Grid</a></li>
                                         <li>
                                             <a href="#">Single </a>
                                             <!--third  level -->
                                             <ul>
-                                                <li><a href="{% url 'light_mode:portfolio-single' %}">Style 1</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio-single2' %}">Style 2</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio-single3' %}">Style 3</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio-single4' %}">Style 4</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single' %}">Style 1</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single2' %}">Style 2</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single3' %}">Style 3</a></li>
+                                                <li><a href="{% url 'light_mode:portfolio_single4' %}">Style 4</a></li>
                                             </ul>
                                             <!--third level end-->
                                         </li>
@@ -83,7 +86,7 @@
                                     <a href="{% url 'light_mode:about' %}">About</a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'light_mode:blog' %}">News</a>
+                                    <a href="{% url 'blog:index_light' %}">News</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'light_mode:contact' %}" class="act-link">Contacts</a>
@@ -177,12 +180,19 @@
                                         <p>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi varius lacinia vestibulum. Aliquam lobortis facilisis tellus, in facilisis ex vehicula ac. In malesuada quis turpis vel viverra.</p>
                                         <div id="contact-form" class="fl-wrap">
                                             <div id="message"></div>
-                                            <form  class="custom-form" action="php/contact.php" name="contactform" id="contactform">
+                                            <form  class="custom-form" action="{% url 'light_mode:contact' %}" method="post">
+                                                {% csrf_token %}
                                                 <fieldset>
-                                                    <input type="text" name="name" id="name" placeholder="Your Name *" value="">
-                                                    <input type="text"  name="email" id="email" placeholder="Email Address *" value="">
-                                                    <textarea name="comments"  id="comments" cols="40" rows="3" placeholder="Your Message:"></textarea>
-                                                    <button class="btn float-btn flat-btn color-bg" id="submit">Send Message </button>
+                                                    <input type="text" name="name" id="name" placeholder="نام *" value="" required="">
+                                                    <input type="email"  name="email" id="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" placeholder="آدرس ایمیل *" value="" required="">
+                                                    <input type="text"  name="subject" id="subject" placeholder="موضوع *" value="" required="">
+                                                    <textarea name="message"  id="comments" cols="40" rows="3" placeholder="پیام شما" required=""></textarea><br><br>
+                                                    <div style="width: 50%;">
+                                                        <div></div>
+                                                        {{form.captcha.label}}<br><br>
+                                                        {{form.captcha}}
+                                                    </div>
+                                                    <button type="submit" class="btn float-btn flat-btn color-bg" id="submit">ارسال پیام</button>
                                                 </fieldset>
                                             </form>
                                         </div>
@@ -256,7 +266,7 @@
                         <div class="sb-widget  fl-wrap">
                             <div class="categories_widget-wrap">
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="portfolio-single.html">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/14.jpg' %}" class="respimg" alt="">
                                     </div>
@@ -264,7 +274,7 @@
                                 </a>
                                 <!-- categories_widget_item end-->
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="portfolio-single.html">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/15.jpg' %}" class="respimg" alt="">
                                     </div>
@@ -272,7 +282,7 @@
                                 </a>
                                 <!-- categories_widget_item end-->							
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="portfolio-single.html">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/16.jpg' %}" class="respimg" alt="">
                                     </div>
@@ -280,7 +290,7 @@
                                 </a>
                                 <!-- categories_widget_item end-->
                                 <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="portfolio-single.html">
+                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
                                     <div class="categories_widget_item_img">
                                         <img src="{% static 'images/folio/17.jpg' %}" class="respimg" alt="">
                                     </div>
