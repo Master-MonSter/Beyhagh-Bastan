@@ -3,3 +3,4 @@ asgiref
 sqlparse
 tzdata
 django-simple-captcha
+django-summernote
