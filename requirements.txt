@@ -4,3 +4,4 @@ sqlparse
 tzdata
 django-simple-captcha
 django-summernote
+django-jalali-date

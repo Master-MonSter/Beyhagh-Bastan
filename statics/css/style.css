@@ -3157,7 +3157,7 @@ section {
     font-size: 1.6em;
     font-weight: 600;
     margin-bottom: 15px;
-	text-align: left;
+	text-align: right;
 	position: relative;
 }
 .post-item_content h3 a {
@@ -3201,7 +3201,7 @@ section {
     color: #666;
 }
 .post-item_content p {
-	text-align: left;
+	text-align: right;
 }
 .post-item_content .single-btn {
 	margin-top: 10px;

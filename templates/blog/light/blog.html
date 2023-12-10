@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load jalali_tags %}
 {% block extrahead %}
 {% endblock extrahead %}
 {% block content %}
@@ -153,118 +154,39 @@
                                     <!-- filter category end  --> 	
                                 </div>
                                 <div class="post-items">
-                                    <!-- post-item-->
-                                    <div class="post-item">
-                                        <div class="post-item_wrap">
-                                            <div class="post-item_media">
-                                                <a href="{% url 'blog:blog_single' %}">
-                                                <img src="{% static 'images/folio/6.jpg' %}" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-item_content">
-                                                <div class="post-header"><a href="#">25 may 2022</a> <a href="#">Nature</a> <a href="#">Trip</a> </div>
-                                                <h3><a href="{% url 'blog:blog_single' %}">Wood Nature Trip</a></h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla...</p>
-                                                <a href="{% url 'blog:blog_single' %}" class="single-btn"><span>Read more</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- post-item end-->
-                                    <!-- post-item-->
-                                    <div class="post-item">
-                                        <div class="post-item_wrap">
-                                            <div class="post-item_media">
-                                                <a href="{% url 'blog:blog_single' %}">
-                                                <img src="{% static 'images/folio/7.jpg' %}" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-item_content">
-                                                <div class="post-header"><a href="#">20 April 2022</a> <a href="#">Outdoor</a> <a href="#">Travel</a> </div>
-                                                <h3><a href="{% url 'blog:blog_single' %}">Funny Animals</a></h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla...</p>
-                                                <a href="{% url 'blog:blog_single' %}" class="single-btn"><span>Read more</span></a>
+                                    {% for post in context %}
+                                        <!-- post-item-->
+                                        <div class="post-item">
+                                            <div class="post-item_wrap">
+                                                <div class="post-item_media">
+                                                    <a href="{% url 'blog:blog_single' %}">
+                                                    <img src="{{post.image_main.url}}" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="post-item_content">
+                                                    <div class="post-header"><a href="#">{{post.category.first}}</a><a href="#">{{post.published_date|to_jalali:'%H:%M:%S _ %Y/%m/%d'}}</a> </div>
+                                                    <h3><a href="{% url 'blog:blog_single' %}">{{post.title}}</a></h3>
+                                                    <p>{{post.content|safe|truncatewords_html:20}}</p>
+                                                    <a href="{% url 'blog:blog_single' %}" class="single-btn"><span>مشاهده</span></a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- post-item end-->									
-                                    <!-- post-item-->
-                                    <div class="post-item">
-                                        <div class="post-item_wrap">
-                                            <div class="post-item_media">
-                                                <a href="{% url 'blog:blog_single' %}">
-                                                <img src="{% static 'images/folio/14.jpg' %}" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-item_content">
-                                                <div class="post-header"><a href="#">15 march 2022</a> <a href="#">Outdoor</a> <a href="#">Trip</a> </div>
-                                                <h3><a href="{% url 'blog:blog_single' %}">Connecting the Lost</a></h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla...</p>
-                                                <a href="{% url 'blog:blog_single' %}" class="single-btn"><span>Read more</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- post-item end-->
-                                    <!-- post-item-->
-                                    <div class="post-item">
-                                        <div class="post-item_wrap">
-                                            <div class="post-item_media">
-                                                <a href="{% url 'blog:blog_single' %}">
-                                                <img src="{% static 'images/folio/16.jpg' %}" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-item_content">
-                                                <div class="post-header"><a href="#">10 march 2022</a> <a href="#">Models</a> <a href="#">Trip</a> </div>
-                                                <h3><a href="{% url 'blog:blog_single' %}">The Beauty in the Calm</a></h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla...</p>
-                                                <a href="{% url 'blog:blog_single' %}" class="single-btn"><span>Read more</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- post-item end-->										
-                                    <!-- post-item-->
-                                    <div class="post-item">
-                                        <div class="post-item_wrap">
-                                            <div class="post-item_media">
-                                                <a href="{% url 'blog:blog_single' %}">
-                                                <img src="{% static 'images/folio/17.jpg' %}" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-item_content">
-                                                <div class="post-header"><a href="#">03 march 2022</a> <a href="#">Outdoor</a> <a href="#">Nature</a> </div>
-                                                <h3><a href="{% url 'blog:blog_single' %}">Wood Nature Trip</a></h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla...</p>
-                                                <a href="{% url 'blog:blog_single' %}" class="single-btn"><span>Read more</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- post-item end-->	
-                                    <!-- post-item-->
-                                    <div class="post-item">
-                                        <div class="post-item_wrap">
-                                            <div class="post-item_media">
-                                                <a href="{% url 'blog:blog_single' %}">
-                                                <img src="{% static 'images/folio/18.jpg' %}" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-item_content">
-                                                <div class="post-header"><a href="#">01 march 2022</a> <a href="#">Models</a> <a href="#">Trip</a> </div>
-                                                <h3><a href="{% url 'blog:blog_single' %}">Snowy Mountains Journey</a></h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla...</p>
-                                                <a href="{% url 'blog:blog_single' %}" class="single-btn"><span>Read more</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- post-item end-->									
+                                        <!-- post-item end-->
+                                    {% endfor %}									
                                 </div>
                                 <!--pagination-->   
                                 <div class="pagination">
                                     <div class="pr-bg pr-bg-white"></div>
-                                    <a href="#" class="prevposts-link"><i class="fal fa-long-arrow-left"></i></a>
-                                    <a href="#">01</a>
-                                    <a href="#" class="current-page">02</a>
-                                    <a href="#">03</a>
-                                    <a href="#">04</a>
-                                    <a href="#" class="nextposts-link"><i class="fal fa-long-arrow-right"></i></a>
+                                    {% if context.has_previous %}
+                                        <a href="?page={{context.previous_page_number}}" class="prevposts-link"><i class="fal fa-long-arrow-left"></i></a>
+                                    {% endif %}
+                                    {% for page in context.paginator.page_range %}
+                                        <a href="?page={{page}}">{{page}}</a>
+                                    {% endfor %}
+                                    {% comment %} <a href="#" class="current-page">02</a> {% endcomment %}
+                                    {% if context.has_next %}
+                                        <a href="?page={{context.next_page_number}}" class="nextposts-link"><i class="fal fa-long-arrow-right"></i></a>
+                                    {% endif %}
                                 </div>
                                 <!--pagination end-->				
                             </div>
