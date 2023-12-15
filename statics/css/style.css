@@ -37,7 +37,7 @@ body{
 @viewport {width: device-width;}
 /*--------------Typography--------------------------------------*/
 p {
-	text-align: left;
+	text-align: right;
     font-size: 1.2em;
     line-height: 24px;
     padding-bottom: 10px;
@@ -172,7 +172,7 @@ blockquote p {
 	padding: 50px 40px;
 } 
 .fl-wrap {
-	float:left;
+	float:right;
 	width:100%;
 	position:relative;
 }
@@ -2466,9 +2466,9 @@ blockquote p {
 .column-title {
 	position:absolute;
 	bottom:0;
-	left:0;
+	right:0;
 	width:100%;
-	text-align:left;
+	text-align:right;
 	padding:0 50px 50px;
 	z-index:11;
 }
@@ -2481,7 +2481,7 @@ blockquote p {
 .column-title h2:before {
 	content: '';
 	position: absolute;
-	left: 0;
+	right: 0;
 	top: -20px;
 	height: 2px;
 	background: #fff;
@@ -2489,7 +2489,7 @@ blockquote p {
 }
 .column-title h3 {
 	color:rgba(255,255,255,.8);
-	max-width: 400px;
+	/* max-width: 400px; */
 	line-height: 24px;
  
 } 
@@ -2542,9 +2542,9 @@ section {
     padding-bottom: 40px;
 	margin-bottom:40px;
 	border-bottom:1px solid rgba(255,255,255, .2);
+	text-align: right;
 }
 .section-title h3 {
-	text-align: left;
     font-size: 2.4em;
  	position: relative;
     font-weight: 800;
@@ -2565,8 +2565,8 @@ section {
 }
 .section-title h4 {
 	color:rgba(255,255,255,.8);
-	max-width:400px;
-	text-align:left;
+	/* max-width:400px; */
+	text-align:right;
 }
 .section-title.st_small {
 	border:none;
@@ -2873,12 +2873,12 @@ section {
 }
 /*------ services ------------------------------------------------*/
 .contact-details {
-	text-align:left;
+	text-align:right;
 	margin:50px 0 30px;
 }
 .contact-details ul li {
-	text-align:left;
-	float:left;
+	text-align:right;
+	float:right;
 	width:100%;
 	font-weight: 400;
     letter-spacing: 1.5px;
@@ -2915,6 +2915,7 @@ section {
 	position: relative;
 	color: #fff;
  	font-family:'Poppins', sans-serif;
+	text-align: right;
 	-webkit-appearance: none;
 }
 .custom-form input::-webkit-input-placeholder,
@@ -3286,7 +3287,7 @@ section {
     border: none;
     outline: none;
     position: absolute;
-    right: 10px;
+    left: 10px;
     top: 0;
     cursor: pointer;
 	padding: 0;
@@ -3319,7 +3320,7 @@ section {
 	float: left;
 	width: 100%;
 	padding: 6px 0;
-	text-align: left;
+	text-align: right;
 }
 .blog-btn-filter ul li a  {
 	text-transform: uppercase;
@@ -4105,3 +4106,4 @@ section {
 	background-position:center;
 }
 }
+

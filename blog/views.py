@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from datetime import datetime
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Post
+from .models import Post, PostImage
+from django.contrib import messages
 
 def check_published_date():
     # Now time with timezone
@@ -41,8 +42,52 @@ def index_view(request, **kwargs):
         posts = posts.get_page(1)
     # Pagination *********************************************************************************************
 
-    context = {'context': posts}
+    # Deleting duplicated values from tag and category *********************************************************************************************
+    tag_con = []
+    cat_con = []
+    for post in posts:
+        for tag in post.tag.all():
+            tag_con.append(str(tag))
+        for cat in post.category.all():
+            cat_con.append(str(cat))
+    tag_con = list(dict.fromkeys(tag_con))
+    cat_con = list(dict.fromkeys(cat_con))
+    # Deleting duplicated values from tag and category *********************************************************************************************
+
+    context = {'context': posts, 'tag_con': tag_con, 'cat_con': cat_con}
     return render(request, 'blog/light/blog.html', context)
 
-def blog_single_view(request):
-    return render(request, 'blog/light/blog-single.html')
+def blog_single_view(request, pid):
+    # ******************************** About CommentForm ********************************
+    # if request.method == 'POST':
+    #     form = CommentForm(request.POST)
+    #     if form.is_valid():
+    #         messages.add_message(request, messages.SUCCESS, 'Your comment submitted successfully')
+    #         form.save()
+    #     else:
+    #         messages.add_message(request, messages.ERROR, 'Your comment didnt submite')
+    # form = CommentForm()
+    # ******************************** About CommentForm ********************************
+
+    posts = check_published_date()
+    # print("all posts: " + str(posts))
+    context = get_object_or_404(posts, pk=pid)
+    if context.login_require == True and not request.user.is_authenticated:
+        messages.add_message(request, messages.INFO, 'You are not logged in<br>Please login')
+        # return redirect('accounts:login', 'blog:index')
+        return redirect("/accounts/login/?next=" + request.path)
+    # comments = Comment.objects.filter(post=context.id, approved = True)
+    context.counted_views = context.counted_views + 1
+    context.save()
+    # Finding the post before and after
+    nextPost = posts.filter(pk__gt=pid).first()
+    prevPost = posts.filter(pk__lt=pid).last()
+    images = PostImage.objects.filter(post_id=pid)
+    print(images)
+    # context = {'context': context, 'prevPost': prevPost, 'nextPost': nextPost, 'comments': comments, 'form': form}
+    context = {'context': context, 'prevPost': prevPost, 'nextPost': nextPost, 'images': images}
+    # return render(request, 'blog/blog-single.html', context)
+    print(request.path)
+    return render(request, 'blog/light/blog-single.html', context)
+
+

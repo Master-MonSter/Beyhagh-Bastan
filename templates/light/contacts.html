@@ -1,110 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load humanize %}
+{% load jalali_tags %}
 {% block extrahead %}
-    {% if light_theme %}
-        <link type="text/css" rel="stylesheet" href="{% static 'css/light-style.css' %}">
-    {% endif %}
+<style>
+    #id_captcha_1 {
+        margin-top: 20px;
+    }
+</style>
 {% endblock extrahead %}
 {% block content %}
-        <!--loader-->
-        <div class="main-loader">
-            <div class="ml-wrap">
-                <div class="ml-mask"></div>
-                <img src="{% static 'images/beyhagh-bastan-black(text).png' %}" alt="">
-            </div>
-            <div class="ml_images-wrap">
-                <div class="ml_bg-item" style="top:-30px; left: 0">
-                    <div class="bg" data-bg="{% static 'images/folio/2.jpg' %}"></div>
-                </div>
-                <div class="ml_bg-item" style="bottom:  -20px; left: 50px">
-                    <div class="bg" data-bg="{% static 'images/folio/6.jpg' %}"></div>
-                </div>
-                <div class="ml_bg-item" style="top:30px; right: -120px">
-                    <div class="bg" data-bg="{% static 'images/folio/18.jpg' %}"></div>
-                </div>
-            </div>
-        </div>
-        <!--loader end-->
+{% load humanize %}
         <!--  main start  -->
         <div id="main">
-            <!--  header main-header  -->
-            <header class="main-header">
-                <div class="main-inner">
-                    <!--logo-->
-                    <a href="index.html' %}" class="logo-holder"><img src="{% static 'images/beyhagh-bastan-black.png' %}" alt=""></a>
-                    <!--logo end-->
-                    <!-- sb-button-->
-                    <div class="sb-button c_sb"><span></span></div>
-                    <!-- sb-button end-->
-                    <!-- mobile nav -->
-                    <div class="nav-button-wrap">
-                        <div class="nav-button"><span></span><span></span><span></span></div>
-                    </div>
-                    <!-- mobile nav end-->	
-                    <!-- share btn-->	
-                    <div class="share-btn isShare show-share"> <span>Share  <i class="fal fa-chevron-up"></i></span></div>
-                    <!-- share btn end-->	
-                    <!--  navigation -->
-                    <div class="nav-holder main-menu">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">Home </a>
-                                    <!--second level -->
-                                    <ul>
-                                        <li><a href="{% url 'light_mode:index_carousel' %}">Carousel</a></li>
-                                        <li><a href="{% url 'light_mode:index_slider' %}">Slider  </a></li>
-                                        <li><a href="{% url 'light_mode:index_imagesGrid' %}">Images Grid</a></li>
-                                        <li><a href="{% url 'light_mode:index_carousel2' %}">Carousel 2</a></li>
-                                        <li><a href="{% url 'light_mode:index_video' %}">Video</a></li>
-                                    </ul>
-                                    <!--second level end-->
-                                </li>
-                                <li>
-                                    <a href="#">Portfolio </a>
-                                    <!--second level -->
-                                    <ul>
-                                        <li><a href="{% url 'light_mode:portfolio_horizontal' %}">Horizontal Grid </a></li>
-                                        <li><a href="{% url 'light_mode:portfolio_vertical' %}">Vertical Grid</a></li>
-                                        <li><a href="{% url 'light_mode:portfolio_column' %}">Column Grid</a></li>
-                                        <li>
-                                            <a href="#">Single </a>
-                                            <!--third  level -->
-                                            <ul>
-                                                <li><a href="{% url 'light_mode:portfolio_single' %}">Style 1</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio_single2' %}">Style 2</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio_single3' %}">Style 3</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio_single4' %}">Style 4</a></li>
-                                            </ul>
-                                            <!--third level end-->
-                                        </li>
-                                    </ul>
-                                    <!--second level end-->
-                                </li>
-                                <li>
-                                    <a href="{% url 'light_mode:about' %}">About</a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'blog:index_light' %}">News</a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'light_mode:contact' %}" class="act-link">Contacts</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- navigation  end -->  						
-                    <!-- share-wrapper-->  
-                    <div class="share-wrapper">
-                        <div class="share-inner">
-                            <div class="share-container"></div>
-                        </div>
-                    </div>
-                    <!-- share-wrapper end -->  
-                </div>
-            </header>
-            <!-- Header   end-->
             <!-- wrapper -->
             <div id="wrapper">
                 <!-- content-holder -->
@@ -114,7 +21,7 @@
                         <div class="bg"  data-bg="{% static 'images/bg/13.jpg' %}"></div>
                         <div class="overlay"></div>
                         <div class="column-title">
-                            <h2>Our Contacts</h2>
+                            <h2>ارتباط با ما</h2>
                             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.</h3>
                         </div>
                         <div class="ci_dec"><span></span></div>
@@ -126,9 +33,9 @@
                         <section id="sec1">
                             <div class="container small-container">
                                 <div class="section-title fl-wrap">
-                                    <h3>Contact Details</h3>
-                                    <h4>Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa</h4>
-									<div class="section-number">01.</div>
+									<div class="section-number">.01</div><br /><br /><br />
+                                    <h3>ارتباط با ما</h3>
+                                    <h4>در ادامه برخی از روش های ارتباط با ما را خواهید یافت، منتظرتان هستیم</h4>
                                 </div>
                                 <div class="column-wrapper_item fl-wrap">
                                     <div class="column-wrapper_text fl-wrap">
@@ -137,9 +44,9 @@
                                         </p>
                                         <div class="contact-details fl-wrap">
                                             <ul>
-                                                <li><span>Mail :</span><a href="#" target="_blank">yourmail@domain.com</a></li>
+                                                <li><span>Mail :</span><a href="#" target="_blank">l.o0of.war@gmail.com</a></li>
                                                 <li><span>Adress :</span><a href="#" target="_blank">USA 27TH Brooklyn NY</a></li>
-                                                <li><span>Phone :</span><a href="#">+7(111)123456789</a> , <a href="#">09155710393</a></li>
+                                                <li><span>Phone :</span><a href="#">051-44231123</a> , <a href="#">09155710393</a></li>
                                             </ul>
                                         </div>
                                         <a href="#sec3" class="custom-scroll-link btn fl-btn">Say Hello</a>
@@ -152,9 +59,9 @@
                         <section id="sec2">
                             <div class="container small-container">
                                 <div class="section-title fl-wrap">
+									<div class="section-number">.02</div><br /><br /><br />
                                     <h3>Studio Location</h3>
                                     <h4>Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa</h4>
-									<div class="section-number">02.</div>
                                 </div>
                                 <div class="column-wrapper_item fl-wrap">
                                     <div class="column-wrapper_text fl-wrap">
@@ -171,9 +78,9 @@
                         <section id="sec3">
                             <div class="container small-container">
                                 <div class="section-title fl-wrap">
+									<div class="section-number">.03</div><br /><br /><br />
                                     <h3>Get in Touch</h3>
                                     <h4>Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa</h4>
-									<div class="section-number">03.</div>
                                 </div>
                                 <div class="column-wrapper_item fl-wrap">
                                     <div class="column-wrapper_text fl-wrap">
@@ -186,13 +93,17 @@
                                                     <input type="text" name="name" id="name" placeholder="نام *" value="" required="">
                                                     <input type="email"  name="email" id="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" placeholder="آدرس ایمیل *" value="" required="">
                                                     <input type="text"  name="subject" id="subject" placeholder="موضوع *" value="" required="">
-                                                    <textarea name="message"  id="comments" cols="40" rows="3" placeholder="پیام شما" required=""></textarea><br><br>
-                                                    <div style="width: 50%;">
+                                                    <textarea name="message"  id="comments" cols="40" rows="3" placeholder="پیام شما *" required=""></textarea><br><br>
+                                                    <div style="width: 50%; float: right; text-align: -webkit-right;" class="custom-form">
                                                         <div></div>
-                                                        {{form.captcha.label}}<br><br>
-                                                        {{form.captcha}}
+                                                        <div style="{% if 'dark' in request.path %}color: white;{% else %}color:black;{% endif %} font-size:15px;">
+                                                            <h4>{{form.captcha.label}}</h4><br>
+                                                        </div>
+                                                        <div>
+                                                            {{form.captcha}}
+                                                        </div>
+                                                        <button type="submit" class="btn float-btn flat-btn color-bg" id="submit">ارسال پیام</button>
                                                     </div>
-                                                    <button type="submit" class="btn float-btn flat-btn color-bg" id="submit">ارسال پیام</button>
                                                 </fieldset>
                                             </form>
                                         </div>

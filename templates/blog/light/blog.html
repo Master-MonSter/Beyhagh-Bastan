@@ -4,104 +4,9 @@
 {% block extrahead %}
 {% endblock extrahead %}
 {% block content %}
-        <!--loader-->
-        <div class="main-loader">
-            <div class="ml-wrap">
-                <div class="ml-mask"></div>
-                <img src="{% static 'images/beyhagh-bastan-black(text).png' %}" alt="">
-            </div>
-            <div class="ml_images-wrap">
-                <div class="ml_bg-item" style="top:-30px; left: 0">
-                    <div class="bg" data-bg="{% static 'images/folio/2.jpg' %}"></div>
-                </div>
-                <div class="ml_bg-item" style="bottom:  -20px; left: 50px">
-                    <div class="bg" data-bg="{% static 'images/folio/6.jpg' %}"></div>
-                </div>
-                <div class="ml_bg-item" style="top:30px; right: -120px">
-                    <div class="bg" data-bg="{% static 'images/folio/18.jpg' %}"></div>
-                </div>
-            </div>
-        </div>
-        <!--loader end-->
+{% load blog_tags %}
         <!--  main start  -->
         <div id="main">
-            <!--  header main-header  -->
-            <header class="main-header">
-                <div class="main-inner">
-                    <!--logo-->
-                    <a href="index.html" class="logo-holder"><img src="{% static 'images/beyhagh-bastan-black.png' %}" alt=""></a>
-                    <!--logo end-->
-                    <!-- sb-button-->
-                    <div class="sb-button c_sb"><span></span></div>
-                    <!-- sb-button end-->
-                    <!-- mobile nav -->
-                    <div class="nav-button-wrap">
-                        <div class="nav-button"><span></span><span></span><span></span></div>
-                    </div>
-                    <!-- mobile nav end-->	
-                    <!-- share btn-->	
-                    <div class="share-btn isShare show-share"> <span>Share  <i class="fal fa-chevron-up"></i></span></div>
-                    <!-- share btn end-->	
-                    <!--  navigation -->
-                    <div class="nav-holder main-menu">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">Home </a>
-                                    <!--second level -->
-                                    <ul>
-                                        <li><a href="{% url 'light_mode:index_carousel' %}">Carousel</a></li>
-                                        <li><a href="{% url 'light_mode:index_slider' %}">Slider  </a></li>
-                                        <li><a href="{% url 'light_mode:index_imagesGrid' %}">Images Grid</a></li>
-                                        <li><a href="{% url 'light_mode:index_carousel2' %}">Carousel 2</a></li>
-                                        <li><a href="{% url 'light_mode:index_video' %}">Video</a></li>
-                                    </ul>
-                                    <!--second level end-->
-                                </li>
-                                <li>
-                                    <a href="#">Portfolio </a>
-                                    <!--second level -->
-                                    <ul>
-                                        <li><a href="{% url 'light_mode:portfolio_horizontal' %}">Horizontal Grid </a></li>
-                                        <li><a href="{% url 'light_mode:portfolio_vertical' %}">Vertical Grid</a></li>
-                                        <li><a href="{% url 'light_mode:portfolio_column' %}">Column Grid</a></li>
-                                        <li>
-                                            <a href="#">Single </a>
-                                            <!--third  level -->
-                                            <ul>
-                                                <li><a href="{% url 'light_mode:portfolio_single' %}">Style 1</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio_single2' %}">Style 2</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio_single3' %}">Style 3</a></li>
-                                                <li><a href="{% url 'light_mode:portfolio_single4' %}">Style 4</a></li>
-                                            </ul>
-                                            <!--third level end-->
-                                        </li>
-                                    </ul>
-                                    <!--second level end-->
-                                </li>
-                                <li>
-                                    <a href="{% url 'light_mode:about' %}">About</a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'blog:index_light' %}" class="act-link">News</a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'light_mode:contact' %}">Contacts</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- navigation  end -->  						
-                    <!-- share-wrapper-->  
-                    <div class="share-wrapper">
-                        <div class="share-inner">
-                            <div class="share-container"></div>
-                        </div>
-                    </div>
-                    <!-- share-wrapper end -->  
-                </div>
-            </header>
-            <!-- Header   end-->
             <!-- wrapper -->
             <div id="wrapper">
                 <!-- content-holder -->
@@ -123,29 +28,25 @@
                         <section id="sec1">
                             <div class="container small-container">
                                 <div class="blog-opt">
-                                    <div class="blog-search-wrap custom-form">
-                                        <input name="se" id="se" type="text" class="search" placeholder="Search..." value="">
-                                        <button><i class="far fa-search"></i></button>
-                                    </div>
+                                    
+                                    {% include "blog/blog-search.html" %}
+
                                     <!-- filter category    -->
                                     <div class="category-filter blog-btn-filter">
-                                        <div class="blog-btn">Categories - Tags </div>
+                                        <div class="blog-btn">تگ ها - دسته بندی ها</div>
                                         <div class="blog-filter-wrap">
                                             <div class="blog-filter-wrap_item" data-bfgt="Categories">
                                                 <ul>
-                                                    <li><a href="#">Interior</a></li>
-                                                    <li><a href="#">Nature</a></li>
-                                                    <li><a href="#">Comercial</a></li>
-                                                    <li><a href="#">Travel</a></li>
+                                                    {% for cat in cat_con %}
+                                                        <li><a {% if 'dark' in request.path %}href="{% url 'blog:category_dark' cat %}"{% else %}href="{% url 'blog:category_light' cat %}"{% endif %}>{{cat}}</a></li>
+                                                    {% endfor %}
                                                 </ul>
                                             </div>
                                             <div class="blog-filter-wrap_item" data-bfgt="Tags">
                                                 <ul>
-                                                    <li><a href="#">Blog</a></li>
-                                                    <li><a href="#">Photography</a></li>
-                                                    <li><a href="#">Portfolio</a></li>
-                                                    <li><a href="#">Tag</a></li>
-                                                    <li><a href="#">Video</a></li>
+                                                    {% for tag in tag_con %}
+                                                        <li><a {% if 'dark' in request.path %}href="{% url 'blog:tag_dark' tag %}"{% else %}href="{% url 'blog:tag_light' tag %}"{% endif %}>{{tag}}</a></li>
+                                                    {% endfor %}
                                                 </ul>
                                             </div>
                                             <div class="blog-filter-wrap_title"></div>
@@ -159,15 +60,15 @@
                                         <div class="post-item">
                                             <div class="post-item_wrap">
                                                 <div class="post-item_media">
-                                                    <a href="{% url 'blog:blog_single' %}">
+                                                    <a href="{% if 'light' in request.path %}{% url 'blog:blog_single_light' post.id %}{% else %}{% url 'blog:blog_single_dark' post.id %}{% endif %}">
                                                     <img src="{{post.image_main.url}}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="post-item_content">
                                                     <div class="post-header"><a href="#">{{post.category.first}}</a><a href="#">{{post.published_date|to_jalali:'%H:%M:%S _ %Y/%m/%d'}}</a> </div>
-                                                    <h3><a href="{% url 'blog:blog_single' %}">{{post.title}}</a></h3>
-                                                    <p>{{post.content|safe|truncatewords_html:20}}</p>
-                                                    <a href="{% url 'blog:blog_single' %}" class="single-btn"><span>مشاهده</span></a>
+                                                    <h3><a href="{% if 'light' in request.path %}{% url 'blog:blog_single_light' post.id %}{% else %}{% url 'blog:blog_single_dark' post.id %}{% endif %}">{{post.title}}</a></h3>
+                                                    <p>{{post.content|safe|truncatewords_html:15}}</p>
+                                                    <a href="{% if 'light' in request.path %}{% url 'blog:blog_single_light' post.id %}{% else %}{% url 'blog:blog_single_dark' post.id %}{% endif %}" class="single-btn"><span>مشاهده</span></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -181,7 +82,7 @@
                                         <a href="?page={{context.previous_page_number}}" class="prevposts-link"><i class="fal fa-long-arrow-left"></i></a>
                                     {% endif %}
                                     {% for page in context.paginator.page_range %}
-                                        <a href="?page={{page}}">{{page}}</a>
+                                        <a href="?page={{page}}" {% if context.number == page %}class="current-page"{% endif %}>{{page}}</a>
                                     {% endfor %}
                                     {% comment %} <a href="#" class="current-page">02</a> {% endcomment %}
                                     {% if context.has_next %}
@@ -249,47 +150,9 @@
             <!-- sidebar-->
             <div class="sidebar-wrap">
                 <div class="sidebar-wrap-container">
-                    <!-- sb-widget-wrap-->
-                    <div class="sb-widget-wrap fl-wrap">
-                        <h3>Latest Works</h3>
-                        <div class="sb-widget  fl-wrap">
-                            <div class="categories_widget-wrap">
-                                <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
-                                    <div class="categories_widget_item_img">
-                                        <img src="{% static 'images/folio/14.jpg' %}" class="respimg" alt="">
-                                    </div>
-                                    <span class="categories_widget_title">Crazy, Cute Couple</span>
-                                </a>
-                                <!-- categories_widget_item end-->
-                                <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
-                                    <div class="categories_widget_item_img">
-                                        <img src="{% static 'images/folio/15.jpg' %}" class="respimg" alt="">
-                                    </div>
-                                    <span class="categories_widget_title">Alone on Nature</span>
-                                </a>
-                                <!-- categories_widget_item end-->							
-                                <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
-                                    <div class="categories_widget_item_img">
-                                        <img src="{% static 'images/folio/16.jpg' %}" class="respimg" alt="">
-                                    </div>
-                                    <span class="categories_widget_title">Living in my dream</span>
-                                </a>
-                                <!-- categories_widget_item end-->
-                                <!-- categories_widget_item-->
-                                <a class="categories_widget_item" href="{% url 'light_mode:portfolio_single' %}">
-                                    <div class="categories_widget_item_img">
-                                        <img src="{% static 'images/folio/17.jpg' %}" class="respimg" alt="">
-                                    </div>
-                                    <span class="categories_widget_title">Sunny Side Up</span>
-                                </a>
-                                <!-- categories_widget_item end-->					
-                            </div>
-                        </div>
-                    </div>
-                    <!-- sb-widget-wrap end-->					
+
+                    {% latest_posts 4 %}
+
                     <!-- sb-widget-wrap-->
                     <div class="sb-widget-wrap fl-wrap">
                         <h3>Subscribe To  Newsletter</h3>

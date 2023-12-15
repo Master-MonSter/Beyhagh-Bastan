@@ -1,0 +1,19 @@
+<!-- sb-widget-wrap-->
+<div class="sb-widget-wrap fl-wrap">
+    <h3>آخرین پست ها</h3>
+    <div class="sb-widget  fl-wrap">
+        <div class="categories_widget-wrap">
+            <!-- categories_widget_item-->
+            {% for post in context %}
+                <a class="categories_widget_item" href="{% url 'blog:blog_single_dark' post.id %}">
+                    <div class="categories_widget_item_img">
+                        <img src="{{post.image_main.url}}" class="respimg" alt="">
+                    </div>
+                    <span class="categories_widget_title">{{post.title}}</span>
+                </a>
+            {% endfor %}
+            <!-- categories_widget_item end-->
+        </div>
+    </div>
+</div>
+<!-- sb-widget-wrap end-->

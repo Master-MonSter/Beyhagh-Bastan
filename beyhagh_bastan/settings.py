@@ -167,3 +167,16 @@ JALALI_DATE_DEFAULTS = {
     },
 }
 # ************************************* Jalali date ********************************
+
+# ******************************** Captcha ********************************
+# Simple math
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
+# Random char
+# CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
+# Dictonary word
+# CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.word_challenge'
+
+CAPTCHA_FONT_SIZE = 40
+# CAPTCHA_IMAGE_SIZE = (200, 50)
+# CAPTCHA_LENGTH = 5
+# ******************************** Captcha ********************************

@@ -17,8 +17,12 @@ class Tag(models.Model):
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     image_main = models.ImageField(upload_to = 'blog/', default='blog/default.jpg')
+    image_content_1 = models.ImageField(upload_to = 'blog/', default='blog/image_content.png')
+    image_content_2 = models.ImageField(upload_to = 'blog/', default='blog/image_content.png')
     title = models.CharField(max_length=255)
-    content = models.TextField()
+    sub_title = models.CharField(max_length=255)
+    content_1 = models.TextField()
+    content_2 = models.TextField()
     category = models.ManyToManyField(Category)
     tag = models.ManyToManyField(Tag)
     counted_views = models.IntegerField(default=0)
@@ -50,7 +54,7 @@ class PostImage(models.Model):
         ordering = ['post']
 
     def __str__(self):
-        return self.name
+        return self.image.url
     
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)

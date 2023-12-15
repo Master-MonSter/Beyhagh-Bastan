@@ -5,7 +5,7 @@
         <!--=============== basic  ===============-->
         <meta charset="UTF-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Photogam - Creative Photography Portfolio Template</title>
+        <title>Mr.BoO - Beyhagh-bastan</title>
         <!--=============== css  ===============-->	
         <link type="text/css" rel="stylesheet" href="{% static 'css/reset_first_page.css' %}">
         <link type="text/css" rel="stylesheet" href="{% static 'css/style_first_page.css' %}">
@@ -46,7 +46,7 @@
                     <img src="{% static 'images/b5.jpg' %}" alt="">
                     <img src="{% static 'images/c5.jpg' %}" class="dark-ver" alt="">
                     <div class="ver-link">
-                        <a href="#" target="_blank" class="drt"><span> Dark Version</span></a>						
+                        <a href="{% url 'light_mode:index_carousel2_dark' %}" target="_blank" class="drt"><span> Dark Version</span></a>						
                         <a href="{% url 'light_mode:index_carousel2' %}" target="_blank" class="lrt"> <span>Light Version</span></a>
                     </div>
                 </div>

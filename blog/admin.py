@@ -11,8 +11,8 @@ class PostAdmin(SummernoteModelAdmin):
     list_filter = ('status', 'login_require', 'author')
     # It's prefer to Meta class
     # ordering = ('-created_date',) 
-    search_fields = ('title', 'content')
-    summernote_fields = ('content',)
+    search_fields = ('title', 'content_1', 'content_2')
+    summernote_fields = ('content_1', 'content_2')
 
 class CommentAdmin(admin.ModelAdmin):
     date_hierarchy = 'created_date'

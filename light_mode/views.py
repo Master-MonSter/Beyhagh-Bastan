@@ -85,6 +85,10 @@ def contact_view(request):
             messages.add_message(request, messages.ERROR, msg)
             # ************************************** Set error list ***********************************************
     form = ContactForm()
+    form1 = form['captcha']
+    print(form)
+    print(type(form))
+    print(form1[0])
     return render(request, 'light/contacts.html', {'form': form, 'light_theme': light_theme})
 
 
