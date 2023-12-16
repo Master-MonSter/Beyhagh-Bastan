@@ -1,0 +1,18 @@
+{% load static %}
+<!-- sb-widget-wrap -->
+<div class="sb-widget-wrap fl-wrap">
+  <h3>برای دریافت اخبار مارا دنبال کنید</h3>
+  <div class="sb-widget fl-wrap">
+    <p>سریع ترین راه برای اشتراک اخبار سایت با شما دوست عزیز</p>
+    <div class="subcribe-form fl-wrap">
+      <form action="{% url 'light_mode:news_letter' %}" id="subscribe" method="post">
+            {% csrf_token %}
+            <input type="hidden" value="{{ request.get_full_path }}" name="path" />
+            <input class="enteremail" name="email" id="subscribe-email" placeholder="آدرس ایمیل" spellcheck="false" type="email" required />
+            <button type="submit" id="subscribe-button" class="subscribe-button">ثبت</button>
+            <label for="subscribe-email" class="subscribe-message"></label>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- sb-widget-wrap end -->

@@ -1,6 +1,7 @@
 {% load static %}
 {% load humanize %}
 {% load jalali_tags %}
+{% load blog_tags %}
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
@@ -23,135 +24,240 @@
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
   </head>
   <body>
-    <!-- loader -->
-    <div class="main-loader">
-      <div class="ml-wrap">
-        <div class="ml-mask"></div>
-        <img src="{% if 'light' in request.path %}{% static 'images/beyhagh-bastan-black(text).png' %}{% else %}{% static 'images/beyhagh-bastan-white(text).png' %}{% endif %}" alt="" />
-      </div>
-      <div class="ml_images-wrap">
-        <div class="ml_bg-item" style="top:-30px; left: 0">
-          <div class="bg" data-bg="{% static 'images/folio/2.jpg' %}"></div>
+    <!-- main start -->
+    <div id="main">
+      <!-- loader -->
+      <div class="main-loader">
+        <div class="ml-wrap">
+          <div class="ml-mask"></div>
+          <img src="{% if 'light' in request.path %}
+              {% static 'images/beyhagh-bastan-black(text).png' %}
+            {% else %}
+              {% static 'images/beyhagh-bastan-white(text).png' %}
+            {% endif %}"
+            alt="" />
         </div>
-        <div class="ml_bg-item" style="bottom:  -20px; left: 50px">
-          <div class="bg" data-bg="{% static 'images/folio/6.jpg' %}"></div>
-        </div>
-        <div class="ml_bg-item" style="top:30px; right: -120px">
-          <div class="bg" data-bg="{% static 'images/folio/18.jpg' %}"></div>
-        </div>
-      </div>
-    </div>
-    <!-- loader end -->
-    <!-- header main-header -->
-    <header class="main-header">
-      <div class="main-inner">
-        <!-- logo -->
-        <a href="index.html" class="logo-holder"><img src="{% if 'light' in request.path %}{% static 'images/beyhagh-bastan-black.png' %}{% else %}{% static 'images/beyhagh-bastan-white.png' %}{% endif %}" alt="" /></a>
-        <!-- logo end -->
-        <!-- sb-button -->
-        <div class="sb-button c_sb">
-          <span></span>
-        </div>
-        <!-- sb-button end -->
-        <!-- mobile nav -->
-        <div class="nav-button-wrap">
-          <div class="nav-button">
-            <span></span><span></span><span></span>
+        <div class="ml_images-wrap">
+          <div class="ml_bg-item" style="top:-30px; left: 0">
+            <div class="bg" data-bg="{% static 'images/folio/2.jpg' %}"></div>
+          </div>
+          <div class="ml_bg-item" style="bottom:  -20px; left: 50px">
+            <div class="bg" data-bg="{% static 'images/folio/6.jpg' %}"></div>
+          </div>
+          <div class="ml_bg-item" style="top:30px; right: -120px">
+            <div class="bg" data-bg="{% static 'images/folio/18.jpg' %}"></div>
           </div>
         </div>
-        <!-- mobile nav end -->
-        <!-- share btn -->
-        <div class="share-btn isShare show-share">
-          <span>Share <i class="fal fa-chevron-up"></i></span>
+      </div>
+      <!-- loader end -->
+      <!-- header main-header -->
+      <header class="main-header">
+        <div class="main-inner">
+          <!-- logo -->
+          <a href="index.html" class="logo-holder">
+            <img src="{% if 'light' in request.path %}
+                {% static 'images/beyhagh-bastan-black.png' %}
+              {% else %}
+                {% static 'images/beyhagh-bastan-white.png' %}
+              {% endif %}"
+              alt="" />
+          </a>
+          <!-- logo end -->
+          <!-- sb-button -->
+          <div class="sb-button c_sb">
+            <span></span>
+          </div>
+          <!-- sb-button end -->
+          <!-- mobile nav -->
+          <div class="nav-button-wrap">
+            <div class="nav-button">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <!-- mobile nav end -->
+          <!-- share btn -->
+          <div class="share-btn isShare show-share">
+            <span>Share <i class="fal fa-chevron-up"></i></span>
+          </div>
+          <!-- share btn end -->
+          <!-- navigation -->
+          <div class="nav-holder main-menu">
+            <nav>
+              <ul>
+                <li>
+                  <a href="{% if 'light' in request.path %}
+                      {% url 'light_mode:index_carousel2' %}
+                    {% else %}
+                      {% url 'light_mode:index_carousel2_dark' %}
+                    {% endif %}"
+                    class="{% if '/light/' == request.path or '/dark/' == request.path %}act-link{% endif %}">
+                    Home
+                  </a>
+                  <!-- second level -->
+                  {% comment %} <ul>
+                    <li>
+                      <a href="{% url 'light_mode:index_carousel' %}">Carousel</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'light_mode:index_slider' %}">Slider</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'light_mode:index_imagesGrid' %}">Images Grid</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'light_mode:index_carousel2' %}">Carousel 2</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'light_mode:index_video' %}">Video</a>
+                    </li>
+                  </ul>
+                  <!-- second level end --> {% endcomment %}
+                </li>
+                <li>
+                  <a href="#">Portfolio</a>
+                  <!-- second level -->
+                  <ul>
+                    <li>
+                      <a href="{% url 'light_mode:portfolio_vertical' %}">Vertical Grid</a>
+                    </li>
+                    {% comment %} <li>
+                      <a href="{% url 'light_mode:portfolio_horizontal' %}">Horizontal Grid</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'light_mode:portfolio_column' %}">Column Grid</a>
+                    </li> {% endcomment %}
+                    <li>
+                      <a href="#">Single</a>
+                      <!-- third level -->
+                      <ul>
+                        <li>
+                          <a href="{% url 'light_mode:portfolio_single' %}">Style 1</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'light_mode:portfolio_single2' %}">Style 2</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'light_mode:portfolio_single3' %}">Style 3</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'light_mode:portfolio_single4' %}">Style 4</a>
+                        </li>
+                      </ul>
+                      <!-- third level end -->
+                    </li>
+                  </ul>
+                  <!-- second level end -->
+                </li>
+                <li>
+                  <a href="{% if 'light' in request.path %}
+                      {% url 'light_mode:about' %}
+                    {% else %}
+                      {% url 'light_mode:about_dark' %}
+                    {% endif %}"
+                    class="{% if 'about' in request.path %}act-link{% endif %}">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="{% if 'light' in request.path %}
+                      {% url 'blog:index_light' %}
+                    {% else %}
+                      {% url 'blog:index_dark' %}
+                    {% endif %}"
+                    class="{% if 'blog' in request.path %}act-link{% endif %}">
+                    News
+                  </a>
+                </li>
+                <li>
+                  <a href="{% if 'light' in request.path %}
+                      {% url 'light_mode:contact' %}
+                    {% else %}
+                      {% url 'light_mode:contact_dark' %}
+                    {% endif %}"
+                    class="{% if 'contact' in request.path %}act-link{% endif %}">
+                    Contacts
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- navigation end -->
+          <!-- share-wrapper -->
+          <div class="share-wrapper">
+            <div class="share-inner">
+              <div class="share-container"></div>
+            </div>
+          </div>
+          <!-- share-wrapper end -->
         </div>
-        <!-- share btn end -->
-        <!-- navigation -->
-        <div class="nav-holder main-menu">
-          <nav>
-            <ul>
-              <li>
-                <a href="{% if 'light' in request.path %}{% url 'light_mode:index_carousel2' %}{% else %}{% url 'light_mode:index_carousel2_dark' %}{% endif %}" {% if '/light/' == request.path or '/dark/' == request.path %}class="act-link"{% endif %}>Home</a>
-                <!-- second level -->
-                {% comment %} <ul>
-                  <li>
-                    <a href="{% url 'light_mode:index_carousel' %}">Carousel</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'light_mode:index_slider' %}">Slider</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'light_mode:index_imagesGrid' %}">Images Grid</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'light_mode:index_carousel2' %}">Carousel 2</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'light_mode:index_video' %}">Video</a>
-                  </li>
-                </ul>
-                <!-- second level end --> {% endcomment %}
-              </li>
-              <li>
-                <a href="#">Portfolio</a>
-                <!-- second level -->
+      </header>
+      <!-- Header end -->
+      {% block content %}
+
+      {% endblock %}
+      <!-- aside-column -->
+
+      {% include 'social_links.html' %}
+
+      <!-- aside-column end -->
+      <!-- footer -->
+      <footer class="main-footer">
+        <div class="footer_contacts">
+          <ul>
+            <li>
+              <span>Mail :</span><a href="#" target="_blank">yourmail@domain.com</a>
+            </li>
+            <li>
+              <span>Phone :</span><a href="#">+3(111)123456789</a>
+            </li>
+          </ul>
+        </div>
+        <div class="policy-box">Photogam 2023 . All rights reserved.</div>
+      </footer>
+      <div class="to-top-btn to-top">
+        <i class="fal fa-long-arrow-up"></i>
+      </div>
+      <!-- footer end -->
+      <div class="aside_dec"></div>
+      <!-- sidebar -->
+      <div class="sidebar-wrap">
+        <div class="sidebar-wrap-container">
+          {% latest_posts 4 %}
+
+          <!-- sb-widget-wrap -->
+          
+          {% include "news-letter.html" %}
+
+          <!-- sb-widget-wrap end -->
+          <!-- sb-widget-wrap -->
+          <div class="sb-widget-wrap fl-wrap">
+            <h3>Social Links</h3>
+            <div class="sb-widget fl-wrap">
+              <div class="sidebar-social fl-wrap">
                 <ul>
                   <li>
-                    <a href="{% url 'light_mode:portfolio_vertical' %}">Vertical Grid</a>
-                  </li>
-                  {% comment %} <li>
-                    <a href="{% url 'light_mode:portfolio_horizontal' %}">Horizontal Grid</a>
+                    <a href="#" target="_blank">Fb</a>
                   </li>
                   <li>
-                    <a href="{% url 'light_mode:portfolio_column' %}">Column Grid</a>
-                  </li> {% endcomment %}
+                    <a href="#" target="_blank">Tw</a>
+                  </li>
                   <li>
-                    <a href="#">Single</a>
-                    <!-- third level -->
-                    <ul>
-                      <li>
-                        <a href="{% url 'light_mode:portfolio_single' %}">Style 1</a>
-                      </li>
-                      <li>
-                        <a href="{% url 'light_mode:portfolio_single2' %}">Style 2</a>
-                      </li>
-                      <li>
-                        <a href="{% url 'light_mode:portfolio_single3' %}">Style 3</a>
-                      </li>
-                      <li>
-                        <a href="{% url 'light_mode:portfolio_single4' %}">Style 4</a>
-                      </li>
-                    </ul>
-                    <!-- third level end -->
+                    <a href="#" target="_blank">Ins</a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank">Tic</a>
                   </li>
                 </ul>
-                <!-- second level end -->
-              </li>
-              <li>
-                <a href="{% if 'light' in request.path %}{% url 'light_mode:about' %}{% else %}{% url 'light_mode:about_dark' %}{% endif %}" {% if 'about' in request.path %}class="act-link"{% endif %}>About</a>
-              </li>
-              <li>
-                <a href="{% if 'light' in request.path %}{% url 'blog:index_light' %}{% else %}{% url 'blog:index_dark' %}{% endif %}" {% if 'blog' in request.path %}class="act-link"{% endif %}>News</a>
-              </li>
-              <li>
-                <a href="{% if 'light' in request.path %}{% url 'light_mode:contact' %}{% else %}{% url 'light_mode:contact_dark' %}{% endif %}" {% if 'contact' in request.path %}class="act-link"{% endif %}>Contacts</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <!-- navigation end -->
-        <!-- share-wrapper -->
-        <div class="share-wrapper">
-          <div class="share-inner">
-            <div class="share-container"></div>
+              </div>
+            </div>
           </div>
+          <!-- sb-widget-wrap end -->
         </div>
-        <!-- share-wrapper end -->
       </div>
-    </header>
-    <!-- Header end -->
-    {% block content %}
-
-    {% endblock %}
+      <div class="sb-overlay"></div>
+      <!-- sidebar end -->
+    </div>
+    <!-- Main end -->
     <!-- =============== scripts =============== -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
     <script src="{% static 'admin/js/django_jalali.min.js' %}"></script>

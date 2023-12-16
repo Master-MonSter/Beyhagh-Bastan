@@ -9,6 +9,11 @@ class ContactAdmin(admin.ModelAdmin):
     # ordering = ('-created_date',) 
     search_fields = ('name', 'email')
 
+class NewsLetterAdmin(admin.ModelAdmin):
+    list_display = ('email', 'created_date')
+    list_filter = ('email',)
+    search_fields = ('email',)
+
 # Register your models here.
 admin.site.register(Contact, ContactAdmin)
-admin.site.register(NewsLetter)
+admin.site.register(NewsLetter, NewsLetterAdmin)

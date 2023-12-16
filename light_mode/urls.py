@@ -28,4 +28,5 @@ urlpatterns = [
     path('dark/about/', views.about_view, name='about_dark'),
     path('light/contact/', views.contact_view, name='contact'),
     path('dark/contact/', views.contact_view, name='contact_dark'),
+    path('newsletter', views.newsletter_view, name='news_letter'),
 ]

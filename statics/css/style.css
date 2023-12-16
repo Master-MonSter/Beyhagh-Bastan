@@ -664,14 +664,14 @@ blockquote p {
 }
 .sb-widget-wrap h3 {
 	color: #fff;
-    text-align: left;
+    text-align: right;
     font-size: 1.5em;
     font-weight: 700;
     margin: 0 0 20px;
 }
 .sb-widget p {
 	color:rgba(255,255,255,.7);
-	text-align: left;
+	text-align: right;
 }
 #subscribe {
 	float:left;
@@ -731,7 +731,7 @@ blockquote p {
 	color:#666;
 }
 .sidebar-social li {
-	float:left;
+	float:right;
 	margin-right:4px;
 }
 .sidebar-social li a {
@@ -3358,7 +3358,7 @@ section {
 	border-radius: 30px;
 }
 .pr-tags ul {
-    display: flex;
+    display: flow-root;
     flex-grow: 0;
     flex-direction: row;
 	position:relative;
@@ -3399,6 +3399,7 @@ section {
 .pr-tags li {
     float: left;
     margin-right: 10px;
+    margin-bottom: 5px;
     font-size: .9em;
 	font-weight: 600;
  

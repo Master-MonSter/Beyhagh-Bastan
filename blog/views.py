@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Post, PostImage
 from django.contrib import messages
+from django.db.models import Q
 
 def check_published_date():
     # Now time with timezone
@@ -26,11 +27,25 @@ def index_view(request, **kwargs):
         elif kwargs.get('tag_name') is not None:
             posts = posts.filter(tag__name=kwargs['tag_name'])
     # Category validation ***********************************************************************************
+            
     # Search validations *************************************************************************************
     if request.method == 'GET':
         if x:= request.GET.get('sBar'):
-            posts = posts.filter(content__contains=x)
+            posts = posts.filter(Q(content_1__contains=x) | Q(content_2__contains=x))
     # Search validations *************************************************************************************
+            
+    # Deleting duplicated values from tag and category ********************************************************************
+    tag_con = []
+    cat_con = []
+    for post in posts:
+        for tag in post.tag.all():
+            tag_con.append(str(tag))
+        for cat in post.category.all():
+            cat_con.append(str(cat))
+    tag_con = list(dict.fromkeys(tag_con))
+    cat_con = list(dict.fromkeys(cat_con))
+    # Deleting duplicated values from tag and category ********************************************************************
+
     # Pagination *********************************************************************************************
     posts = Paginator(posts, 3)
     try:
@@ -41,18 +56,6 @@ def index_view(request, **kwargs):
     except PageNotAnInteger:
         posts = posts.get_page(1)
     # Pagination *********************************************************************************************
-
-    # Deleting duplicated values from tag and category *********************************************************************************************
-    tag_con = []
-    cat_con = []
-    for post in posts:
-        for tag in post.tag.all():
-            tag_con.append(str(tag))
-        for cat in post.category.all():
-            cat_con.append(str(cat))
-    tag_con = list(dict.fromkeys(tag_con))
-    cat_con = list(dict.fromkeys(cat_con))
-    # Deleting duplicated values from tag and category *********************************************************************************************
 
     context = {'context': posts, 'tag_con': tag_con, 'cat_con': cat_con}
     return render(request, 'blog/light/blog.html', context)

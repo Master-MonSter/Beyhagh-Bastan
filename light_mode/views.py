@@ -85,12 +85,26 @@ def contact_view(request):
             messages.add_message(request, messages.ERROR, msg)
             # ************************************** Set error list ***********************************************
     form = ContactForm()
-    form1 = form['captcha']
-    print(form)
-    print(type(form))
-    print(form1[0])
     return render(request, 'light/contacts.html', {'form': form, 'light_theme': light_theme})
 
-
+def newsletter_view(request):
+    if request.method == 'POST':
+        msg=""
+        form = NewsLetterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, '******************<br>Well done<br>******************')
+            return HttpResponseRedirect(request.POST.get('path'))
+        else:
+            # ************************************** Set error list ***********************************************
+            if form.errors:
+                for field in form.errors:
+                    print(form.errors)
+                    for error in form.errors[field]:
+                        msg = msg + f"<p><b>{error} </b> :{field}</p>"
+            # messages.add_message(request, messages.ERROR, 'Somthing went wrong<br>please try again')
+            messages.add_message(request, messages.ERROR, msg)
+            # ************************************** Set error list ***********************************************
+    return HttpResponseRedirect(request.POST.get('path'))
 
 

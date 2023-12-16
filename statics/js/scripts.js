@@ -946,10 +946,10 @@ function initPhotogam() {
     });
 }
 //   mailchimp------------------
-$("#subscribe").ajaxChimp({
-    language: "eng",
-     url: "https://gmail.us1.list-manage.com/subscribe/post?u=1fe818378d5c129b210719d80&amp;id=a2792f681b"
- });
+// $("#subscribe").ajaxChimp({
+//     language: "eng",
+//      url: "http://127.0.0.1:8000/newsletter"
+//  });
 $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">');
 document.addEventListener('gesturestart', function (e) {
     e.preventDefault();

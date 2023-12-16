@@ -2,191 +2,164 @@
 {% load static %}
 {% load jalali_tags %}
 {% block extrahead %}
-{% endblock extrahead %}
-{% block content %}
+
+{% endblock %}
 {% load blog_tags %}
-        <!--  main start  -->
-        <div id="main">
-            <!-- wrapper -->
-            <div id="wrapper">
-                <!-- content-holder -->
-                <div class="content-holder">
-                    <!-- column-image  -->
-                    <div class="column-image">
-                        <div class="bg"  data-bg="{% static 'images/bg/4.jpg' %}"></div>
-                        <div class="overlay"></div>
-                        <div class="column-title">
-                            <h2>Our Last News</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.</h3>
-                        </div>
-                        <div class="ci_dec"><span></span></div>
-                    </div>
-                    <!-- column-image end  -->
-                    <!-- column-wrapper -->
-                    <div class="column-wrapper">
-                        <!--section  -->
-                        <section id="sec1">
-                            <div class="container small-container">
-                                <div class="blog-opt">
-                                    
-                                    {% include "blog/blog-search.html" %}
-
-                                    <!-- filter category    -->
-                                    <div class="category-filter blog-btn-filter">
-                                        <div class="blog-btn">تگ ها - دسته بندی ها</div>
-                                        <div class="blog-filter-wrap">
-                                            <div class="blog-filter-wrap_item" data-bfgt="Categories">
-                                                <ul>
-                                                    {% for cat in cat_con %}
-                                                        <li><a {% if 'dark' in request.path %}href="{% url 'blog:category_dark' cat %}"{% else %}href="{% url 'blog:category_light' cat %}"{% endif %}>{{cat}}</a></li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </div>
-                                            <div class="blog-filter-wrap_item" data-bfgt="Tags">
-                                                <ul>
-                                                    {% for tag in tag_con %}
-                                                        <li><a {% if 'dark' in request.path %}href="{% url 'blog:tag_dark' tag %}"{% else %}href="{% url 'blog:tag_light' tag %}"{% endif %}>{{tag}}</a></li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </div>
-                                            <div class="blog-filter-wrap_title"></div>
-                                        </div>
-                                    </div>
-                                    <!-- filter category end  --> 	
-                                </div>
-                                <div class="post-items">
-                                    {% for post in context %}
-                                        <!-- post-item-->
-                                        <div class="post-item">
-                                            <div class="post-item_wrap">
-                                                <div class="post-item_media">
-                                                    <a href="{% if 'light' in request.path %}{% url 'blog:blog_single_light' post.id %}{% else %}{% url 'blog:blog_single_dark' post.id %}{% endif %}">
-                                                    <img src="{{post.image_main.url}}" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="post-item_content">
-                                                    <div class="post-header"><a href="#">{{post.category.first}}</a><a href="#">{{post.published_date|to_jalali:'%H:%M:%S _ %Y/%m/%d'}}</a> </div>
-                                                    <h3><a href="{% if 'light' in request.path %}{% url 'blog:blog_single_light' post.id %}{% else %}{% url 'blog:blog_single_dark' post.id %}{% endif %}">{{post.title}}</a></h3>
-                                                    <p>{{post.content|safe|truncatewords_html:15}}</p>
-                                                    <a href="{% if 'light' in request.path %}{% url 'blog:blog_single_light' post.id %}{% else %}{% url 'blog:blog_single_dark' post.id %}{% endif %}" class="single-btn"><span>مشاهده</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- post-item end-->
-                                    {% endfor %}									
-                                </div>
-                                <!--pagination-->   
-                                <div class="pagination">
-                                    <div class="pr-bg pr-bg-white"></div>
-                                    {% if context.has_previous %}
-                                        <a href="?page={{context.previous_page_number}}" class="prevposts-link"><i class="fal fa-long-arrow-left"></i></a>
-                                    {% endif %}
-                                    {% for page in context.paginator.page_range %}
-                                        <a href="?page={{page}}" {% if context.number == page %}class="current-page"{% endif %}>{{page}}</a>
-                                    {% endfor %}
-                                    {% comment %} <a href="#" class="current-page">02</a> {% endcomment %}
-                                    {% if context.has_next %}
-                                        <a href="?page={{context.next_page_number}}" class="nextposts-link"><i class="fal fa-long-arrow-right"></i></a>
-                                    {% endif %}
-                                </div>
-                                <!--pagination end-->				
-                            </div>
-                        </section>
-                        <!--section end  -->
-                        <div class="order-wrap">
-                            <div class="container small-container">
-                                <h4>Ready To order Your Project?</h4>
-                            </div>
-                            <a href="{% url 'light_mode:contact' %}" class="order_btn">Get In Touch</a>
-                        </div>
-                    </div>
-                    <!-- column-wrapper -->
-                    <!-- fixed-bottom-container -->
-                    <div class="fixed-bottom-container">
-                        <div class="scroll-down-wrap">
-                            <div class="mousey">
-                                <div class="scroller"></div>
-                            </div>
-                        </div>
-                        <a href="{% url 'light_mode:index_carousel2' %}" class="bth_btn hbn_vis"><i class="fal fa-home-lg-alt"></i><strong>Back to Home</strong></a>
-                        <div class="progress-bar-wrap">
-                            <div class="progress-bar color-bg"></div>
-                        </div>
-                    </div>
-                    <!-- fixed-bottom-container end-->
-                </div>
-                <!-- content-holder end -->
-            </div>
-            <!-- wrapper end -->
-            <!-- aside-column -->			
-            <div class="aside-column">
-                <!-- social_links-->
-                <div class="header_social">
-                    <ul>
-                        <li><a href="#" target="_blank">Fb</a></li>
-                        <li><a href="#" target="_blank">Ins</a></li>
-                        <li><a href="#" target="_blank">Tw</a></li>
-                        <li><a href="#" target="_blank">Tic</a></li>
-                    </ul>
-                </div>
-                <!-- social_links end-->			
-            </div>
-            <!-- aside-column  end -->			
-            <!-- footer -->
-            <footer class="main-footer">
-                <div class="footer_contacts">
-                    <ul>
-                        <li><span>Mail :</span><a href="#" target="_blank">yourmail@domain.com</a></li>
-                        <li><span>Phone :</span><a href="#">+3(111)123456789</a></li>
-                    </ul>
-                </div>
-                <div class="policy-box">
-                    Photogam 2023 . All rights reserved.  
-                </div>
-            </footer>
-            <div class="to-top-btn  to-top"><i class="fal fa-long-arrow-up"></i></div>
-            <!-- footer end-->
-            <div class="aside_dec"></div>
-            <!-- sidebar-->
-            <div class="sidebar-wrap">
-                <div class="sidebar-wrap-container">
-
-                    {% latest_posts 4 %}
-
-                    <!-- sb-widget-wrap-->
-                    <div class="sb-widget-wrap fl-wrap">
-                        <h3>Subscribe To  Newsletter</h3>
-                        <div class="sb-widget  fl-wrap">
-                            <p>Lorem ipsum dosectetur adipisicing elit, sed do.Lorem ipsum dolor sit amet,  </p>
-                            <div class="subcribe-form fl-wrap">
-                                <form id="subscribe">
-                                    <input class="enteremail" name="email" id="subscribe-email" placeholder="Your Email" spellcheck="false" type="text">
-                                    <button type="submit" id="subscribe-button" class="subscribe-button">Submit</button>
-                                    <label for="subscribe-email" class="subscribe-message"></label>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- sb-widget-wrap end-->
-                    <!-- sb-widget-wrap-->
-                    <div class="sb-widget-wrap fl-wrap">
-                        <h3>Social Links</h3>
-                        <div class="sb-widget    fl-wrap">
-                            <div class="sidebar-social fl-wrap">
-                                <ul>
-                                    <li><a href="#" target="_blank">Fb</a></li>
-                                    <li><a href="#" target="_blank">Tw</a></li>
-                                    <li><a href="#" target="_blank">Ins</a></li>
-                                    <li><a href="#" target="_blank">Tic</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- sb-widget-wrap end-->
-                </div>
-            </div>
-            <div class="sb-overlay"></div>
-            <!-- sidebar end-->				
+{% block content %}
+  <!-- wrapper -->
+  <div id="wrapper">
+    <!-- content-holder -->
+    <div class="content-holder">
+      <!-- column-image -->
+      <div class="column-image">
+        <div class="bg" data-bg="{% static 'images/bg/4.jpg' %}"></div>
+        <div class="overlay"></div>
+        <div class="column-title">
+          <h2>Our Last News</h2>
+          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.</h3>
         </div>
-        <!-- Main end -->
-{% endblock content %}
+        <div class="ci_dec">
+          <span></span>
+        </div>
+      </div>
+      <!-- column-image end -->
+      <!-- column-wrapper -->
+      <div class="column-wrapper">
+        <!-- section -->
+        <section id="sec1">
+          <div class="container small-container">
+            <div class="blog-opt">
+              {% include 'blog/blog-search.html' %}
+
+              <!-- filter category -->
+              <div class="category-filter blog-btn-filter">
+                <div class="blog-btn">تگ ها - دسته بندی ها</div>
+                <div class="blog-filter-wrap">
+                  <div class="blog-filter-wrap_item" data-bfgt="Categories">
+                    <ul>
+                      {% for cat in cat_con %}
+                        <li>
+                          <a href="{% if 'dark' in request.path %}
+                              {% url 'blog:category_dark' cat %}
+                            {% else %}
+                              {% url 'blog:category_light' cat %}
+                            {% endif %}">
+                            {{ cat }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  <div class="blog-filter-wrap_item" data-bfgt="Tags">
+                    <ul>
+                      {% for tag in tag_con %}
+                        <li>
+                          <a href="{% if 'dark' in request.path %}
+                              {% url 'blog:tag_dark' tag %}
+                            {% else %}
+                              {% url 'blog:tag_light' tag %}
+                            {% endif %}">
+                            {{ tag }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  <div class="blog-filter-wrap_title"></div>
+                </div>
+              </div>
+              <!-- filter category end -->
+            </div>
+            <div class="post-items">
+              {% for post in context %}
+                <!-- post-item -->
+                <div class="post-item">
+                  <div class="post-item_wrap">
+                    <div class="post-item_media">
+                      <a href="{% if 'light' in request.path %}
+                          {% url 'blog:blog_single_light' post.id %}
+                        {% else %}
+                          {% url 'blog:blog_single_dark' post.id %}
+                        {% endif %}">
+                        <img src="{{ post.image_main.url }}" alt="" />
+                      </a>
+                    </div>
+                    <div class="post-item_content">
+                      <div class="post-header">
+                        <a href="#">{{ post.category.first }}</a><a href="#">{{ post.published_date|to_jalali:'%H:%M:%S _ %Y/%m/%d' }}</a>
+                      </div>
+                      <h3>
+                        <a href="{% if 'light' in request.path %}
+                            {% url 'blog:blog_single_light' post.id %}
+                          {% else %}
+                            {% url 'blog:blog_single_dark' post.id %}
+                          {% endif %}">
+                          {{ post.title }}
+                        </a>
+                      </h3>
+                      <p>{{ post.content|safe|truncatewords_html:15 }}</p>
+                      <a href="{% if 'light' in request.path %}
+                          {% url 'blog:blog_single_light' post.id %}
+                        {% else %}
+                          {% url 'blog:blog_single_dark' post.id %}
+                        {% endif %}"
+                        class="single-btn">
+                        <span>مشاهده</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- post-item end -->
+              {% endfor %}
+            </div>
+            <!-- pagination -->
+            {% if context.paginator.count > 0 %}
+                <div class="pagination">
+                <div class="pr-bg pr-bg-white"></div>
+                {% if context.has_previous %}
+                    <a href="?page={{ context.previous_page_number }}" class="prevposts-link"><i class="fal fa-long-arrow-left"></i></a>
+                {% endif %}
+                {% for page in context.paginator.page_range %}
+                    <a href="?page={{ page }}" class="{% if context.number == page %}current-page{% endif %}">{{ page }}</a>
+                {% endfor %}
+                {% comment %} <a href="#" class="current-page">02</a> {% endcomment %}
+                {% if context.has_next %}
+                    <a href="?page={{ context.next_page_number }}" class="nextposts-link"><i class="fal fa-long-arrow-right"></i></a>
+                {% endif %}
+                </div>
+            {% else %}
+                <div class="pagination">
+                <div class="pr-bg pr-bg-white"></div>
+                <a href="{% if 'light' in request.path %}{% url 'blog:index_light' %}{% else %}{% url 'blog:index_dark' %}{% endif %}" class="current-page">نمایش تمامی بلاگ ها</a>
+                </div>
+            {% endif %}
+            <!-- pagination end -->
+          </div>
+        </section>
+        <!-- section end -->
+        <div class="order-wrap">
+          <div class="container small-container">
+            <h4>Ready To order Your Project?</h4>
+          </div>
+          <a href="{% url 'light_mode:contact' %}" class="order_btn">Get In Touch</a>
+        </div>
+      </div>
+      <!-- column-wrapper -->
+      <!-- fixed-bottom-container -->
+      <div class="fixed-bottom-container">
+        <div class="scroll-down-wrap">
+          <div class="mousey">
+            <div class="scroller"></div>
+          </div>
+        </div>
+        <a href="{% url 'light_mode:index_carousel2' %}" class="bth_btn hbn_vis"><i class="fal fa-home-lg-alt"></i><strong>Back to Home</strong></a>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar color-bg"></div>
+        </div>
+      </div>
+      <!-- fixed-bottom-container end -->
+    </div>
+    <!-- content-holder end -->
+  </div>
+  <!-- wrapper end -->
+{% endblock %}
