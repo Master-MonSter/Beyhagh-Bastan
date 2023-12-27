@@ -1,0 +1,93 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block extrahead %}
+  <title>Sign up</title>
+{% endblock %}
+{% block content %}
+  <!-- Login 2 start -->
+  <div class="login-2 login-background">
+    <div class="login-background-inner">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+    <div class="login-2-inner">
+      <div class="container">
+        <div class="row login-box">
+          <div class="col-lg-6 align-self-center pad-0 form-info">
+            <div class="form-section clearfix">
+              <div class="logo-2 logo">
+                <a href="/{% if 'light' in request.path %}light{% else %}dark{% endif %}">
+                  <img src="{% static 'account_assets/img/logos/logo-2.png' %}" alt="logo" />
+                </a>
+              </div>
+              <h3>دسترسی هات رو بیشتر کن</h3>
+              <div class="btn-section clearfix">
+                <a href="{% if 'light' in request.path %}{% url 'accounts:signup_light' %}?next={{next_reload}}{% else %}{% url 'accounts:signup_dark' %}?next={{next_reload}}{% endif %}"class="link-btn btn-1 active-bg">ثبت نام</a>
+                <a href="{% if 'light' in request.path %}{% url 'accounts:login_light' %}?next={{next_reload}}{% else %}{% url 'accounts:login_dark' %}?next={{next_reload}}{% endif %}"class="link-btn active btn-2 default-bg">ورود</a>
+              </div>
+              <div class="clearfix"></div>
+              <form action="{% if 'light' in request.path %}{% url 'accounts:signup_light' %}?next={{next_reload}}{% else %}{% url 'accounts:signup_dark' %}?next={{next_reload}}{% endif %}"method="post">
+                {% csrf_token %}
+                {% if request.GET.next %}
+                  <input type="hidden" name="next" value="{{ request.GET.next }}" />
+                {% endif %}
+                <input type="hidden" name="next_reload" value="{{ next_reload }}" />
+                <div class="form-group">
+                  <input type="text" name="username" class="form-control ltr-with-rtl-pHolder" placeholder="نام کاربری" autocomplete="off" required autofocus />
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" class="form-control ltr-with-rtl-pHolder" placeholder="آدرس ایمیل" autocomplete="off" required />
+                </div>
+                <div class="form-group clearfix">
+                  <input type="password" id="password-field" name="password1" class="form-control ltr-with-rtl-pHolder" autocomplete="off" placeholder="رمز عبور" required />
+                  <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password eyes"></span>
+                </div>
+                <div class="form-group clearfix">
+                  <input type="password" id="confirm_password" name="password2" class="form-control ltr-with-rtl-pHolder" autocomplete="off" placeholder="تکرار رمز عبور" required />
+                  <span toggle="#confirm_password" class="fa fa-fw fa-eye field-icon toggle-password eyes"></span>
+                </div>
+                <div class="form-group clearfix float-right">
+                  <div class="form-check">
+                    <label class="form-check-label" for="rememberme">.با ثبت نام<a href="/" class="a-style">&nbsp;شرایط و قوانین سایت&nbsp;</a>را خواهید پذیرفت</label>
+                  </div>
+                </div>
+                <div class="form-group clearfix">
+                  <button type="submit" class="btn btn-lg btn-info btn-theme">ثبت نام</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-6 align-self-center pad-0 bg-img">
+            <div class="info clearfix">
+              <div class="box">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <div class="content">
+                  <div class="logo-2">
+                    <a href="/{% if 'light' in request.path %}light{% else %}dark{% endif %}"><img src="{% static 'account_assets/img/logos/logo-2.png' %}" alt="logo" /></a>
+                  </div>
+                  <h3>ثبت نام و ورود با</h3>
+                  <div class="social-list">
+                    <a href="#" class="facebook-bg disabled-link"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="twitter-bg disabled-link"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="google-bg"><i class="fa fa-google"></i></a>
+                    <a href="#" class="linkedin-bg disabled-link"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Login 2 end -->
+{% endblock %}
+{% block extrafooter %}
+
+{% endblock %}

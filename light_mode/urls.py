@@ -23,6 +23,8 @@ urlpatterns = [
     path('portfolio-single3/', views.portfolio_single3_view, name='portfolio_single3'),
     path('portfolio-single4/', views.portfolio_single4_view, name='portfolio_single4'),
     # ********************************************* Portfolios ****************************************
+    
+    path('light/404_error_page/', views.error_page_404, name='404_error_page'),
 
     path('light/about/', views.about_view, name='about'),
     path('dark/about/', views.about_view, name='about_dark'),

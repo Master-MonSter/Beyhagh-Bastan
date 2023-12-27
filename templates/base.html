@@ -76,8 +76,15 @@
           </div>
           <!-- mobile nav end -->
           <!-- share btn -->
-          <div class="share-btn isShare show-share">
-            <span>Share <i class="fal fa-chevron-up"></i></span>
+          <div class="share-btn">
+            {% if request.user.is_authenticated %}
+              <span class="hi_user">{{request.user.username}} درود بر</span>
+              <span><a {% if 'light' in request.path %}href="{% url 'accounts:change_password_light' %}?next={{request.get_full_path}}"{% else %}href="{% url 'accounts:change_password_dark' %}?next={{request.get_full_path}}" style="color: white;"{% endif %}>تغییر پسورد</a></span>
+              <span><a {% if 'light' in request.path %}href="{% url 'accounts:logout_light' %}?next={{request.get_full_path}}" style="color: black;"{% else %}href="{% url 'accounts:logout_dark' %}?next={{request.get_full_path}}" style="color: white;"{% endif %}>خروج</a></span>
+            {% else %}
+            {% comment %} <p>{{request.get_full_path}}</p> {% endcomment %}
+              <a {% if 'light' in request.path %}href="{% url 'accounts:login_light' %}?next={{request.get_full_path}}" style="color: black;"{% else %}href="{% url 'accounts:login_dark' %}?next={{request.get_full_path}}" style="color: white;"{% endif %}><span>ورود / ثبت نام</span></a>
+            {% endif %}
           </div>
           <!-- share btn end -->
           <!-- navigation -->
@@ -86,35 +93,36 @@
               <ul>
                 <li>
                   <a href="{% if 'light' in request.path %}
-                      {% url 'light_mode:index_carousel2' %}
+                      {% url 'light_mode:contact' %}
                     {% else %}
-                      {% url 'light_mode:index_carousel2_dark' %}
+                      {% url 'light_mode:contact_dark' %}
                     {% endif %}"
-                    class="{% if '/light/' == request.path or '/dark/' == request.path %}act-link{% endif %}">
-                    Home
+                    class="{% if 'contact' in request.path %}act-link{% endif %}">
+                    ارتباط با ما
                   </a>
-                  <!-- second level -->
-                  {% comment %} <ul>
-                    <li>
-                      <a href="{% url 'light_mode:index_carousel' %}">Carousel</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'light_mode:index_slider' %}">Slider</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'light_mode:index_imagesGrid' %}">Images Grid</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'light_mode:index_carousel2' %}">Carousel 2</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'light_mode:index_video' %}">Video</a>
-                    </li>
-                  </ul>
-                  <!-- second level end --> {% endcomment %}
                 </li>
                 <li>
-                  <a href="#">Portfolio</a>
+                  <a href="{% if 'light' in request.path %}
+                      {% url 'light_mode:about' %}
+                    {% else %}
+                      {% url 'light_mode:about_dark' %}
+                    {% endif %}"
+                    class="{% if 'about' in request.path %}act-link{% endif %}">
+                    در باره ی ما
+                  </a>
+                </li>
+                <li>
+                  <a href="{% if 'light' in request.path %}
+                      {% url 'blog:index_light' %}
+                    {% else %}
+                      {% url 'blog:index_dark' %}
+                    {% endif %}"
+                    class="{% if 'blog' in request.path %}act-link{% endif %}">
+                    بلاگ
+                  </a>
+                </li>
+                <li>
+                  <a href="#">محصولات</a>
                   <!-- second level -->
                   <ul>
                     <li>
@@ -150,44 +158,43 @@
                 </li>
                 <li>
                   <a href="{% if 'light' in request.path %}
-                      {% url 'light_mode:about' %}
+                      {% url 'light_mode:index_carousel2' %}
                     {% else %}
-                      {% url 'light_mode:about_dark' %}
+                      {% url 'light_mode:index_carousel2_dark' %}
                     {% endif %}"
-                    class="{% if 'about' in request.path %}act-link{% endif %}">
-                    About
+                    class="{% if '/light/' == request.path or '/dark/' == request.path %}act-link{% endif %}">
+                    خانه
                   </a>
-                </li>
-                <li>
-                  <a href="{% if 'light' in request.path %}
-                      {% url 'blog:index_light' %}
-                    {% else %}
-                      {% url 'blog:index_dark' %}
-                    {% endif %}"
-                    class="{% if 'blog' in request.path %}act-link{% endif %}">
-                    News
-                  </a>
-                </li>
-                <li>
-                  <a href="{% if 'light' in request.path %}
-                      {% url 'light_mode:contact' %}
-                    {% else %}
-                      {% url 'light_mode:contact_dark' %}
-                    {% endif %}"
-                    class="{% if 'contact' in request.path %}act-link{% endif %}">
-                    Contacts
-                  </a>
+                  <!-- second level -->
+                  {% comment %} <ul>
+                    <li>
+                      <a href="{% url 'light_mode:index_carousel' %}">Carousel</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'light_mode:index_slider' %}">Slider</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'light_mode:index_imagesGrid' %}">Images Grid</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'light_mode:index_carousel2' %}">Carousel 2</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'light_mode:index_video' %}">Video</a>
+                    </li>
+                  </ul>
+                  <!-- second level end --> {% endcomment %}
                 </li>
               </ul>
             </nav>
           </div>
           <!-- navigation end -->
           <!-- share-wrapper -->
-          <div class="share-wrapper">
+          {% comment %} <div class="share-wrapper">
             <div class="share-inner">
               <div class="share-container"></div>
             </div>
-          </div>
+          </div> {% endcomment %}
           <!-- share-wrapper end -->
         </div>
       </header>
@@ -205,14 +212,14 @@
         <div class="footer_contacts">
           <ul>
             <li>
-              <span>Mail :</span><a href="#" target="_blank">yourmail@domain.com</a>
+              <span>Mail :</span><a href="#" target="_blank">l.o0of.war@gmail.com</a>
             </li>
             <li>
-              <span>Phone :</span><a href="#">+3(111)123456789</a>
+              <span>Phone :</span><a href="#">09917695905</a>
             </li>
           </ul>
         </div>
-        <div class="policy-box">Photogam 2023 . All rights reserved.</div>
+        <div class="policy-box">Mr.BoO 2023 . All rights reserved.</div>
       </footer>
       <div class="to-top-btn to-top">
         <i class="fal fa-long-arrow-up"></i>
@@ -268,16 +275,9 @@
   </body>
   <!-- Main msg for all pages *********************************************************************************** -->
   {% if messages %}
-    <script>
-      alert('has some msgs')
-    </script>
     {% for message in messages %}
-      <script>
-        alert('has a {{message.tags}}')
-      </script>
-      {% if message.tags == 'success' %}
+      {% if message.tags == 'alert-success' %}
         <script>
-          alert('Succes msg')
           Swal.fire({
             icon: 'success',
             title: 'Well',
@@ -285,7 +285,7 @@
             footer: '<a href="/">Home</a>'
           })
         </script>
-      {% elif message.tags == 'error' %}
+      {% elif message.tags == 'alert-error' %}
         <script>
           Swal.fire({
             icon: 'error',

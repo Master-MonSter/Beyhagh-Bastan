@@ -11,6 +11,15 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-secondary',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+ }
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,6 +53,7 @@ INSTALLED_APPS = [
     'blog',
     'light_mode',
     'captcha',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -175,8 +185,23 @@ CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
 # CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
 # Dictonary word
 # CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.word_challenge'
-
 CAPTCHA_FONT_SIZE = 40
 # CAPTCHA_IMAGE_SIZE = (200, 50)
 # CAPTCHA_LENGTH = 5
 # ******************************** Captcha ********************************
+
+# LOGIN_URL = "accounts:login_light"
+# LOGIN_REDIRECT_URL = ""
+# LOGOUT_REDIRECT_URL = "accounts:login_light"
+
+# ******************************** reset password with email ********************************
+# !!!  C u o t i o n  !!! We must change some lines on the auth.views and moddified app name on th password_reset_email.html in PasswordResetEmail class
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"    # With console
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"         # With email
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_POST = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER ='beyhagh.bastan.antique@gmail.com'
+EMAIL_HOST_PASSWORD ='byxy leux imad acea' # From beyhagh.bastan.antique@gmail.com
+# ******************************** reset password with email ********************************
+

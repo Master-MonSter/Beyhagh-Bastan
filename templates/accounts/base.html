@@ -1,0 +1,92 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    {% block extrahead %}
+
+    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <!-- External CSS libraries -->
+    <link type="text/css" rel="stylesheet" href="{% static 'account_assets/css/bootstrap.min.css' %}" />
+    {% comment %} <link type="text/css" rel="stylesheet" href="{% static 'account_assets/fonts/font-awesome/css/font-awesome.min.css' %}" /> {% endcomment %}
+    <link type="text/css" rel="stylesheet" href="{% static 'account_assets/fonts/flaticon/font/flaticon.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="{% static 'account_assets/img/favicon.ico' %}" type="image/x-icon" />
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Custom Stylesheet -->
+    <link type="text/css" rel="stylesheet" href="{% static 'account_assets/css/style.css' %}" />
+  </head>
+  <body id="top">
+    <div class="page_loader"></div>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- External JS libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
+    <script src="{% static 'account_assets/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'account_assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'account_assets/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'account_assets/js/app.js' %}"></script>
+    <!-- Custom JS Script -->
+  </body>
+  <!-- Main msg for all pages *********************************************************************************** -->
+  {% if messages %}
+    {% for message in messages %}
+      <p>{{ message|safe }}</p>
+      {% if message.tags == 'alert-success' %}
+        <script>
+          Swal.fire({
+            icon: 'success',
+            title: 'Well...',
+            html: '{{message|safe}}',
+            footer: '<a href="/">Home</a>'
+          })
+        </script>
+      {% elif message.tags == 'alert-danger' %}
+        <script>
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            html: '{{message|safe}}',
+            footer: '<a href="/">Home</a>'
+          })
+        </script>
+      {% elif message.tags == 'alert-info' %}
+        <script>
+          Swal.fire({
+            icon: 'info',
+            title: 'Attention...',
+            html: '{{message|safe}}',
+            footer: '<a href="/">Home</a>'
+          })
+        </script>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  <!-- Main msg for all pages *********************************************************************************** -->
+  {% block extrafooter %}
+
+  {% endblock %}
+  <!-- ******************* Eyes part ********************* -->
+  <script>
+    $('.toggle-password').click(function () {
+      $(this).toggleClass('fa-eye fa-eye-slash')
+      var input = $($(this).attr('toggle'))
+      if (input.attr('type') == 'password') {
+        input.attr('type', 'text')
+      } else {
+        input.attr('type', 'password')
+      }
+    })
+  </script>
+  <!-- ******************* Eyes part ********************* -->
+</html>

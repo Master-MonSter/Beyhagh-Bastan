@@ -135,7 +135,7 @@ h3 {
 .logo-holder {
 	position:absolute;
 	top:150px;
-	left: 150px;
+	right: 150px;
  
 	z-index:12;
 }
@@ -171,13 +171,13 @@ h3 {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	right: 150px;
+	left: 150px;
  	width: 50%;
 	z-index:3;
 }
 .version-inner {
 	width: 100%;
-	float: right;
+	float: left;
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -192,7 +192,7 @@ h3 {
 .dark-ver {
 	position:absolute;
 	z-index:2;
-	right:0;
+	left:0;
 	top:0;
 	opacity:0;
 	visibility:hidden;
@@ -259,13 +259,13 @@ h3 {
 } 
 .details_templ {
 	position: absolute;
-	left: 150px;
+	right: 150px;
 	top: 50%;
 	transform: translateY(-50%);
 	z-index: 10;
 }
 .details_templ h3 {
-	text-align: left;
+	text-align: right;
 	color:#fff;
 	font-size: 1.4em;
 } 
@@ -305,22 +305,24 @@ h3 {
 }
 @media only screen and  (max-width: 1500px) {
 .version-wrap {
-	right: 100px;
+	left: 100px;
 }
 }
 .logo-holder , .notifer , .details_templ {
-    left: 100px;
+    right: 100px;
 }
 @media only screen and  (max-width: 1400px) {
 .logo-holder , .notifer , .details_templ , .version-wrap  {
 	position: relative;
-	left: 0;
-	float: left;
+	right: 0;
+	float: right;
 	top: 0;
 	transform: translateY(0);
 	width: 100%;
 }
 .version-wrap  {
+	float: left;
+	left: 0;
 	margin :50px 0;
 	padding: 0 30px;
  

@@ -483,9 +483,11 @@ blockquote p {
 	margin-top: 30px;
 }
 .share-btn span {
+	float: right;
+	margin-right: 15px;
     font-size: .9em;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
 	position: relative;
 }
 .share-btn i {
@@ -4106,5 +4108,12 @@ section {
 	-webkit-background-size:cover;
 	background-position:center;
 }
+}
+
+.hi_user {
+	font-size: 1em;
+	font-weight: 700;
+	color: #0dcaf0;
+	cursor: default;
 }
 

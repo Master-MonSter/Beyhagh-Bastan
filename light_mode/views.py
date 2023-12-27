@@ -107,4 +107,5 @@ def newsletter_view(request):
             # ************************************** Set error list ***********************************************
     return HttpResponseRedirect(request.POST.get('path'))
 
-
+def error_page_404(request):
+    return render(request, '404_error_page.html')
