@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 {% load jalali_tags %}
 {% block extrahead %}
 
@@ -151,46 +152,47 @@
         <section>
           <div class="container small-container">
             <div class="section-title n_dec st_small">
-              <h3>Comments</h3>
+              <h3>دیدگاه ها</h3>
             </div>
             <div class="commnets-list">
               <!-- comment-item -->
-              <div class="comment-item">
-                <div class="comment-author">
-                  <img alt="" src="{% static 'images/avatar/2.jpg' %}" width="50" height="50" />
-                  <h5><a href="#">Kevin</a></h5>
-                  <h6><a href="#">January 02, 2022</a></h6>
+              {% if comments %}
+                {% for comment in comments %}
+                  <div class="comment-item">
+                    <div class="comment-author">
+                      <img alt="" src="{% static 'images/avatar/2.jpg' %}" width="50" height="50" />
+                      <h5><a href="#">{{comment.name}}</a></h5>
+                      <h6><a href="#">{{comment.created_date|naturaltime}}</a></h6>
+                    </div>
+                    <div class="comment-body gray-bg">
+                      <p>{{comment.message|truncatewords_html:10}}</p>
+                      <div class="comm-num">{{forloop.counter}} .</div>
+                    </div>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="comment-item">
+                  <div class="comment-author">
+                  </div>
+                  <div class="comment-body gray-bg">
+                  </div>
                 </div>
-                <div class="comment-body gray-bg">
-                  <p>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo."</p>
-                  <div class="comm-num">01.</div>
-                </div>
-              </div>
-              <!-- comment-item end -->
-              <!-- comment-item -->
-              <div class="comment-item">
-                <div class="comment-author">
-                  <img alt="" src="{% static 'images/avatar/3.jpg' %}" width="50" height="50" />
-                  <h5><a href="#">Alexa</a></h5>
-                  <h6><a href="#">January 12, 2021</a></h6>
-                </div>
-                <div class="comment-body gray-bg">
-                  <p>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo."</p>
-                  <div class="comm-num">02.</div>
-                </div>
-              </div>
+              {% endif %}
               <!-- comment-item end -->
             </div>
             <div class="comment-form">
               <div class="section-title n_dec st_small">
-                <h3>Add Comment</h3>
+                <h3>ارسال دیدگاه</h3>
               </div>
-              <form class="custom-form" name="commentform" id="commentform">
+              <form class="custom-form" method="post">
+                {% csrf_token %}
                 <fieldset>
-                  <input type="text" name="name" id="name" placeholder="Your Name *" value="" />
-                  <input type="text" name="email" id="email" placeholder="Email Address *" value="" />
-                  <textarea name="comments" id="comments" cols="40" rows="3" placeholder="Your Message:"></textarea>
-                  <button class="btn" id="submit">Send Comment</button>
+                  <input type="hidden" name="post" value="{{context.id}}">
+                  <input type="text" {% if request.user.is_authenticated %}hidden="True" value="{{request.user.first_name}}"{% else %}value=""{% endif %} name="name" id="name" placeholder="* نام" required/>
+                  <input type="text" {% if request.user.is_authenticated %}hidden="True" value="{{request.user.email}}"{% else %}value=""{% endif %} name="email" id="email-comment" placeholder="* ایمیل آدرس" style="" required/>
+                  <input type="text" name="subject" id="subject" placeholder=":عنوان" value="" required/>
+                  <textarea name="message" id="comments" cols="40" rows="3" placeholder=":پیام شما" required></textarea>
+                  <button class="btn" id="submit">ارسال</button>
                 </fieldset>
               </form>
             </div>
@@ -199,7 +201,7 @@
         <!-- section end -->
         <div class="order-wrap">
           <div class="container small-container">
-            <h4>Ready To order Your Project?</h4>
+            <h4>آماده شرکت در گالری هستید؟</h4>
           </div>
           <a href="{% if 'dark' in request.path %}
               {% url 'light_mode:contact_dark' %}
@@ -207,7 +209,7 @@
               {% url 'light_mode:contact' %}
             {% endif %}"
             class="order_btn">
-            Get In Touch
+            ارتباط با ما
           </a>
         </div>
       </div>

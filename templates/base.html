@@ -274,7 +274,7 @@
     <script src="{% static 'js/map.js' %}"></script>
   </body>
   <!-- Main msg for all pages *********************************************************************************** -->
-  {% if messages %}
+  {% comment %} {% if messages %}
     {% for message in messages %}
       {% if message.tags == 'alert-success' %}
         <script>
@@ -296,6 +296,39 @@
         </script>
       {% endif %}
     {% endfor %}
-  {% endif %}
+  {% endif %} {% endcomment %}
+{% if messages %}
+  {% for message in messages %}
+    <p>{{ message|safe }}</p>
+    {% if message.tags == 'alert-success' %}
+      <script>
+        Swal.fire({
+          icon: 'success',
+          title: 'Well...',
+          html: '{{message|safe}}',
+          footer: '<a href="/">Home</a>'
+        })
+      </script>
+    {% elif message.tags == 'alert-danger' %}
+      <script>
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          html: '{{message|safe}}',
+          footer: '<a href="/">Home</a>'
+        })
+      </script>
+    {% elif message.tags == 'alert-info' %}
+      <script>
+        Swal.fire({
+          icon: 'info',
+          title: 'Attention...',
+          html: '{{message|safe}}',
+          footer: '<a href="/">Home</a>'
+        })
+      </script>
+    {% endif %}
+  {% endfor %}
+{% endif %}
   <!-- Main msg for all pages *********************************************************************************** -->
 </html>

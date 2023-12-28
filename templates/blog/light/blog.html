@@ -114,24 +114,31 @@
             </div>
             <!-- pagination -->
             {% if context.paginator.count > 0 %}
-                <div class="pagination">
+              <div class="pagination">
                 <div class="pr-bg pr-bg-white"></div>
                 {% if context.has_previous %}
-                    <a href="?page={{ context.previous_page_number }}" class="prevposts-link"><i class="fal fa-long-arrow-left"></i></a>
+                  <a href="?page={{ context.previous_page_number }}" class="prevposts-link"><i class="fal fa-long-arrow-left"></i></a>
                 {% endif %}
                 {% for page in context.paginator.page_range %}
-                    <a href="?page={{ page }}" class="{% if context.number == page %}current-page{% endif %}">{{ page }}</a>
+                  <a href="?page={{ page }}" class="{% if context.number == page %}{% endif %}">{{ page }}</a>
                 {% endfor %}
                 {% comment %} <a href="#" class="current-page">02</a> {% endcomment %}
                 {% if context.has_next %}
-                    <a href="?page={{ context.next_page_number }}" class="nextposts-link"><i class="fal fa-long-arrow-right"></i></a>
+                  <a href="?page={{ context.next_page_number }}" class="nextposts-link"><i class="fal fa-long-arrow-right"></i></a>
                 {% endif %}
-                </div>
+              </div>
             {% else %}
-                <div class="pagination">
+              <div class="pagination">
                 <div class="pr-bg pr-bg-white"></div>
-                <a href="{% if 'light' in request.path %}{% url 'blog:index_light' %}{% else %}{% url 'blog:index_dark' %}{% endif %}" class="current-page">نمایش تمامی بلاگ ها</a>
-                </div>
+                <a href="{% if 'light' in request.path %}
+                    {% url 'blog:index_light' %}
+                  {% else %}
+                    {% url 'blog:index_dark' %}
+                  {% endif %}"
+                  class="current-page">
+                  نمایش تمامی بلاگ ها
+                </a>
+              </div>
             {% endif %}
             <!-- pagination end -->
           </div>
@@ -139,9 +146,16 @@
         <!-- section end -->
         <div class="order-wrap">
           <div class="container small-container">
-            <h4>Ready To order Your Project?</h4>
+            <h4>آماده شرکت در گالری هستید؟</h4>
           </div>
-          <a href="{% url 'light_mode:contact' %}" class="order_btn">Get In Touch</a>
+          <a href="{% if 'dark' in request.path %}
+              {% url 'light_mode:contact_dark' %}
+            {% else %}
+              {% url 'light_mode:contact' %}
+            {% endif %}"
+            class="order_btn">
+            ارتباط با ما
+          </a>
         </div>
       </div>
       <!-- column-wrapper -->

@@ -2,9 +2,15 @@ from django.shortcuts import render, redirect, get_object_or_404
 from datetime import datetime
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Post, PostImage
+from .models import Post, PostImage, Comment
+from .forms import CommentForm
 from django.contrib import messages
 from django.db.models import Q
+
+def dark_light_switch(request):
+    if 'dark' in request.path:
+        return ('dark')
+    return ('light')
 
 def check_published_date():
     # Now time with timezone
@@ -62,14 +68,14 @@ def index_view(request, **kwargs):
 
 def blog_single_view(request, pid):
     # ******************************** About CommentForm ********************************
-    # if request.method == 'POST':
-    #     form = CommentForm(request.POST)
-    #     if form.is_valid():
-    #         messages.add_message(request, messages.SUCCESS, 'Your comment submitted successfully')
-    #         form.save()
-    #     else:
-    #         messages.add_message(request, messages.ERROR, 'Your comment didnt submite')
-    # form = CommentForm()
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            messages.add_message(request, messages.SUCCESS, 'دیدگاه شما با موفقیت ثبت گردید')
+            form.save()
+        else:
+            messages.add_message(request, messages.ERROR, 'متاسفانه دیدگاه شما ثبت نشد')
+    form = CommentForm()
     # ******************************** About CommentForm ********************************
 
     posts = check_published_date()
@@ -79,7 +85,7 @@ def blog_single_view(request, pid):
         messages.add_message(request, messages.INFO, 'You are not logged in<br>Please login')
         # return redirect('accounts:login', 'blog:index')
         return redirect("/accounts/login/?next=" + request.path)
-    # comments = Comment.objects.filter(post=context.id, approved = True)
+    comments = Comment.objects.filter(post=context.id, approved = True)
     context.counted_views = context.counted_views + 1
     context.save()
     # Finding the post before and after
@@ -87,8 +93,8 @@ def blog_single_view(request, pid):
     prevPost = posts.filter(pk__lt=pid).last()
     images = PostImage.objects.filter(post_id=pid)
     print(images)
-    # context = {'context': context, 'prevPost': prevPost, 'nextPost': nextPost, 'comments': comments, 'form': form}
-    context = {'context': context, 'prevPost': prevPost, 'nextPost': nextPost, 'images': images}
+    context = {'context': context, 'prevPost': prevPost, 'nextPost': nextPost, 'comments': comments, 'form': form, 'images': images}
+    # context = {'context': context, 'prevPost': prevPost, 'nextPost': nextPost, 'images': images}
     # return render(request, 'blog/blog-single.html', context)
     print(request.path)
     return render(request, 'blog/light/blog-single.html', context)

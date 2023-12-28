@@ -41,7 +41,6 @@
   <!-- Main msg for all pages *********************************************************************************** -->
   {% if messages %}
     {% for message in messages %}
-      <p>{{ message|safe }}</p>
       {% if message.tags == 'alert-success' %}
         <script>
           Swal.fire({

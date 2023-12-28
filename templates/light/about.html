@@ -328,9 +328,16 @@
         </div>
         <div class="order-wrap">
           <div class="container small-container">
-            <h4>Ready To order Your Project?</h4>
+            <h4>آماده شرکت در گالری هستید؟</h4>
           </div>
-          <a href="{% url 'light_mode:contact' %}" class="order_btn">Get In Touch</a>
+          <a href="{% if 'dark' in request.path %}
+              {% url 'light_mode:contact_dark' %}
+            {% else %}
+              {% url 'light_mode:contact' %}
+            {% endif %}"
+            class="order_btn">
+            ارتباط با ما
+          </a>
         </div>
       </div>
       <!-- column-wrapper -->

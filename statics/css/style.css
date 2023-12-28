@@ -2847,7 +2847,7 @@ section {
 } 
 .order-wrap h4 {
 	color:#fff;
-	text-align: left;
+	text-align: right;
 	line-height: 90px;
 	font-size: 1.3em;
 	font-weight: 800;
@@ -2858,7 +2858,7 @@ section {
 	height: 60px;
 	line-height: 60px;
 	width: 180px;
-	right: 20px;
+	left: 20px;
 	border-radius: 30px;
 	color:#fff;
 	z-index: 20;
@@ -4117,3 +4117,34 @@ section {
 	cursor: default;
 }
 
+/* *********************** Some css classes ************************* */
+.rtl {
+    text-align: right;
+}
+
+.ltr {
+	left: left;
+}
+
+.ltr-with-rtl-pHolder {
+    text-align: left;
+}
+
+.ltr-with-rtl-pHolder::placeholder {
+    text-align: right;
+}
+
+#email-comment::placeholder {
+	text-align: right;
+}
+#email-comment {
+	text-align: left;
+}
+
+.custom-form input[type=email]  {
+	text-align: left;
+}
+.custom-form input[type=email]::placeholder  {
+	text-align: right;
+}
+/* *********************** Some css classes ************************* */
