@@ -79,7 +79,7 @@
                   </div>
                   <!-- inline-facts end -->
                 </div>
-                <a href="{% url 'light_mode:portfolio_horizontal' %}" class="btn fl-btn">My Portfolio</a>
+                <a href="{% if 'dark' in request.path %}{% url 'portfolio:portfolio_dark' %}{% else %}{% url 'portfolio:portfolio_light' %}{% endif %}" class="btn fl-btn">لیست محصولات</a>
               </div>
             </div>
           </div>

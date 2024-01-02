@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites', # Added it for sites framework
+    'django.contrib.sitemaps',  # Added it for enabled sites map
     'django.contrib.humanize',
     'django_summernote',
     'jalali_date',
