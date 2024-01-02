@@ -20,9 +20,22 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from light_mode.sitemaps import StaticViewSitemap
+from blog.sitemaps import BlogSitemap_single_post, BlogSitemap_category, BlogSitemap_tag
+from portfolio.sitemaps import PortfolioSitemap_portfolio, PortfolioSitemap_category, PortfolioSitemap_tag
 
 sitemaps = {
+    # It seems that the app name is not important.
     "static": StaticViewSitemap,
+    
+    # Blog
+    "blog_single_post": BlogSitemap_single_post,
+    "blog_category": BlogSitemap_category,
+    "blog_tag": BlogSitemap_tag,
+    
+    # Portfolio
+    "portfolio_portfolio": PortfolioSitemap_portfolio,
+    "portfolio_category": PortfolioSitemap_category,
+    "portfolio_tag": PortfolioSitemap_tag,
 }
 
 urlpatterns = [

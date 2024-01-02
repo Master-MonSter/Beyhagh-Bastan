@@ -7,12 +7,16 @@ class Category(models.Model):
     name = models.CharField(max_length=255)
     def __str__(self):
         return self.name
+    def get_absolute_url(self):
+        return reverse("blog:category_light", kwargs={"cat_name": self.name})
 
 # I don't use taggit here because it dosent work for persian words so I create a Tag model same Category model       
 class Tag(models.Model):
     name = models.CharField(max_length=255)
     def __str__(self):
         return self.name
+    def get_absolute_url(self):
+        return reverse("blog:tag_light", kwargs={"tag_name": self.name})
 
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
@@ -42,7 +46,7 @@ class Post(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('blog:post', kwargs={'pid': self.id})
+        return reverse('blog:blog_single_light', kwargs={'pid': self.id})   # It handles reverse items for sitemaps and create a button in the admin for each post
     
 # Created for Posts' images excluded image-main
 class PostImage(models.Model):

@@ -6,12 +6,19 @@ class Category(models.Model):
     name = models.CharField(max_length=255)
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("portfolio:category_light", kwargs={"cat_name": self.name})
+
 
 # I don't use taggit here because it dosent work for persian words so I create a Tag model same Category model       
 class Tag(models.Model):
     name = models.CharField(max_length=255)
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("portfolio:tag_light", kwargs={"tag_name": self.name})
 
 class Product(models.Model):
     # *** Attention *** for using (Char field) or (Text field) for setting empty in these it's better don't use null=True just use blank=True Because django use in two case 2values("", None)
@@ -45,8 +52,8 @@ class Product(models.Model):
     def __str__(self):
         return self.title
     
-    # def get_absolute_url(self):
-    #     return reverse('portfolio:post', kwargs={'pid': self.id})
+    def get_absolute_url(self):
+        return reverse('portfolio:portfolio_single_light', kwargs={'pid': self.id})
     
 # Created for Posts' images excluded image-main
 class ProductImage(models.Model):

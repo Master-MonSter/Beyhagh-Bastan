@@ -92,11 +92,9 @@ def blog_single_view(request, pid):
     nextPost = posts.filter(pk__gt=pid).first()
     prevPost = posts.filter(pk__lt=pid).last()
     images = PostImage.objects.filter(post_id=pid)
-    print(images)
     context = {'context': context, 'prevPost': prevPost, 'nextPost': nextPost, 'comments': comments, 'form': form, 'images': images}
     # context = {'context': context, 'prevPost': prevPost, 'nextPost': nextPost, 'images': images}
     # return render(request, 'blog/blog-single.html', context)
-    print(request.path)
     return render(request, 'blog/light/blog-single.html', context)
 
 
