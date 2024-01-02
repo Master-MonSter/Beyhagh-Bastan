@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # Added it for sites framework
     'django.contrib.humanize',
     'django_summernote',
     'jalali_date',
@@ -216,3 +217,5 @@ DECIMAL_SEPARATOR='.'
 
 NUMBER_GROUPING = 3
 # ***************************** Set Thousand Separator ********************************
+
+SITE_ID = 2 # Using site id for site framework
