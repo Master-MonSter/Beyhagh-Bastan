@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 # from blog.feeds import LatestEntriesFeed
 from django.contrib.auth import views as auth_views
+from portfolio.feeds import LatestEntriesFeed
+
 
 app_name = 'portfolio'
 
@@ -15,5 +17,7 @@ urlpatterns = [
     path('search/', views.index_view, name='search'),
     path('light/single-<int:pid>', views.portfolio_single_view, name='portfolio_single_light'),
     path('dark/single-<int:pid>', views.portfolio_single_view, name='portfolio_single_dark'),
+    path("light/rss/feed/", LatestEntriesFeed()),
+
 ]
     

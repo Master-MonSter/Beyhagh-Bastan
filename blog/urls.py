@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from blog.feeds import LatestEntriesFeed
+
 
 app_name = 'blog'
 
@@ -13,5 +15,6 @@ urlpatterns = [
     path('dark/tag-<str:tag_name>', views.index_view, name='tag_dark'),
     path('light/tag-<str:tag_name>', views.index_view, name='tag_light'),
     path('search/', views.index_view, name='search'),
+    path("light/rss/feed/", LatestEntriesFeed()),
     # path('light/search/', views.index_view, name='search_light'),
 ]
