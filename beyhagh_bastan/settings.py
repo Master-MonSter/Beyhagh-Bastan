@@ -40,6 +40,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,6 +59,7 @@ INSTALLED_APPS = [
     'accounts',
     'django_sass',
     'portfolio',
+    'robots',
 ]
 
 MIDDLEWARE = [
@@ -220,3 +222,8 @@ NUMBER_GROUPING = 3
 # ***************************** Set Thousand Separator ********************************
 
 SITE_ID = 2 # Using site id for site framework
+
+# Admin's captcha types(simple-captcha, recaptcha, recaptcha2)
+MULTI_CAPTCHA_ADMIN = {
+    'engine': 'simple-captcha',
+}

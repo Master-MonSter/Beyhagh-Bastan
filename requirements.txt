@@ -6,3 +6,5 @@ django-simple-captcha
 django-summernote
 django-jalali-date
 django-sass
+django-robots
+django-multi-captcha-admin
