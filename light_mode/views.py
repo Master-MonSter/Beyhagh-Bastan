@@ -2,8 +2,24 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from light_mode.forms import ContactForm, NewsLetterForm
 from django.contrib import messages
+from portfolio.models import Product
+from datetime import datetime
+from django.utils import timezone
 
 # Create your views here.
+def dark_light_switch(request):
+    if 'dark' in request.path:
+        return ('dark')
+    return ('light')
+
+def check_published_date():
+    # Now time with timezone
+    now = datetime.now()
+    now = timezone.make_aware(datetime(now.year, now.month, now.day, now.hour, now.minute, now.second))
+    # Now time without timezone
+    # now = datetime(now.year, now.month, now.day, now.hour, now.minute, now.second)
+    products = Product.objects.filter(published_date__lte=now, status=1)
+    return products
 
 # ************************************************* Indexes ************************************************
 def index_carousel_view(request):
@@ -16,7 +32,9 @@ def index_imagesGrid_view(request):
     return render(request, 'light/index3.html')
 
 def index_carousel2_view(request):
-    return render(request, 'light/index4.html')
+    products = check_published_date()
+    context = {'products': products}
+    return render(request, 'light/index4.html', context)
 
 def index_video_view(request):
     return render(request, 'light/index5.html')
@@ -107,8 +125,9 @@ def newsletter_view(request):
             # ************************************** Set error list ***********************************************
     return HttpResponseRedirect(request.POST.get('path'))
 
-# def error_page_404(request):
-#     return render(request, '404.html')
+def error_page_404(request):
+    return render(request, '404.html')
 
-def custom_404(request, exception):
-    return render(request, '404.html', status=404)
+# Debug is False
+# def custom_404(request, exception):
+#     return render(request, '404.html', status=404)

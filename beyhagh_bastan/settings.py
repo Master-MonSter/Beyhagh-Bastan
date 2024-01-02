@@ -32,9 +32,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-v8!i8204e5_v@_n82#d_2k@_92pn8=*5aqgvfu4-v3z0zr3hw@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'captcha',
     'accounts',
     'django_sass',
+    'portfolio',
 ]
 
 MIDDLEWARE = [
@@ -206,3 +207,12 @@ EMAIL_HOST_USER ='beyhagh.bastan.antique@gmail.com'
 EMAIL_HOST_PASSWORD ='byxy leux imad acea' # From beyhagh.bastan.antique@gmail.com
 # ******************************** reset password with email ********************************
 
+# ***************************** Set Thousand Separator ********************************
+USE_THOUSAND_SEPARATOR = True
+
+THOUSAND_SEPARATOR=','
+
+DECIMAL_SEPARATOR='.'
+
+NUMBER_GROUPING = 3
+# ***************************** Set Thousand Separator ********************************

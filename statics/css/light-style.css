@@ -104,3 +104,8 @@ body , .ml_bg-item:before , .main-loader , .main-inner , .aside-column , .main-f
 	box-shadow: 0  10px 44px 0px rgba(0,0,0, .3);
 }
 }
+
+.text_bloder {
+	font-size: x-large !important;
+	color: rgb(0, 93, 105) !important;
+}

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+{% endblock %}
+{% load portfolio_tags %}
+{% block content %}
+  <!-- wrapper -->
+  <div id="wrapper">
+    <!-- content-holder -->
+    <div class="content-holder">
+      <!-- vertical-portfolio_wrap -->
+      <div class="vertical-portfolio_wrap" id="port-scroll">
+        <!-- portfolio start -->
+        <div class="gallery-items big-padding lightgallery gi_left_al">
+          {% for product in products %}
+            <!-- gallery-item -->
+            <div class="gallery-item {% for tag in product.tag.all %}{{tag.id}} {% endfor %}">
+              <div class="grid-item-holder hov_zoom">
+                <img src="{{ product.image_main.url }}" alt="" />
+                <div class="grid-item-info">
+                  <h3><a href="{% if 'dark' in request.path %}{% url 'portfolio:portfolio_single_dark' product.id %}{% else %}{% url 'portfolio:portfolio_single_light' product.id %}{% endif %}" class="ajax">{{ product.title }}</a></h3>
+                  <p>{{ product.sub_title }}</p>
+                </div>
+                <div class="pr_num"></div>
+                <a href="{{ product.image_main.url }}" class="grid-media-zoom image-popup"><i class="far fa-search"></i></a>
+              </div>
+            </div>
+            <!-- gallery-item end -->
+          {% endfor %}
+        </div>
+        <!-- portfolio end -->
+      </div>
+      <!-- vertical-portfolio_wrap end -->
+      <!-- fixed-bottom-container -->
+      <div class="fixed-bottom-container f_bc_vis">
+        <div class="scroll-down-wrap">
+          <div class="mousey">
+            <div class="scroller"></div>
+          </div>
+        </div>
+        <div class="filter-btn hid-filter">
+          <div class="filter-btn_container"></div>
+          <span class="filt-title">برچسب ها</span>
+        </div>
+        <div class="folio-counter">
+          <div class="num-album"></div>
+          <div class="all-album"></div>
+        </div>
+      </div>
+      <!-- fixed-bottom-container end -->
+      <!-- gallery-filters-wrap -->
+      <div class="gallery-filters-wrap">
+        <div class="gallery-filters">
+          {% comment %} <a href="#" class="gallery-filter gallery-filter-active" data-filter="*">All Cases</a>
+          <a href="#" class="gallery-filter" data-filter=".nature">Nature</a>
+          <a href="#" class="gallery-filter" data-filter=".models">Models</a>
+          <a href="#" class="gallery-filter" data-filter=".couples">Couples</a>
+          <a href="#" class="gallery-filter" data-filter=".outdoor">Outdoor</a> {% endcomment %}
+          <a href="{% if 'dark' in request.path %}{% url 'portfolio:portfolio_dark' %}{% else %}{% url 'portfolio:portfolio_light' %}{% endif %}" class="gallery-filter text_bloder">تمامی محصولات</a><br><br><br>
+          {% for tag, id in zipped_tag_id %}
+          <a href="#" class="gallery-filter" data-filter=".{{id}}">{{tag}}</a>
+
+          {% comment %} It handles id_con's index {% endcomment %}
+          {% comment %} <a href="{% if 'dark' in request.path %}{% url 'portfolio:category_dark' cat %}{% else %}{% url 'portfolio:category_light' cat %}{% endif %}" class="gallery-filter" data-filter=".{{cat_id}}">{{cat}}{{cat_id|value:forloop.counter0}}</a> {% endcomment %}
+
+            {% comment %} The (modulo calculates mode of a number) {% endcomment %}
+            {% if forloop.counter|modulo:5  %}<br><br>{% endif %}
+          {% endfor %}
+        </div>
+        <div class="gallery-filters-overlay"></div>
+      </div>
+      <!-- gallery-filters-wrap end -->
+    </div>
+    <!-- content-holder end -->
+  </div>
+  <!-- wrapper end -->
+{% endblock %}

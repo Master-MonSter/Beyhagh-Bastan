@@ -1218,9 +1218,9 @@ blockquote p {
 }
 .slide-progress-wrap , .progress-bar-wrap {
 	position: absolute;
-	top: 60px;
+	top: 1px;
 	left: 50%;
-	height: 170px;
+	height: 120px;
 	width: 1px;
 	background: rgba(255,255,255,.2);
 }
@@ -4146,5 +4146,14 @@ section {
 }
 .custom-form input[type=email]::placeholder  {
 	text-align: right;
+}
+
+.text_bloder {
+	font-size: x-large !important;
+	color: rgb(0, 225, 255) !important;
+}
+
+.center {
+	text-align: center !important;
 }
 /* *********************** Some css classes ************************* */

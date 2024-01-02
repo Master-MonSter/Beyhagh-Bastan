@@ -4,9 +4,9 @@ from . import views
 app_name = 'light_mode'
 
 # It is useable when that moved on db
-from django.conf.urls import handler404
-
-handler404 = 'light_mode.views.custom_404'
+# Debug is False
+# from django.conf.urls import handler404
+# handler404 = 'light_mode.views.custom_404'
 
 urlpatterns = [
     # ********************************************* Home pages ****************************************
@@ -29,7 +29,7 @@ urlpatterns = [
     path('portfolio-single4/', views.portfolio_single4_view, name='portfolio_single4'),
     # ********************************************* Portfolios ****************************************
     
-    # path('light/404_error_page/', views.error_page_404, name='404_error_page'),
+    path('light/404_error_page/', views.error_page_404, name='404_error_page'),
 
     path('light/about/', views.about_view, name='about'),
     path('dark/about/', views.about_view, name='about_dark'),

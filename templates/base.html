@@ -14,6 +14,13 @@
     <link type="text/css" rel="stylesheet" href="{% static 'css/plugins.css' %}" />
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link type="text/css" rel="stylesheet" href="{% static 'css/map.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    {% comment %} ********************* Light Gallery ********************* {% endcomment %}
+    <link href="https://cdn.jsdelivr.net/lightgallery/1.3.9/css/lightgallery.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/lightgallery/1.3.9/css/transistions.min.css" rel="stylesheet">
+    {% comment %} ********************* Light Gallery ********************* {% endcomment %}
+
     {% if 'light' in request.path %}
       <link type="text/css" rel="stylesheet" href="{% static 'css/light-style.css' %}" />
     {% endif %}
@@ -28,7 +35,7 @@
     <div id="main">
       <!-- loader -->
       <div class="main-loader">
-        <div class="ml-wrap">
+        <div class="ml-wrap" style="display: inline;">
           <div class="ml-mask"></div>
           <img src="{% if 'light' in request.path %}
               {% static 'images/beyhagh-bastan-black(text).png' %}
@@ -122,18 +129,12 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#">محصولات</a>
+                  <a href="{% if 'dark' in request.path %}{% url 'portfolio:portfolio_dark' %}{% else %}{% url 'portfolio:portfolio_light' %}{% endif %}" class="{% if 'portfolio' in request.path %}act-link{% endif %}">محصولات</a>
                   <!-- second level -->
-                  <ul>
+                  {% comment %} <ul>
                     <li>
                       <a href="{% url 'light_mode:portfolio_vertical' %}">Vertical Grid</a>
                     </li>
-                    {% comment %} <li>
-                      <a href="{% url 'light_mode:portfolio_horizontal' %}">Horizontal Grid</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'light_mode:portfolio_column' %}">Column Grid</a>
-                    </li> {% endcomment %}
                     <li>
                       <a href="#">Single</a>
                       <!-- third level -->
@@ -153,7 +154,7 @@
                       </ul>
                       <!-- third level end -->
                     </li>
-                  </ul>
+                  </ul> {% endcomment %}
                   <!-- second level end -->
                 </li>
                 <li>
@@ -272,6 +273,11 @@
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
     <script src="{% static 'js/map.js' %}"></script>
+
+    {% comment %} ********************* Light Gallery for useing mousewheel in gallery show ********************* {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    {% comment %} ********************* Light Gallery for useing mousewheel in gallery show ********************* {% endcomment %}
+    
   </body>
   <!-- Main msg for all pages *********************************************************************************** -->
   {% comment %} {% if messages %}

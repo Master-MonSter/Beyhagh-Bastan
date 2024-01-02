@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+
+{% endblock %}
+{% block content %}
+  <!-- wrapper -->
+  <div id="wrapper">
+    <!-- content-holder -->
+    <div class="content-holder" data-pagetitle="About Us">
+      <!-- column-image -->
+      <div class="column-image">
+        <div class="bg" data-bg="{% static 'images/bg/18.jpg' %}"></div>
+        <div class="overlay"></div>
+        <div class="column-title">
+          <h2>جزئیات بیشتر</h2>
+          <h3>.برای دریافت هر گونه اطلاعات بیشتر از کالا میتوانید از شماره تلفن و ایمیل  مشخص شده در سایت استفاده نمایید</h3>
+        </div>
+        <div class="ci_dec">
+          <span></span>
+        </div>
+      </div>
+      <!-- column-image end -->
+      <!-- column-wrapper -->
+      <div class="column-wrapper">
+        <section id="sec1">
+          <div class="container small-container">
+            <div class="section-title fl-wrap">
+              <div class="section-number">.01</div></br></br>
+              <h3>{{ product.title }}</h3>
+              <h4>{{ product.sub_title }}</h4>
+            </div>
+          </div>
+          <div class="container small-container">
+            <!-- portfolio start -->
+            <div class="gallery-items lightgallery two-column big-padding sg_items scale_anim">
+              <!-- gallery-item -->
+              {% for image in images %}
+                <div class="gallery-item">
+                {% comment %} <div class="gallery-item {% if forloop.counter == 3 or forloop.counter == 6 or forloop.counter == 9 %}{% endif %}"> {% endcomment %}
+                  <div class="grid-item-holder hov_zoom">
+                    <a href="{{ image }}" class="box-media-zoom popup-image"><i class="fal fa-search"></i></a>
+                    <img src="{{ image }}" alt="" />
+                  </div>
+                </div>
+              {% endfor %}
+              <!-- gallery-item end -->
+            </div>
+            <!-- gallery-items end -->
+          </div>
+          <div class="container small-container">
+            <div class="single_det_wrap">
+              <p>{{ product.info|safe }}</p>
+              <p>{{ product.more_info|safe }}</p><br /><br /><br /><br />
+              <div class="caption-wrap det-anim">
+                <ul>
+                  <li>
+                    <span class="center">(میلیمتر)ابعاد</span>
+                    <a class="center">{{product.dimensions}}</a>
+                  </li>
+                  <li>
+                    <span class="center">جنس</span>
+                    <a class="center">{{product.material}}</a>
+                  </li>
+                  <li>
+                    <span class="center">(گرم)وزن</span>
+                    <a class="center">{{product.weight}}</a>
+                  </li>
+                  <li>
+                    <span class="center">(سال)قدمت</span>
+                    <a class="center">{{product.product_age}}</a>
+                  </li>
+                </ul><br /><br /><br />
+                <ul>
+                  <li>
+                    <span class="center">دسته بندی</span>
+                    <a class="center">{{product.category.first}}</a>
+                  </li>
+                  <li>
+                    <span class="center">تنوع رنگ موجود</span>
+                    <a class="center">{{product.color}}</a>
+                  </li>
+                  <li>
+                    <span class="center">قیمت پایه</span>
+                    <a class="center">{% if product.price == None %}--تماس بگیرید--{% else %}{{product.price}}{% endif %}</a>
+                  </li>
+                  <li>
+                    <span class="center">دیده شده</span>
+                    <a class="center">{{product.counted_views}}</a>
+                  </li>
+                </ul>
+              </div>
+              {% comment %} <a href="#" class="btn">View Case</a> {% endcomment %}
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="container small-container">
+            <div class="section-title n_dec st_small">
+              <h3>دیدگاه ها</h3>
+            </div>
+            <div class="comment-item">
+              <div id="disqus_thread"></div>
+                <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://http-127-0-0-1-8000-nno4pazhpy.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+          </div>
+        </section>
+        <div class="order-wrap">
+          <div class="container small-container">
+            <h4>آماده شرکت در گالری هستید؟</h4>
+          </div>
+          <a href="{% if 'dark' in request.path %}
+              {% url 'light_mode:contact_dark' %}
+            {% else %}
+              {% url 'light_mode:contact' %}
+            {% endif %}"
+            class="order_btn">
+            ارتباط با ما
+          </a>
+        </div>
+      </div>
+      <!-- column-wrapper -->
+      <!-- fixed-bottom-container -->
+      <div class="fixed-bottom-container">
+        <div class="scroll-down-wrap">
+          <div class="mousey">
+            <div class="scroller"></div>
+          </div>
+        </div>
+        <div class="aside_icon_wrap hbn_vis">
+          <div class="list">
+            <a href="{% if 'dark' in request.path %}
+                {% url 'portfolio:portfolio_dark' %}
+              {% else %}
+                {% url 'portfolio:portfolio_light' %}
+              {% endif %}">
+              <span>
+                <i class="b1 c1"></i><i class="b1 c2"></i><i class="b1 c3"></i>
+                <i class="b2 c1"></i><i class="b2 c2"></i><i class="b2 c3"></i>
+                <i class="b3 c1"></i><i class="b3 c2"></i><i class="b3 c3"></i>
+              </span>
+            </a>
+          </div>
+          <strong>برگشت به محصولات</strong>
+        </div>
+        <div class="progress-bar-wrap" style="height: 170px;">
+          <div class="progress-bar color-bg"></div>
+        </div>
+      </div>
+      <!-- fixed-bottom-container end -->
+    </div>
+    <!-- content-holder end -->
+  </div>
+  <!-- wrapper end -->
+{% endblock %}

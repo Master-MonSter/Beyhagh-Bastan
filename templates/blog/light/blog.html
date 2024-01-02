@@ -2,7 +2,6 @@
 {% load static %}
 {% load jalali_tags %}
 {% block extrahead %}
-
 {% endblock %}
 {% load blog_tags %}
 {% block content %}
@@ -86,7 +85,7 @@
                     </div>
                     <div class="post-item_content">
                       <div class="post-header">
-                        <a href="#">{{ post.category.first }}</a><a href="#">{{ post.published_date|to_jalali:'%H:%M:%S _ %Y/%m/%d' }}</a>
+                        <a href="{% if 'dark' in request.path %}{% url 'blog:category_dark' post.category.first %}{% else %}{% url 'blog:category_light' post.category.first %}{% endif %}">{{ post.category.first }}</a><a>{{ post.published_date|to_jalali:'%H:%M:%S _ %Y/%m/%d' }}</a>
                       </div>
                       <h3>
                         <a href="{% if 'light' in request.path %}
