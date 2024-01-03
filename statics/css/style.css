@@ -4157,3 +4157,16 @@ section {
 	text-align: center !important;
 }
 /* *********************** Some css classes ************************* */
+
+.next-prev {
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.txt-next-prev {
+	font-size: 1.5em !important;
+	color: #777777 !important;
+}
+.txt-next-prev2 {
+	font-size: 1em !important;
+	color: #a7a7a7 !important;
+}

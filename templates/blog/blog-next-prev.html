@@ -1,0 +1,39 @@
+{% load static %}
+<br /><br /><br />
+<div class="single-post-container">
+  <div {% if prevPost is None and nextPost is None %}hidden{% endif %}>
+    <table style="width: 100%;">
+      <tr>
+        <td style="float: left; text-align: center;">
+            <div {% if prevPost is None %}style="visibility: hidden;"{% endif %}>
+              <div>
+                <a href={% if prevPost is None %}""{% else %}"{% url 'blog:blog_single_light' prevPost.id %}"{% endif %}><img class="next-prev" src="{{prevPost.image_main.url}}" alt="" width="60px" height="60px" /></a>
+              </div>
+              <div><p></p>
+                <a href={% if prevPost is None %}""{% else %}"{% url 'blog:blog_single_light' prevPost.id %}"{% endif %}><span></span></a>
+              </div>
+              <div>
+                <a href={% if prevPost is None %}""{% else %}"{% url 'blog:blog_single_light' prevPost.id %}"{% endif %}><h3 class="txt-next-prev">{{ prevPost }}</h3></a>
+                <h4 class="txt-next-prev2">پست قبلی</h4>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td style="float: right; text-align: center;">
+          <div {% if nextPost is None %}style="visibility: hidden;"{% endif %}>
+            <div>
+              <a href={% if nextPost is None %}""{% else %}"{% url 'blog:blog_single_light' nextPost.id %}"{% endif %} aria-disabled="true"><img class="next-prev" src="{{nextPost.image_main.url}}" alt="" width="60px" height="60px"/></a>
+            </div><p></p>
+            <div>
+              <a href={% if nextPost is None %}""{% else %}"{% url 'blog:blog_single_light' nextPost.id %}"{% endif %}><h3 class="txt-next-prev">{{ nextPost }}</h3></a>
+              <h4 class="txt-next-prev2">پست بعدی</h4>
+            </div>
+            <div>
+              <a href={% if nextPost is None %}""{% else %}"{% url 'blog:blog_single_light' nextPost.id %}"{% endif %}><span></span></a>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

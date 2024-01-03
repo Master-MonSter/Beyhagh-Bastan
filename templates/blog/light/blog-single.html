@@ -143,6 +143,7 @@
                   <span style="{% if 'light' in request.path %}color:black;{% endif %}"><i class="fal fa-eye"></i> {{ context.counted_views }} دیده شده</span>
                 </div>
               </div>
+              {% include "blog/blog-next-prev.html" %}
             </div>
             <!-- single-post-container end -->
           </div>
