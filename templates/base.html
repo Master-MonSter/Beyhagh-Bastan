@@ -130,32 +130,6 @@
                 </li>
                 <li>
                   <a href="{% if 'dark' in request.path %}{% url 'portfolio:portfolio_dark' %}{% else %}{% url 'portfolio:portfolio_light' %}{% endif %}" class="{% if 'portfolio' in request.path %}act-link{% endif %}">محصولات</a>
-                  <!-- second level -->
-                  {% comment %} <ul>
-                    <li>
-                      <a href="{% url 'light_mode:portfolio_vertical' %}">Vertical Grid</a>
-                    </li>
-                    <li>
-                      <a href="#">Single</a>
-                      <!-- third level -->
-                      <ul>
-                        <li>
-                          <a href="{% url 'light_mode:portfolio_single' %}">Style 1</a>
-                        </li>
-                        <li>
-                          <a href="{% url 'light_mode:portfolio_single2' %}">Style 2</a>
-                        </li>
-                        <li>
-                          <a href="{% url 'light_mode:portfolio_single3' %}">Style 3</a>
-                        </li>
-                        <li>
-                          <a href="{% url 'light_mode:portfolio_single4' %}">Style 4</a>
-                        </li>
-                      </ul>
-                      <!-- third level end -->
-                    </li>
-                  </ul> {% endcomment %}
-                  <!-- second level end -->
                 </li>
                 <li>
                   <a href="{% if 'light' in request.path %}
@@ -166,37 +140,10 @@
                     class="{% if '/light/' == request.path or '/dark/' == request.path %}act-link{% endif %}">
                     خانه
                   </a>
-                  <!-- second level -->
-                  {% comment %} <ul>
-                    <li>
-                      <a href="{% url 'light_mode:index_carousel' %}">Carousel</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'light_mode:index_slider' %}">Slider</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'light_mode:index_imagesGrid' %}">Images Grid</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'light_mode:index_carousel2' %}">Carousel 2</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'light_mode:index_video' %}">Video</a>
-                    </li>
-                  </ul>
-                  <!-- second level end --> {% endcomment %}
                 </li>
               </ul>
             </nav>
           </div>
-          <!-- navigation end -->
-          <!-- share-wrapper -->
-          {% comment %} <div class="share-wrapper">
-            <div class="share-inner">
-              <div class="share-container"></div>
-            </div>
-          </div> {% endcomment %}
-          <!-- share-wrapper end -->
         </div>
       </header>
       <!-- Header end -->
@@ -213,7 +160,7 @@
         <div class="footer_contacts">
           <ul>
             <li>
-              <span>Mail :</span><a href="#" target="_blank">l.o0of.war@gmail.com</a>
+              <span>Mail :</span><a href="#" target="_blank">beyhagh.bastan.antique@gmail.com</a>
             </li>
             <li>
               <span>Phone :</span><a href="#">09917695905</a>

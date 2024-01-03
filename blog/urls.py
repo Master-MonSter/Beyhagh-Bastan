@@ -14,7 +14,8 @@ urlpatterns = [
     path('light/category-<str:cat_name>', views.index_view, name='category_light'),
     path('dark/tag-<str:tag_name>', views.index_view, name='tag_dark'),
     path('light/tag-<str:tag_name>', views.index_view, name='tag_light'),
-    path('search/', views.index_view, name='search'),
+    path('light/search/', views.index_view, name='search_light'),
+    path('dark/search/', views.index_view, name='search_dark'),
     path("light/rss/feed/", LatestEntriesFeed()),
     # path('light/search/', views.index_view, name='search_light'),
 ]

@@ -1,7 +1,7 @@
 {% load static %}
 
 <div class="blog-search-wrap custom-form">
-    <form action="{% url 'blog:search' %}" method="get">
+    <form action="{% if 'dark' in request.path %}{% url 'blog:search_dark' %}{% else %}{% url 'blog:search_light' %}{% endif %}" method="get">
         <input name="sBar" id="se" type="text" class="search" placeholder="... جستجو" value="">
         <button type="submit"><i class="far fa-search"></i></button>
     </form>
