@@ -75,8 +75,8 @@ def contact_view(request):
     path_info = request.path
     # *********************************** Get full path ********************************
     light_theme = "light" in path_info
-    print(path_info)
-    print(light_theme)
+    theme = dark_light_switch(request)
+    print(theme)
     # request.add({"names": 'ali' })
     updated_request = request.GET.copy()
     print(request)
@@ -103,6 +103,7 @@ def contact_view(request):
             messages.add_message(request, messages.ERROR, msg)
             # ************************************** Set error list ***********************************************
     form = ContactForm()
+    
     return render(request, 'light/contacts.html', {'form': form, 'light_theme': light_theme})
 
 def newsletter_view(request):

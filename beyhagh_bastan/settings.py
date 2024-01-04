@@ -25,20 +25,7 @@ MESSAGE_TAGS = {
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-v8!i8204e5_v@_n82#d_2k@_92pn8=*5aqgvfu4-v3z0zr3hw@'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
-
 # Application definition
-
 INSTALLED_APPS = [
     'multi_captcha_admin',
     'django.contrib.admin',
@@ -93,17 +80,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'beyhagh_bastan.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -144,14 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
-
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-
-STATICFILES_DIRS = [
-    BASE_DIR / "statics",
-]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -200,16 +169,6 @@ CAPTCHA_FONT_SIZE = 40
 # LOGIN_REDIRECT_URL = ""
 # LOGOUT_REDIRECT_URL = "accounts:login_light"
 
-# ******************************** reset password with email ********************************
-# !!!  C u o t i o n  !!! We must change some lines on the auth.views and moddified app name on th password_reset_email.html in PasswordResetEmail class
-# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"    # With console
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"         # With email
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_POST = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER ='beyhagh.bastan.antique@gmail.com'
-EMAIL_HOST_PASSWORD ='byxy leux imad acea' # From beyhagh.bastan.antique@gmail.com
-# ******************************** reset password with email ********************************
 
 # ***************************** Set Thousand Separator ********************************
 USE_THOUSAND_SEPARATOR = True
@@ -220,8 +179,6 @@ DECIMAL_SEPARATOR='.'
 
 NUMBER_GROUPING = 3
 # ***************************** Set Thousand Separator ********************************
-
-SITE_ID = 2 # Using site id for site framework
 
 # Admin's captcha types(simple-captcha, recaptcha, recaptcha2)
 MULTI_CAPTCHA_ADMIN = {

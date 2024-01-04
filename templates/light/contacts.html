@@ -46,14 +46,14 @@
                       <span>:آدرس</span><a href="#" target="_blank">سبزوار، خیابان قائم، قائم 1، پلاک 73</a>
                     </li>
                     <li>
-                      <span>:شماره تماس</span><a href="#">051-44231123</a> , <a href="#">09155710393</a>
+                      <span>:شماره تماس</span><a href="#">051-44231123</a> , <a href="#">09155710393 - 09305717572</a>
                     </li>
                     <li>
                       <span>:آدرس ایمیل</span><a href="#" target="_blank">beyhagh.bastan.antique@gmail.com</a>
                     </li>
                   </ul>
                 </div>
-                <a href="#sec3" class="custom-scroll-link btn fl-btn">Say Hello</a>
+                <a href="#sec3" class="custom-scroll-link btn fl-btn">-سلام-</a>
               </div>
             </div>
           </div>
@@ -85,14 +85,14 @@
             <div class="section-title fl-wrap">
               <div class="section-number">.03</div><br /><br /><br />
               <h3>منتظرتان هستیم</h3>
-              <h4>"... میتونی از پل ارتباطی زیر استفاده کنی، "هر چه میخواهد دل تنگت بگو</h4>
+              <h4>(: میتونی از پل ارتباطی زیر استفاده کنی، گوش به زنگیم<br>"... هر چه میخواهد دل تنگت بگو"</h4>
             </div>
             <div class="column-wrapper_item fl-wrap">
               <div class="column-wrapper_text fl-wrap">
                 <p>این یک متن تصادفی است.این یک متن تصادفی است.این یک متن تصادفی است.این یک متن تصادفی است.این یک متن تصادفی است.این یک متن تصادفی است.این یک متن تصادفی است.این یک متن تصادفی است.این یک متن تصادفی است.این یک متن تصادفی است.این یک متن تصادفی است.</p>
                 <div id="contact-form" class="fl-wrap">
                   <div id="message"></div>
-                  <form class="custom-form" action="{% url 'light_mode:contact' %}" method="post">
+                  <form class="custom-form" action="{% if 'dark' in request.path %}{% url 'light_mode:contact_dark' %}{% else %}{% url 'light_mode:contact' %}{% endif %}" method="post">
                     {% csrf_token %}
                     <fieldset>
                       <input type="text" name="name" id="name" placeholder="نام *" value="" required="">
