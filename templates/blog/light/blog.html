@@ -14,8 +14,8 @@
         <div class="bg" data-bg="{% static 'images/bg/4.jpg' %}"></div>
         <div class="overlay"></div>
         <div class="column-title">
-          <h2>Our Last News</h2>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.</h3>
+          <h2>تارنگار</h2>
+          <h3>!!!در تشخیص قدمت آثار باستانی با ما به روز بمانید</h3>
         </div>
         <div class="ci_dec">
           <span></span>
@@ -119,7 +119,7 @@
                   <a href="?page={{ context.previous_page_number }}" class="prevposts-link"><i class="fal fa-long-arrow-left"></i></a>
                 {% endif %}
                 {% for page in context.paginator.page_range %}
-                  <a href="?page={{ page }}" class="{% if context.number == page %}{% endif %}">{{ page }}</a>
+                  <a href="?page={{ page }}" class="{% if context.number == page %}current-page{% endif %}">{{ page }}</a>
                 {% endfor %}
                 {% comment %} <a href="#" class="current-page">02</a> {% endcomment %}
                 {% if context.has_next %}
@@ -165,7 +165,7 @@
             <div class="scroller"></div>
           </div>
         </div>
-        <a href="{% url 'light_mode:index_carousel2' %}" class="bth_btn hbn_vis"><i class="fal fa-home-lg-alt"></i><strong>Back to Home</strong></a>
+        <a href="{% url 'light_mode:index_carousel2' %}" class="bth_btn hbn_vis"><i class="fal fa-home-lg-alt"></i><strong>بازگشت به صفحه ی اصلی</strong></a>
         <div class="progress-bar-wrap">
           <div class="progress-bar color-bg"></div>
         </div>

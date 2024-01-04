@@ -14,8 +14,26 @@
   ++responsive++ 
 */
 /*-------------Import fonts ---------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Mukta+Mahee:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Mahee:wght@300;400;500;600;700;800&family=IRANSans:wght@300;400;500;600;700;800;900&display=swap');
 /*-------------General Style---------------------------------------*/
+
+@font-face {
+	font-family: IRANSans;
+	src: url("../fonts/IRANSansWeb_FaNum.woff");
+ }
+@font-face {
+	font-family: Vazir_Bold;
+	src: url("../fonts/Vazir-Bold-FD.woff");
+ }
+ @font-face {
+	font-family: BNazanin;
+	src: url("../fonts/BNazanin.woff");
+ }
+@font-face {
+	font-family: BNazanin_B;
+	src: url("../fonts/BNaznnBd.woff");
+ }
+
 html{
 	overflow-x:hidden !important;
 	height:100%;
@@ -24,7 +42,7 @@ html{
 body{
 	margin: 0;
 	padding: 0;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'IRANSans', sans-serif;
 	font-weight: 400;
 	font-size: 12px;
 	background: #000;
@@ -43,7 +61,7 @@ p {
     padding-bottom: 10px;
     font-weight: 400;
     color: #999;
-	font-family:  'Mukta Mahee', sans-serif;
+	font-family:  'BNazanin', sans-serif;
 }
 blockquote {
 	float:left;
@@ -701,7 +719,7 @@ blockquote p {
 	font-size: 10px;
 	position: relative;
 	text-transform:uppercase;
-	letter-spacing:2px;
+	letter-spacing:1px;
 	text-align: center;
 }
 #subscribe-button {
@@ -714,7 +732,7 @@ blockquote p {
 	font-weight:700;
 	border:none;
 	text-transform:uppercase;
-	letter-spacing:2px;
+	letter-spacing:1px;
 	font-size: .9em;
 	cursor:pointer;
 	border-radius: 30px;
@@ -797,7 +815,7 @@ blockquote p {
 .page-scroll-nav li   span{
 	font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-weight: 700;
 	color:#000;
 	position: absolute;
@@ -1062,7 +1080,7 @@ blockquote p {
 	font-weight: 500;
 	font-size: .9em;
 	text-transform: uppercase;
-	letter-spacing: 4px;
+	letter-spacing: 1px;
 	transform: translateX(-50%);
 } 
 .thumb-info {
@@ -1096,7 +1114,7 @@ blockquote p {
 	text-transform: uppercase;
 	font-weight: 500;
 	padding-bottom: 10px;
-	letter-spacing: 10px;
+	letter-spacing: 2px;
 	position: relative;
 }
 .slider-fw  .thumb-info h3 {
@@ -1175,7 +1193,7 @@ blockquote p {
     display: inline-block;
     margin-top: 25px;
     font-size: 10px;
-    letter-spacing: 4px;
+    letter-spacing: 1px;
     font-weight: 600;
     position: relative;
     padding: 20px 55px;
@@ -1508,7 +1526,7 @@ blockquote p {
 	font-weight: 700;
 	bottom: auto;
 	left: auto;
- 	font-family: 'Mukta Mahee', sans-serif;
+ 	font-family: 'BNazanin', sans-serif;
 	font-size: 13px;
 }
 .ccsw {
@@ -1689,7 +1707,7 @@ blockquote p {
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 	padding-bottom: 10px;
 }
 .btn {
@@ -1698,7 +1716,7 @@ blockquote p {
     font-weight: 600;
     cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-size: 10px;
 	background: #fff;
 	color:#000;
@@ -2687,7 +2705,7 @@ section {
 	color:rgba(255,255,255, .6);
 }
 .serv-price span {
-    font-family: 'Playfair+Display', serif;
+    font-family: 'BNazanin_B', serif;
 	font-style:italic;
 	color:#fff;
 }
@@ -2866,7 +2884,7 @@ section {
 	font-weight: 600;
     cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 	font-size: 10px;
 }
 .order_btn:hover , .close-details:hover {
@@ -2883,7 +2901,7 @@ section {
 	float:right;
 	width:100%;
 	font-weight: 400;
-    letter-spacing: 1.5px;
+    letter-spacing: 0px;
     word-spacing: 0;
     text-transform: uppercase;
 	margin-bottom:12px;
@@ -2916,7 +2934,7 @@ section {
 	font-size: 12px;
 	position: relative;
 	color: #fff;
- 	font-family:'Poppins', sans-serif;
+ 	font-family:'IRANSans', sans-serif;
 	text-align: right;
 	-webkit-appearance: none;
 }
@@ -2926,7 +2944,7 @@ section {
 	font-weight: 600;
 	font-size: 11px;
 	position: relative;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'IRANSans', sans-serif;
 }
 .custom-form input:-moz-placeholder,
 .custom-form textarea:-moz-placeholder {
@@ -2935,7 +2953,7 @@ section {
 	font-size: 10px;
 	text-transform:uppercase;
 	position: relative;
-	font-family:'Poppins', sans-serif;
+	font-family:'IRANSans', sans-serif;
 }
 .custom-form textarea {
 	height: 150px;
@@ -2953,7 +2971,7 @@ section {
 	border: none;
 	cursor: pointer;
 	-webkit-appearance: none;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'IRANSans', sans-serif;
 	border-radius: 30px;
 }
 .custom-form  textarea:focus , .custom-form input[type="text"]:focus  , .custom-form  input[type=email]:focus  {
@@ -3176,7 +3194,7 @@ section {
 	margin-right: 10px;
 	font-size: 10px;
 	text-transform: uppercase;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	font-weight: 600;
 	color: rgba(255,255,255,.7);
 }
@@ -3244,7 +3262,7 @@ section {
 	color:#000;
     text-transform: uppercase;
     font-size: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     display: block;
     margin-top: 50px;
     position: relative;
@@ -4161,6 +4179,20 @@ section {
 .next-prev {
 	border-radius: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.next-prev-td-right {
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 10px;
+	float: right; 
+	text-align: center;
+}
+.next-prev-td-left {
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 10px;
+	float: left; 
+	text-align: center;
 }
 .txt-next-prev {
 	font-size: 1.5em !important;

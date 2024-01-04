@@ -4,35 +4,34 @@
   <div {% if prevPost is None and nextPost is None %}hidden{% endif %}>
     <table style="width: 100%;">
       <tr>
-        <td style="float: left; text-align: center;">
-            <div {% if prevPost is None %}style="visibility: hidden;"{% endif %}>
-              <div>
-                <a href={% if prevPost is None %}""{% else %}"{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' prevPost.id %}{% else %}{% url 'blog:blog_single_light' prevPost.id %}{% endif %}"{% endif %}><img class="next-prev" src="{{prevPost.image_main.url}}" alt="" width="80px" height="80px" /></a>
-              </div>
-              <div><p></p>
-                <a href={% if prevPost is None %}""{% else %}"{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' prevPost.id %}{% else %}{% url 'blog:blog_single_light' prevPost.id %}{% endif %}"{% endif %}><span></span></a>
-              </div>
-              <div>
-                <a href={% if prevPost is None %}""{% else %}"{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' prevPost.id %}{% else %}{% url 'blog:blog_single_light' prevPost.id %}{% endif %}"{% endif %}><h3 class="txt-next-prev">{{ prevPost }}</h3></a>
-                <h4 class="txt-next-prev2">پست قبلی</h4>
-              </div>
-            </div>
-          </div>
-        </td>
-        <td style="float: right; text-align: center;">
-          <div {% if nextPost is None %}style="visibility: hidden;"{% endif %}>
+        {% if prevPost is not None %}
+          <td class="next-prev-td-left">
             <div>
-              <a href={% if nextPost is None %}""{% else %}"{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' nextPost.id %}{% else %}{% url 'blog:blog_single_light' nextPost.id %}{% endif %}"{% endif %} aria-disabled="true"><img class="next-prev" src="{{nextPost.image_main.url}}" alt="" width="80px" height="80px"/></a>
+              <a href="{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' prevPost.id %}{% else %}{% url 'blog:blog_single_light' prevPost.id %}{% endif %}"><img class="next-prev" src="{{prevPost.image_main.url}}" alt="" width="100px" height="80px" /></a>
+            </div>
+            <div><p></p>
+              <a href="{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' prevPost.id %}{% else %}{% url 'blog:blog_single_light' prevPost.id %}{% endif %}"><span></span></a>
+            </div>
+            <div>
+              <a href="{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' prevPost.id %}{% else %}{% url 'blog:blog_single_light' prevPost.id %}{% endif %}"><h3 class="txt-next-prev">{{ prevPost }}</h3></a>
+              <h4 class="txt-next-prev2">پست قبلی</h4>
+            </div>
+          </td>
+        {% endif %}
+        {% if nextPost is not None %}
+          <td class="next-prev-td-right">
+            <div>
+              <a href="{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' nextPost.id %}{% else %}{% url 'blog:blog_single_light' nextPost.id %}{% endif %}" aria-disabled="true"><img class="next-prev" src="{{nextPost.image_main.url}}" alt="" width="100px" height="80px"/></a>
             </div><p></p>
             <div>
-              <a href={% if nextPost is None %}""{% else %}"{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' nextPost.id %}{% else %}{% url 'blog:blog_single_light' nextPost.id %}{% endif %}"{% endif %}><h3 class="txt-next-prev">{{ nextPost }}</h3></a>
+              <a href="{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' nextPost.id %}{% else %}{% url 'blog:blog_single_light' nextPost.id %}{% endif %}"><h3 class="txt-next-prev">{{ nextPost }}</h3></a>
               <h4 class="txt-next-prev2">پست بعدی</h4>
             </div>
             <div>
-              <a href={% if nextPost is None %}""{% else %}"{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' nextPost.id %}{% else %}{% url 'blog:blog_single_light' nextPost.id %}{% endif %}"{% endif %}><span></span></a>
+              <a href="{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' nextPost.id %}{% else %}{% url 'blog:blog_single_light' nextPost.id %}{% endif %}"><span></span></a>
             </div>
-          </div>
-        </td>
+          </td>
+        {% endif %}
       </tr>
     </table>
   </div>

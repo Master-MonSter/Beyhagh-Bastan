@@ -16,8 +16,8 @@
         <div class="bg" data-bg="{% static 'images/single-post-image.jpg' %}"></div>
         <div class="overlay"></div>
         <div class="column-title">
-          <h2>Our Last News</h2>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.</h3>
+          <h2>{{context.title}}</h2>
+          <h3>{{context.sub_title}}</h3>
         </div>
         <div class="ci_dec">
           <span></span>
@@ -162,8 +162,8 @@
                   <div class="comment-item">
                     <div class="comment-author">
                       <img alt="" src="{% static 'images/avatar/2.jpg' %}" width="50" height="50" />
-                      <h5><a href="#">{{comment.name}}</a></h5>
-                      <h6><a href="#">{{comment.created_date|naturaltime}}</a></h6>
+                      <h5><a>{{comment.name}}</a></h5>
+                      <h6><a>{{comment.created_date|naturaltime}}</a></h6>
                     </div>
                     <div class="comment-body gray-bg">
                       <p>{{comment.message|truncatewords_html:10}}</p>

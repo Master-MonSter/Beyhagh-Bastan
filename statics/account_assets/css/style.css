@@ -48,8 +48,25 @@ Version:    1.1.0
 -------------------------------------------------------------------*/
 /** GLOBAL CLASSES **/
 
+@font-face {
+	font-family: IRANSans;
+	src: url("../../fonts/IRANSansWeb_FaNum.woff");
+ }
+@font-face {
+	font-family: Vazir_Bold;
+	src: url("../../fonts/Vazir-Bold-FD.woff");
+ }
+ @font-face {
+	font-family: BNazanin;
+	src: url("../../fonts/BNazanin.woff");
+ }
+@font-face {
+	font-family: BNazanin_B;
+	src: url("../../fonts/BNaznnBd.woff");
+ }
+
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'BNazanin', sans-serif;
     color: #535353;
 }
 
@@ -123,7 +140,7 @@ body {
     background: #fff;
     color: #555;
     font-size: 15px;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     padding-bottom: 5px;
 }
 
@@ -153,7 +170,7 @@ body {
 }
 
 .login-1 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     color: #040404;
 }
 
@@ -315,7 +332,7 @@ body {
     cursor: pointer;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
     width: 100%;
 }
@@ -590,7 +607,7 @@ body {
 }
 
 .login-2 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-2 .login-box {
@@ -704,7 +721,7 @@ body {
     line-height: 37px;
     width: 110px;
     color: #505050;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-2 .btn-section .link-btn:hover{
@@ -801,7 +818,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 50px;
     float: left;
 }
@@ -1151,7 +1168,7 @@ body {
 }
 
 .login-3 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-3 .logo {
@@ -1319,7 +1336,7 @@ body {
     border-radius: 3px;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-3 .btn-theme:before {
@@ -1548,7 +1565,7 @@ body {
 }
 
 .login-4 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-4 .form-section a{
@@ -1793,7 +1810,7 @@ body {
     cursor: pointer;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 50px;
     float: left;
 }
@@ -1884,7 +1901,7 @@ body {
 
 /** Login 5 start **/
 .login-5 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-5 {
@@ -2106,7 +2123,7 @@ body {
     cursor: pointer;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
     border: none;
 }
@@ -2266,7 +2283,7 @@ body {
 }
 
 .login-6 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-6 .form-section{
@@ -2345,7 +2362,7 @@ body {
     text-transform: uppercase;
     animation: waviy 1s infinite;
     animation-delay: calc(.1s * var(--i));
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-6 .waviy span.color-yellow{
@@ -2397,7 +2414,7 @@ body {
     font-size: 17px;
     font-weight: 400;
     width: 100%;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
 }
 
@@ -2628,7 +2645,7 @@ body {
 
 /** Login 7 start **/
 .login-7 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-7 {
@@ -2764,7 +2781,7 @@ body {
     font-size: 17px;
     font-weight: 400;
     width: 100%;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
 }
 
@@ -2964,7 +2981,7 @@ body {
 }
 
 .login-8 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-8 .info-text{
@@ -2990,7 +3007,7 @@ body {
     text-transform: uppercase;
     animation: waviy 1s infinite;
     animation-delay: calc(.1s * var(--i));
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-8 .waviy span.color-yellow{
@@ -3089,7 +3106,7 @@ body {
     padding: 13px 50px 12px 50px;
     font-size: 15px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 100px;
     text-transform: uppercase;
 }
@@ -3349,7 +3366,7 @@ body {
 }
 
 .login-9 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-9 .form-section a {
@@ -3549,7 +3566,7 @@ body {
     cursor: pointer;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
     width: 100%;
     float: left;
@@ -3693,7 +3710,7 @@ body {
 }
 
 .login-10 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-10 .form-section {
@@ -3909,7 +3926,7 @@ body {
     cursor: pointer;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
     border: none;
 }
@@ -4148,7 +4165,7 @@ body {
 }
 
 .login-11 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-11 .form-section {
@@ -4334,7 +4351,7 @@ body {
     border-radius: 0;
     color: #f78c30;
     text-decoration: blink;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     text-transform: uppercase;
 }
 
@@ -4401,7 +4418,7 @@ body {
     font-size: 17px;
     font-weight: 400;
     width: 100%;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 50px;
 }
 
@@ -4724,7 +4741,7 @@ body {
 }
 
 .login-12 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-12 .form-section {
@@ -5050,7 +5067,7 @@ body {
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 500;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 50px;
     border: none;
 }
@@ -5238,7 +5255,7 @@ body {
 }
 
 .login-13 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-13 .form-section{
@@ -5573,7 +5590,7 @@ body {
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     width: 100%;
 }
 
@@ -5800,7 +5817,7 @@ body {
 }
 
 .login-14 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-14 .form-section {
@@ -5949,7 +5966,7 @@ body {
     cursor: pointer;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
 }
 
@@ -6086,7 +6103,7 @@ body {
 }
 
 .login-15 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-15 .login-box {
@@ -6216,7 +6233,7 @@ body {
     line-height: 40px;
     width: 110px;
     color: #535353;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     text-transform: uppercase;
 }
 
@@ -6313,7 +6330,7 @@ body {
     cursor: pointer;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
 }
 
@@ -6744,7 +6761,7 @@ body {
 }
 
 .login-16 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-16 a {
@@ -6904,7 +6921,7 @@ body {
     cursor: pointer;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
     width: 100%;
 }
@@ -7097,7 +7114,7 @@ body {
 }
 
 .login-17 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-17 .form-section{
@@ -7158,7 +7175,7 @@ body {
     color: #fff;
     animation: waviy 1s infinite;
     animation-delay: calc(.1s * var(--i));
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-17 .waviy span.color-yellow{
@@ -7231,7 +7248,7 @@ body {
     color: #33ccff;
     border: solid 2px #33ccff;
     font-size: 17px;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     font-weight: 400;
     float: left;
     margin-right: 5px;
@@ -7376,7 +7393,7 @@ body {
 }
 
 .login-18 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-18 .form-section {
@@ -7490,7 +7507,7 @@ body {
     text-decoration: none;
     background: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-18 .form-section .social-list li a i{
@@ -7544,7 +7561,7 @@ body {
     padding: 13px 50px 12px 50px;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
 }
 
@@ -7693,7 +7710,7 @@ body {
 }
 
 .login-19 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-19 .form-check-input:checked {
@@ -7841,7 +7858,7 @@ body {
     padding: 15.5px 50px 14.5px 50px;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 50px;
     height: 55px;
 }
@@ -8044,7 +8061,7 @@ body {
 }
 
 .login-20 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-20 .login-box {
@@ -8231,7 +8248,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
     float: left;
 }
@@ -8455,7 +8472,7 @@ body {
 }
 
 .login-21 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-21 .form-info {
@@ -8550,7 +8567,7 @@ body {
     height: 55px;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
 }
 
@@ -8818,7 +8835,7 @@ body {
 }
 
 .login-22 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-22 .bg-img{
@@ -8925,7 +8942,7 @@ body {
     padding: 15.5px 50px 14.5px 50px;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 50px;
 }
 
@@ -9018,7 +9035,7 @@ body {
     letter-spacing: 0.5px;
     font-weight: 400;
     color: #ffa637;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-22 .informeson .active {
@@ -9150,7 +9167,7 @@ body {
 }
 
 .login-23 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-23 .form-section{
@@ -9247,7 +9264,7 @@ body {
     text-transform: uppercase;
     animation: waviy 1s infinite;
     animation-delay: calc(.1s * var(--i));
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-23 .waviy span.color-yellow{
@@ -9300,7 +9317,7 @@ body {
     font-size: 17px;
     font-weight: 400;
     width: 100%;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
 }
 
@@ -9577,7 +9594,7 @@ body {
     border: 2px solid #fff;
     background: #fff;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-24 .form-check-input:checked {
@@ -9585,7 +9602,7 @@ body {
 }
 
 .login-24 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-24 .link-btn:hover{
@@ -9626,7 +9643,7 @@ body {
     height: 60px;
     border: 1px solid #fff;
     background: #fff;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-24 .login-inner-form label{
@@ -9634,7 +9651,7 @@ body {
     font-size: 18px;
     margin-bottom: 10px;
     opacity: 0.9;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-24 .login-inner-form .forgot{
@@ -9653,7 +9670,7 @@ body {
     padding: 13px 50px 12px 50px;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
 }
 
@@ -9759,7 +9776,7 @@ body {
 }
 
 .login-25 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-25 a {
@@ -9929,7 +9946,7 @@ body {
     cursor: pointer;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
     width: 100%;
 }
@@ -10132,7 +10149,7 @@ body {
 }
 
 .login-26 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-26 .form-section a {
@@ -10204,7 +10221,7 @@ body {
     text-decoration: none;
     background: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-26 .form-section .social-list li a i{
@@ -10381,7 +10398,7 @@ body {
     border-radius: 3px;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     width: 100%;
 }
 
@@ -10525,7 +10542,7 @@ body {
 }
 
 .login-27 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-27 .form-section {
@@ -10578,7 +10595,7 @@ body {
     margin: 0 0 40px;
     font-size: 25px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     color: #040404;
 }
 
@@ -10610,7 +10627,7 @@ body {
     padding: 12px 50px 11px 50px;
     font-size: 15px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
     height: 45px;
 }
@@ -10871,7 +10888,7 @@ body {
 }
 
 .login-28 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-28 .logo {
@@ -11098,7 +11115,7 @@ body {
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     width: 100%;
 }
 
@@ -11386,7 +11403,7 @@ body {
 }
 
 .login-29 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-29 a {
@@ -11525,7 +11542,7 @@ body {
     cursor: pointer;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
     width: 100%;
 }
@@ -11713,7 +11730,7 @@ body {
 }
 
 .login-30 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-30 .form-section{
@@ -11890,7 +11907,7 @@ body {
     cursor: pointer;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 0;
     border:none;
 }
@@ -12019,7 +12036,7 @@ body {
     line-height: 41px;
     font-size: 16px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-30 .btn-theme-2:hover{
@@ -12078,7 +12095,7 @@ body {
     line-height: 41px;
     font-size: 16px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-30 .btn-theme-3:before {
@@ -12255,7 +12272,7 @@ body {
 }
 
 .login-31 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-31 .container {
@@ -12325,7 +12342,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-31 .none-2{
@@ -12370,7 +12387,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding: 13px 50px 12px 50px;
     font-size: 15px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
     text-transform: uppercase;
 }
@@ -12618,7 +12635,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .login-32 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 /** Animate Image start **/
@@ -12723,7 +12740,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding: 15.5px 50px 14.5px 50px;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 50px;
 }
 
@@ -13018,7 +13035,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .login-33 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-33 .login-inner-form {
@@ -13120,7 +13137,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding: 13px 50px 12px 50px;
     font-size: 15px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
     text-transform: uppercase;
 }
@@ -13408,7 +13425,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .login-34 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-34 .form-section a {
@@ -13465,7 +13482,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     text-decoration: none;
     background: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-34 .form-section .social-list li a i{
@@ -13571,7 +13588,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border-radius: 3px;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     width: 100%;
 }
 
@@ -13713,7 +13730,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .login-35 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
 }
 
 .login-35 .form-check-input:checked {
@@ -13819,7 +13836,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     height: 50px;
     font-size: 17px;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IRANSans', sans-serif;
     border-radius: 3px;
 }
 
