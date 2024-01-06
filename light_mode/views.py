@@ -5,6 +5,7 @@ from django.contrib import messages
 from portfolio.models import Product
 from datetime import datetime
 from django.utils import timezone
+import random
 
 # Create your views here.
 def dark_light_switch(request):
@@ -21,6 +22,24 @@ def check_published_date():
     products = Product.objects.filter(published_date__lte=now, status=1)
     return products
 
+def choosing_random(products, num=5):
+    if num > 10:
+        num = 10
+    elif num <= 0:
+        num = 5
+    if len(products) > num:
+        new_products = []
+        while len(new_products) < num:
+            rnd = random.randrange(0, len(products))
+            print (rnd)
+            if products[rnd] not in new_products:
+                new_products.append(products[rnd])
+        print (new_products)
+        return new_products
+    else:
+        return products
+    
+
 # ************************************************* Indexes ************************************************
 def index_carousel_view(request):
     return render(request, 'light/index.html')
@@ -32,7 +51,7 @@ def index_imagesGrid_view(request):
     return render(request, 'light/index3.html')
 
 def index_carousel2_view(request):
-    products = check_published_date()
+    products = choosing_random(check_published_date())
     context = {'products': products}
     return render(request, 'light/index4.html', context)
 
