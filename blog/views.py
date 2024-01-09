@@ -79,7 +79,6 @@ def blog_single_view(request, pid):
     # ******************************** About CommentForm ********************************
 
     posts = check_published_date()
-    # print("all posts: " + str(posts))
     context = get_object_or_404(posts, pk=pid)
     if context.login_require == True and not request.user.is_authenticated:
         messages.add_message(request, messages.INFO, 'You are not logged in<br>Please login')

@@ -700,6 +700,7 @@ blockquote p {
 }
 #subscribe .enteremail {
 	background:#000;
+	font-family: 'IRANSans', sans-serif;
 	border:none;
  	text-align: center;
     font-size: 12px;
@@ -723,6 +724,7 @@ blockquote p {
 	text-align: center;
 }
 #subscribe-button {
+	font-family: 'IRANSans', sans-serif;
 	margin-top:10px;
 	width:100%;
 	height:55px;

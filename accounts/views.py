@@ -114,7 +114,6 @@ def register_view(request):
                 # Update values before save ****************************************************************
                 obj = form.save(commit=False)
                 obj.email = request.POST.get('email')
-                print(users)
                 # Update values before save ****************************************************************
                 if len(users) == 0:
                     messages.add_message(request, messages.SUCCESS, '.ثبت نام شما با موفقیت انجام شد')

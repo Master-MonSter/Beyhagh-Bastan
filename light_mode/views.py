@@ -31,10 +31,8 @@ def choosing_random(products, num=5):
         new_products = []
         while len(new_products) < num:
             rnd = random.randrange(0, len(products))
-            print (rnd)
             if products[rnd] not in new_products:
                 new_products.append(products[rnd])
-        print (new_products)
         return new_products
     else:
         return products
@@ -95,10 +93,7 @@ def contact_view(request):
     # *********************************** Get full path ********************************
     light_theme = "light" in path_info
     theme = dark_light_switch(request)
-    print(theme)
-    # request.add({"names": 'ali' })
     updated_request = request.GET.copy()
-    print(request)
     if request.method == 'POST':
         msg = ""
         form = ContactForm(request.POST)
@@ -109,13 +104,11 @@ def contact_view(request):
             # Update values before save ****************************************************************
             form.save()
             messages.add_message(request, messages.SUCCESS, '******************<br>Well done<br>******************')
-            print(messages)
             # return HttpResponseRedirect('/contact')
         else:
             # ************************************** Set error list ***********************************************
             if form.errors:
                 for field in form.errors:
-                    print(form.errors)
                     for error in form.errors[field]:
                         msg = msg + f"<p><b>{field}:</b> {error}</p>"
             # messages.add_message(request, messages.ERROR, 'Somthing went wrong<br>please try again')
@@ -137,7 +130,6 @@ def newsletter_view(request):
             # ************************************** Set error list ***********************************************
             if form.errors:
                 for field in form.errors:
-                    print(form.errors)
                     for error in form.errors[field]:
                         msg = msg + f"<p><b>{error} </b> :{field}</p>"
             # messages.add_message(request, messages.ERROR, 'Somthing went wrong<br>please try again')

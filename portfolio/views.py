@@ -78,7 +78,6 @@ def portfolio_single_view(request, pid):
     # ******************************** About CommentForm ********************************
 
     products = check_published_date()
-    # print("all products: " + str(products))
     context = get_object_or_404(products, pk=pid)
     if context.login_require == True and not request.user.is_authenticated:
         messages.add_message(request, messages.INFO, 'You are not logged in<br>Please login')
@@ -91,10 +90,8 @@ def portfolio_single_view(request, pid):
     nextProduct = products.filter(pk__gt=pid).first()
     prevProduct = products.filter(pk__lt=pid).last()
     images = ProductImage.objects.filter(product_id=pid)
-    print(images)
     context = {'product': context, 'prevProduct': prevProduct, 'nextProduct': nextProduct, 'images': images}
     # context = {'context': context, 'prevProduct': prevProduct, 'nextProduct': nextProduct, 'comments': comments, 'form': form, 'images': images}
-    print(request.path)
     return render(request, 'portfolio/portfolio-single-vertical.html', context)
 
 

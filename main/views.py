@@ -7,27 +7,25 @@ from django.contrib import messages
 def index_view(request):
     return render(request, 'main/index.html')
 
-def comming_soon_view(request):
-    if request.method == 'POST':
-        msg = ""
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.add_message(request, messages.SUCCESS, '************** فرم شما با موفقیت ثبت شد **************')
-            # return HttpResponseRedirect('/contact')
-        else:
-            # ************************************** Set error list ***********************************************
-            if form.errors:
-                for field in form.errors:
-                    print(form.errors)
-                    for error in form.errors[field]:
-                        msg = msg + f"<p><b>{field}:</b> {error}</p>"
-            # messages.add_message(request, messages.ERROR, 'Somthing went wrong<br>please try again')
-            messages.add_message(request, messages.ERROR, msg)
-            # ************************************** Set error list ***********************************************
-    return render(request, 'main/coming_soon/comingsoon-countdown-bubble.html')
-    # return render(request, 'main/coming_soon/comingsoon-countdown-particel.html')
-
+# def comming_soon_view(request):
+#     if request.method == 'POST':
+#         msg = ""
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             messages.add_message(request, messages.SUCCESS, '************** فرم شما با موفقیت ثبت شد **************')
+#             # return HttpResponseRedirect('/contact')
+#         else:
+#             # ************************************** Set error list ***********************************************
+#             if form.errors:
+#                 for field in form.errors:
+#                     for error in form.errors[field]:
+#                         msg = msg + f"<p><b>{field}:</b> {error}</p>"
+#             # messages.add_message(request, messages.ERROR, 'Somthing went wrong<br>please try again')
+#             messages.add_message(request, messages.ERROR, msg)
+#             # ************************************** Set error list ***********************************************
+#     return render(request, 'main/coming_soon/comingsoon-countdown-bubble.html')
+#     # return render(request, 'main/coming_soon/comingsoon-countdown-particel.html')
 
 def newsletter_view(request):
     if request.method == 'POST':
@@ -41,7 +39,6 @@ def newsletter_view(request):
             # ************************************** Set error list ***********************************************
             if form.errors:
                 for field in form.errors:
-                    print(form.errors)
                     for error in form.errors[field]:
                         msg = msg + f"<p><b>{error} </b> :{field}</p>"
             # messages.add_message(request, messages.ERROR, 'Somthing went wrong<br>please try again')
