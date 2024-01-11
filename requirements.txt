@@ -8,3 +8,4 @@ django-jalali-date
 django-sass
 django-robots
 django-multi-captcha-admin
+django-compressor
