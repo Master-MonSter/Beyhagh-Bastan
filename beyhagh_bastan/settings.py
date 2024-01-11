@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_sass',
     'portfolio',
     'robots',
+    'compressor',
 ]
 
 MIDDLEWARE = [

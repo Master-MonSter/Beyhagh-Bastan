@@ -2,6 +2,7 @@
 {% load humanize %}
 {% load jalali_tags %}
 {% load blog_tags %}
+{% comment %} {% load static compress %} {% endcomment %}
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
@@ -10,6 +11,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Mr.BoO - Beyhagh-bastan</title>
     <!-- =============== css =============== -->
+    {% comment %} {% compress css %} {% endcomment %}
     <link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}" />
     <link type="text/css" rel="stylesheet" href="{% static 'css/plugins.css' %}" />
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
@@ -29,6 +31,7 @@
     {% endblock %}
     <!-- =============== favicons =============== -->
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+    {% comment %} {% endcompress %} {% endcomment %}
   </head>
   <body>
     <!-- main start -->
@@ -61,7 +64,7 @@
       <header class="main-header">
         <div class="main-inner">
           <!-- logo -->
-          <a href="index.html" class="logo-holder">
+          <a href="{% url 'main:index' %}" class="logo-holder">
             <img src="{% if 'light' in request.path %}
                 {% static 'images/beyhagh-bastan-black.png' %}
               {% else %}
@@ -214,6 +217,7 @@
     </div>
     <!-- Main end -->
     <!-- =============== scripts =============== -->
+    {% comment %} {% compress js %} {% endcomment %}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
     <script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
@@ -224,7 +228,7 @@
     {% comment %} ********************* Light Gallery for useing mousewheel in gallery show ********************* {% endcomment %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     {% comment %} ********************* Light Gallery for useing mousewheel in gallery show ********************* {% endcomment %}
-    
+    {% comment %} {% endcompress %} {% endcomment %}
   </body>
   <!-- Main msg for all pages *********************************************************************************** -->
   {% comment %} {% if messages %}

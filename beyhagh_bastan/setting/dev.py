@@ -41,3 +41,17 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER ='beyhagh.bastan.antique@gmail.com'
 EMAIL_HOST_PASSWORD ='byxy leux imad acea' # From beyhagh.bastan.antique@gmail.com
 # ******************************** reset password with email ********************************
+
+# ************************************** Django-compressor **************************************
+STATICFILES_FINDERS = (
+        # other finders..
+        'compressor.finders.CompressorFinder',
+)
+COMPRESS_ENABLED = True
+COMPRESS_CSS_FILTERS = ["compressor.filters.cssmin.CSSMinFilter"]
+COMPRESS_JS_FILTERS = ["compressor.filters.jsmin.JSMinFilter"]
+if not COMPRESS_ENABLED:
+       COMPRESS_ENABLED = True
+       COMPRESS_CSS_FILTERS = ["compressor.filters.cssmin.CSSMinFilter"]
+       COMPRESS_JS_FILTERS = ["compressor.filters.jsmin.JSMinFilter"]
+# ************************************** Django-compressor **************************************
