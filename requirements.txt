@@ -9,3 +9,4 @@ django-sass
 django-robots
 django-multi-captcha-admin
 django-compressor
+mysqlclient
