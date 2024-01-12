@@ -83,7 +83,7 @@ def blog_single_view(request, pid):
     if context.login_require == True and not request.user.is_authenticated:
         messages.add_message(request, messages.INFO, 'You are not logged in<br>Please login')
         # return redirect('accounts:login', 'blog:index')
-        return redirect("/accounts/login/?next=" + request.path)
+        return redirect(f"/accounts/{dark_light_switch(request)}/login/?next=" + request.path)
     comments = Comment.objects.filter(post=context.id, approved = True)
     context.counted_views = context.counted_views + 1
     context.save()
