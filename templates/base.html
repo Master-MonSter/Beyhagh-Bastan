@@ -3,7 +3,6 @@
 {% load jalali_tags %}
 {% load blog_tags %}
 {% comment %} {% load compress %} {% endcomment %}
-{% comment %} {% load static compress %} {% endcomment %}
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
@@ -12,27 +11,27 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Mr.BoO - Beyhagh-bastan</title>
     <!-- =============== css =============== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     {% comment %} {% compress css %} {% endcomment %}
     <link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}" />
     <link type="text/css" rel="stylesheet" href="{% static 'css/plugins.css' %}" />
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link type="text/css" rel="stylesheet" href="{% static 'css/map.css' %}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    {% if 'light' in request.path %}
+      <link type="text/css" rel="stylesheet" href="{% static 'css/light-style.css' %}" />
+    {% endif %}
+    {% comment %} {% endcompress %} {% endcomment %}
 
     {% comment %} ********************* Light Gallery ********************* {% endcomment %}
     <link href="https://cdn.jsdelivr.net/lightgallery/1.3.9/css/lightgallery.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/lightgallery/1.3.9/css/transistions.min.css" rel="stylesheet">
     {% comment %} ********************* Light Gallery ********************* {% endcomment %}
 
-    {% if 'light' in request.path %}
-      <link type="text/css" rel="stylesheet" href="{% static 'css/light-style.css' %}" />
-    {% endif %}
     {% block extrahead %}
 
     {% endblock %}
     <!-- =============== favicons =============== -->
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
-    {% comment %} {% endcompress %} {% endcomment %}
   </head>
   <body>
     <!-- main start -->

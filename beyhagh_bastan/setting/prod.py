@@ -55,16 +55,18 @@ EMAIL_HOST_PASSWORD ='byxy leux imad acea' # From beyhagh.bastan.antique@gmail.c
 
 # ************************************** Django-compressor **************************************
 STATICFILES_FINDERS = (
-        # other finders..
-        'compressor.finders.CompressorFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
 )
 COMPRESS_ENABLED = True
 COMPRESS_CSS_FILTERS = ["compressor.filters.cssmin.CSSMinFilter"]
 COMPRESS_JS_FILTERS = ["compressor.filters.jsmin.JSMinFilter"]
 if not COMPRESS_ENABLED:
-       COMPRESS_ENABLED = True
-       COMPRESS_CSS_FILTERS = ["compressor.filters.cssmin.CSSMinFilter"]
-       COMPRESS_JS_FILTERS = ["compressor.filters.jsmin.JSMinFilter"]
+    COMPRESS_ENABLED = True
+    COMPRESS_CSS_FILTERS = ["compressor.filters.cssmin.CSSMinFilter"]
+    COMPRESS_JS_FILTERS = ["compressor.filters.jsmin.JSMinFilter"]
 # ************************************** Django-compressor **************************************
 
 # *************************************** Some secure settings *******************************************
