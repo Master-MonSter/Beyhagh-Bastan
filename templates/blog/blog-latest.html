@@ -5,7 +5,7 @@
         <div class="categories_widget-wrap">
             <!-- categories_widget_item-->
             {% for post in context %}
-                <a class="categories_widget_item" href="{% url 'blog:blog_single_dark' post.id %}">
+                <a class="categories_widget_item" href="{% if 'dark' in request.path %}{% url 'blog:blog_single_dark' post.id %}{% else %}{% url 'blog:blog_single_light' post.id %}{% endif %}">
                     <div class="categories_widget_item_img">
                         <img src="{{post.image_main.url}}" class="respimg" alt="">
                     </div>
